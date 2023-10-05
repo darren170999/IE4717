@@ -72,3 +72,36 @@ body {
     width: 50px;
     
 }
+.new-movies-headers {
+    background-color: black;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: yellow;
+    
+}
+h3{
+    color: yellow;
+}
+
+p{
+    color: yellow;
+}
+
+.movie-list {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: black;
+}
+
+.movie-list .movie-poster {
+    display: inline-block;
+    margin: 10px;
+
+}
+.movie-list .movie-image {
+    width: 80%;
+
+}
