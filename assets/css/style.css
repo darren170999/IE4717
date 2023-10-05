@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0; /* Background color behind the image */
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.7); /* Background color of the navigation bar with transparency */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.header li {
+    float: right;
+}
+
+.header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.header li a:hover {
+    background-color: #6e6908;
+    color: black;
+}
+
+.section {
+    background-image: url("../img/movie-poster.png");
+    background-size: cover;
+    background-position: center;
+    height: 600px; /* Adjust the height as needed */
+    padding-top: 70px; /* Ensure the content is below the navigation bar */
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
