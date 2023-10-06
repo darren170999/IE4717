@@ -42,7 +42,7 @@ body {
 
 .header ul.nav-list li a {
     display: block;
-    color: white;
+    color: yellow;
     text-align: center;
     padding: 30px 20px;
     text-decoration: none;
@@ -114,21 +114,22 @@ p{
 }
 
 .navbar {
-    background-color: #333;
-    color: white;
+    background-color: black;
     text-align: left;
     padding: 10px;
 }
 .tab-button {
     background: none;
     border: none;
-    color: white;
+    color: yellow;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
+    padding: 30px 20px;
 }
 
 .movies {
-    margin-top: 20px;
+    padding: 20px;
+    background-color: black;
 }
 
 .day-movies{
