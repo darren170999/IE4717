@@ -78,9 +78,18 @@ body {
     padding: 20px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    color: yellow;
-    
+    color: yellow; 
 }
+
+.upcoming-movies-headers {
+    background-color: black;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: yellow; 
+}
+
 h3{
     color: yellow;
 }
@@ -99,9 +108,29 @@ p{
 .movie-list .movie-poster {
     display: inline-block;
     margin: 10px;
-
 }
 .movie-list .movie-image {
     width: 80%;
+}
 
+.navbar {
+    background-color: #333;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+.tab-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.movies {
+    margin-top: 20px;
+}
+
+.day-movies{
+    display: none;
 }

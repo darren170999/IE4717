@@ -1,4 +1,4 @@
-const images = ["assets/img/movie-poster.png", "assets/img/movie-poster2.png"] // Add your image URLs
+const images = ["assets/img/movie-poster.png", "assets/img/movie-poster2.png"]
 
 let index = 0;
 
