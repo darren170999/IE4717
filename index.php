@@ -1,5 +1,4 @@
 <?php include('assets/php/connect.php'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,12 +28,11 @@
         </div>
     </div>
     <div class="new-movies-headers">
-        NEW MOVIES
+        Upcoming Movies
     </div>
 
-    <div class="movie-list">
-        <!-- Not hardcoded, eventually will pull from DB -->
-        <div class="movie-poster">
+    <div class="movie-list" id="movie-list">
+        <!-- <div class="movie-poster">
             <img class ="movie-image" src="../IE4717/assets/img/rectangle-763.png" alt="Movie 1">
             <h3 class="movie-title">Movie Title 1</h3>
             <p class="movie-rating">Rating: 4.5</p>
@@ -58,7 +56,7 @@
             <img class ="movie-image" src="../IE4717/assets/img/rectangle-763.png" alt="Movie 5">
             <h3 class="movie-title">Movie Title 1</h3>
             <p class="movie-rating">Rating: 4.5</p>
-        </div>
+        </div> -->
     </div>
     <div class="navbar">
         <button class="tab-button" data-day="monday">Monday</button>
@@ -86,22 +84,13 @@
         </div>
     </div>
 
-    <div class="upcoming-movies-headers">
-        UPCOMING MOVIES
-    </div>
-    <div class="movie-list">
-        <!-- Not hardcoded, eventually will pull from DB -->
-        <div class="movie-poster">
-            <img class ="movie-image" src="../IE4717/assets/img/nun.png" alt="Movie 1">
-            <h3 class="movie-title">Movie Title 1</h3>
-        </div>
-        <div class="movie-poster">
-            <img class ="movie-image" src="../IE4717/assets/img/barbie.png" alt="Movie 2">
-            <h3 class="movie-title">Movie Title 1</h3>
-        </div>
-    </div>
-
     <script src="../IE4717/assets/js/rotateBackground.js"></script>
     <script src="../IE4717/assets/js/dayMoviesScreening.js"></script>
+    <script src="../IE4717/assets/js/showUpcomingMovies.js"></script>
 </body>
+<footer>
+    <div id="footer-copyright">
+        <small><i>Copyright &copy; 2023 PureFrames</i></small>
+    </div>
+</footer>
 </html>

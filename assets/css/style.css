@@ -135,3 +135,15 @@ p{
 .day-movies{
     display: none;
 }
+
+footer {
+    background-color: black;
+	padding: 2em;
+	margin: auto;
+	text-align: center;
+    color: white;
+}
+
+.copyright {
+	color: white;
+}

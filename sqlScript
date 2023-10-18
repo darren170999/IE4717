@@ -52,16 +52,23 @@ CREATE Table seats
 );
 CREATE Table movies 
 (
-    movie_id int unsigned not null primary key,
-    movie_title varchar(100),
-    sypnopsis varchar(100),
+    movie_id INT AUTO_INCREMENT PRIMARY KEY,
+    movie_title varchar(255),
+    sypnopsis varchar(255),
     casts char(255),
     screening_dates datetime,
     screening_time datetime,
     price float(4,2),
-    ratings int,
-    created_at timestamp
+    ratings int
 );
+
+CREATE Table moviePosters
+(
+    movie_id INT AUTO_INCREMENT PRIMARY KEY,
+    movie_data LONGBLOB,
+    movie_name VARCHAR(255)
+);
+
 CREATE TABLE advertisements 
 (
     id INT AUTO_INCREMENT PRIMARY KEY,
