@@ -3,6 +3,11 @@ CREATE Table adminRoles
     user_id int unsigned not null primary key,
     roles char(10)
 );
+use PureFrames;
+INSERT INTO adminRoles
+VALUES (1, "customer"), (2, "admin"), (3, "superAdmin");
+
+
 CREATE Table users 
 (
     id int unsigned not null primary key,
@@ -57,11 +62,11 @@ CREATE Table movies
     ratings int,
     created_at timestamp
 );
-CREATE Table advertisements 
+CREATE TABLE advertisements 
 (
-    ad_id int unsigned not null primary key,
-    url_string char(100),
-    created_at timestamp
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image_data LONGBLOB,
+    image_name VARCHAR(255)
 );
 CREATE Table profiles
 (
@@ -70,3 +75,4 @@ CREATE Table profiles
     genres varchar(100),
     preferred varchar(100)
 );
+
