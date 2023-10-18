@@ -32,33 +32,9 @@
     </div>
 
     <div class="movie-list" id="movie-list">
-        <!-- <div class="movie-poster">
-            <img class ="movie-image" src="../IE4717/assets/img/rectangle-763.png" alt="Movie 1">
-            <h3 class="movie-title">Movie Title 1</h3>
-            <p class="movie-rating">Rating: 4.5</p>
-        </div>
-        <div class="movie-poster">
-            <img class ="movie-image" src="../IE4717/assets/img/rectangle-763.png" alt="Movie 2">
-            <h3 class="movie-title">Movie Title 1</h3>
-            <p class="movie-rating">Rating: 4.5</p>
-        </div>
-        <div class="movie-poster">
-            <img class ="movie-image" src="../IE4717/assets/img/rectangle-763.png" alt="Movie 3">
-            <h3 class="movie-title">Movie Title 1</h3>
-            <p class="movie-rating">Rating: 4.5</p>
-        </div>
-        <div class="movie-poster">
-            <img class ="movie-image" src="../IE4717/assets/img/rectangle-763.png" alt="Movie 4">
-            <h3 class="movie-title">Movie Title 1</h3>
-            <p class="movie-rating">Rating: 4.5</p>
-        </div>
-        <div class="movie-poster">
-            <img class ="movie-image" src="../IE4717/assets/img/rectangle-763.png" alt="Movie 5">
-            <h3 class="movie-title">Movie Title 1</h3>
-            <p class="movie-rating">Rating: 4.5</p>
-        </div> -->
+
     </div>
-    <div class="navbar">
+    <div class="navbar" ">
         <button class="tab-button" data-day="monday">Monday</button>
         <button class="tab-button" data-day="tuesday">Tuesday</button>
         <button class="tab-button" data-day="wednesday">Wednesday</button>
@@ -67,19 +43,50 @@
         <button class="tab-button" data-day="saturday">Saturday</button>
         <button class="tab-button" data-day="sunday">Sunday</button>
     </div>
-    <div class="movies">
+    <div class="movies" id="weekly-movie-listings">
+        <!-- Get from DB -->
         <div div class="day-movies" id="monday-movies">
             <h3>Monday's Movies</h3>
             <ul>
-                <li class="movie-poster">
+                <!-- <li class="movie-poster">
                     <img class="movie-image" src="../IE4717/assets/img/avengers.png" alt="Monday Movie 1">
-                </li>
+                </li> -->
             </ul>
         </div>
         <div div class="day-movies" id="tuesday-movies">
             <h3>Tuesday's Movies</h3>
             <ul>
-                <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li>
+                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
+            </ul>
+        </div>
+        <div div class="day-movies" id="wednesday-movies">
+            <h3>Wednesday's Movies</h3>
+            <ul>
+                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
+            </ul>
+        </div>
+        <div div class="day-movies" id="thursday-movies">
+            <h3>Thursday's Movies</h3>
+            <ul>
+                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
+            </ul>
+        </div>
+        <div div class="day-movies" id="friday-movies">
+            <h3>Friday's Movies</h3>
+            <ul>
+                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
+            </ul>
+        </div>
+        <div div class="day-movies" id="saturday-movies">
+            <h3>Saturday's Movies</h3>
+            <ul>
+                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
+            </ul>
+        </div>
+        <div div class="day-movies" id="sunday-movies">
+            <h3>Sunday's Movies</h3>
+            <ul>
+                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
             </ul>
         </div>
     </div>

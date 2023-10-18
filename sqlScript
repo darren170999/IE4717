@@ -56,7 +56,29 @@ CREATE Table movies
     movie_title varchar(255),
     sypnopsis varchar(255),
     casts char(255),
-    screening_dates datetime,
+    weekDays datetime,
+    screening_time datetime,
+    price float(4,2),
+    ratings int
+);
+use PureFrames;
+INSERT INTO movies
+VALUES (1, "a", "b", "c", "Monday", "2023-10-23", 1.2, 1),
+(2, "a", "b", "c", "Tuesday", "2023-10-23", 1.2, 1),
+(3, "a", "b", "c", "Wednesday", "2023-10-23", 1.2, 1),
+(4, "a", "b", "c", "Thursday", "2023-10-23", 1.2, 1),
+(5, "a", "b", "c", "Friday", "2023-10-23", 1.2, 1),
+(6, "a", "b", "c", "Saturday", "2023-10-23", 1.2, 1),
+(7, "a", "b", "c", "Sunday", "2023-10-23", 1.2, 1);
+
+CREATE Table nowShowingMovies 
+(
+    movie_id INT AUTO_INCREMENT PRIMARY KEY,
+    movie_data LONGBLOB,
+    movie_name VARCHAR(255),
+    sypnopsis varchar(255),
+    casts char(255),
+    screening_days datetime,
     screening_time datetime,
     price float(4,2),
     ratings int
@@ -83,3 +105,8 @@ CREATE Table profiles
     preferred varchar(100)
 );
 
+// Very important Query **
+SELECT m.movie_id, m.movie_title, m.sypnopsis, m.casts, m.weekDays, m.screening_time, m.price, m.ratings,
+       mp.movie_data, mp.movie_name
+FROM movies m
+INNER JOIN moviePosters mp ON m.movie_id = mp.movie_id;

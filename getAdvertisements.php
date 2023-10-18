@@ -14,7 +14,7 @@ while ($stmt->fetch()) {
         "data" => base64_encode($image_data)
     );
 }
-echo json_encode($images); // Return the array of image data as JSON
+echo json_encode($images); // Must do this to return the array of image data as JSON
 
 $stmt->close();
 $conn->close();

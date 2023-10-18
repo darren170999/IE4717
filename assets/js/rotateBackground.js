@@ -22,7 +22,7 @@ function changeBackground() {
         index = (index + 1) % images.length;
     }
 
-    setTimeout(changeBackground, 10000); // Change image every 3 seconds
+    setTimeout(changeBackground, 10000); // Change image every 10 seconds
 }
 
 // Call the fetchAdvertisements function to populate the images array
