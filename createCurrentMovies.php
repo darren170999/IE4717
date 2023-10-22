@@ -9,7 +9,6 @@ if (isset($_POST["submitMovie"])) {
     $movie_name = $_FILES["fileToUpload"]["name"];
     $movie_data = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
     $movie_sypnopsis = $_POST["sypnopsis"]; // Add this line to get the synopsis
-
     $movie_casts = $_POST["casts"]; // Add this line to get the casts
     $screening_days = $_POST["screening_days"]; // Add this line to get the screening days
     $screening_time = $_POST["screening_time"]; // Add this line to get the screening time
