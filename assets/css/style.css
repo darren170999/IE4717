@@ -42,7 +42,7 @@ body {
 
 .header ul.nav-list li a {
     display: block;
-    color: yellow;
+    color: #FFC300;
     text-align: center;
     padding: 30px 20px;
     text-decoration: none;
@@ -78,7 +78,7 @@ body {
     padding: 20px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    color: yellow; 
+    color: #FFC300; 
 }
 
 .upcoming-movies-headers {
@@ -87,15 +87,15 @@ body {
     padding: 20px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    color: yellow; 
+    color: #FFC300; 
 }
 
 h3{
-    color: yellow;
+    color: #FFC300;
 }
 
 p{
-    color: yellow;
+    color: #FFC300;
 }
 
 .movie-list {
@@ -121,7 +121,7 @@ p{
 .tab-button {
     background: none;
     border: none;
-    color: yellow;
+    color: #FFC300;
     cursor: pointer;
     font-size: 20px;
     padding: 30px 20px;
