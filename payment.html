@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="style_yinqi.css">
+    <style>
+        .payment-page {
+            display: flex;
+        }
+        .left-column {
+            width: 40%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .payment-details {
+            background-color: #FFC300; /* Yellow background */
+            color: black; /* Black text */
+            font-weight: bold;
+            padding: 10px;
+            text-align: left;
+        }
+        .movie-info, .booking-info, .total-price {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        hr {
+            width: 100%;
+        }
+        .price-details {
+        text-align: left;
+        }
+        .price-line {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="payment-page">
+            <div class="left-column">
+                <!-- Movie Poster Placeholder -->
+                <img src="movie-poster-placeholder.jpg" alt="Movie Poster" width="100%">
+
+                <!-- Payment Details -->
+                <div class="payment-details">PAYMENT DETAILS</div>
+                
+                <!-- Movie Information -->
+                <div class="movie-info">
+                    Movie Title <br>
+                    (PG 13 Some Violence & Drug References)
+                </div>
+                <hr>
+
+                <!-- Booking Info -->
+                <div class="booking-info">
+                    Thu 10/26 08:30 PM <br>
+                    PUREFRAME JURONG POINT HALL 2 <br>
+                    Seat ID: SEAT 4 SEAT 5
+                </div>
+                <hr>
+
+                <!-- Price Details -->
+                <div class="price-details">
+                    <div class="price-line">
+                        <span>Booking Details:</span>
+                        <span></span> <!-- Empty span for alignment -->
+                    </div>
+                    <div class="price-line">
+                        <span>1 x Ticket(s)</span>
+                        <span>S$10.00</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Convenience Fee</span>
+                        <span>S$1.00</span>
+                    </div>
+                </div>
+                <hr>
+                
+                <!-- Total Price -->
+                <div class="total-price">
+                    Total Price                                    S$11.00
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
