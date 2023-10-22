@@ -9,7 +9,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href="#home">
+            <a href="index.php">
                 <img id="home-logo" src="../IE4717/assets/img/pureframeofficiallogodesign-1.png">
                 <img id="home-logo" src="../IE4717/assets/img/name-only-11.png"> 
             </a>

@@ -37,11 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 movies[selectedDay].forEach(movie => {
                     const moviePoster = document.createElement('li');
                     moviePoster.className = 'movie-poster';
+                    const movieLink = document.createElement('a');
+                    movieLink.href = 'booking.html';
                     const movieImage = document.createElement('img');
                     movieImage.className = 'movie-image';
                     movieImage.src = 'data:image/jpeg;base64,' + movie.movie_data;
                     movieImage.alt = movie.movie_title;
-                    moviePoster.appendChild(movieImage);
+                    movieLink.appendChild(movieImage);
+                    moviePoster.appendChild(movieLink);
                     selectedDayMovies.querySelector('ul').appendChild(moviePoster);
                 });
             }
