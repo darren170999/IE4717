@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Frames Booking Page</title>
+
+    <link rel="stylesheet" href="style_booking.css"> 
+</head>
+<body style="background-color: black;">
+    <div class="header">
+        <div class="logo">
+            <a href="index.php">
+                <img id="home-logo" src="../IE4717/assets/img/pureframeofficiallogodesign-1.png">
+                <img id="home-logo" src="../IE4717/assets/img/name-only-11.png"> 
+            </a>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#Location">Location</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#UserProfile">User Profile</a></li>
+            <li><a href="#loginSignUp">Login / SignUp</a></li>
+        </ul>
+    </div>
+    <br>
+    <br><br>
+    <br><br>
+    <div class="movie-screen">
+        <div class="screen-content">
+            <h2>Movie Screen</h2>
+        </div>
+    </div>
+    <br><br>
+    <div class="seating-plan">
+        <!-- Hard-code your seating rows and seats -->
+        <!-- Example: 10 rows, each with 10 seats -->
+        <div class="row">
+            <div class="seat" id="seat1"></div>
+            <div class="seat" id="seat2"></div>
+            <div class="seat" id="seat3"></div>
+            <div class="seat" id="seat4"></div>
+            <div class="seat" id="seat5"></div>
+            <div class="seat" id="seat6"></div>
+            <div class="seat" id="seat7"></div>
+            <div class="seat" id="seat8"></div>
+            <div class="seat" id="seat9"></div>
+            <div class="seat" id="seat10"></div>
+        </div>
+        <!-- Repeat the row structure for additional rows -->
+        <div class="row">
+            <!-- Add more seat divs for each seat in the row -->
+        </div>
+        <div class="row">
+            <!-- Add more seat divs for each seat in the row -->
+        </div>
+        <!-- Add more row divs for additional rows of seats -->
+    </div>
+    <div class="legend">
+        <h3>Legend</h3>
+        <div class="legend-item">
+            <div class="color-code selected"></div>
+            <span>Selected</span><br>
+            <div class="color-code unselected"></div>
+            <span>Unselected</span><br>
+            <div class="color-code booked"></div>
+            <span>Booked</span>
+        </div>
+    </div>
+    <div class="selected-seats-container">
+        <h3>Selected Seats</h3>
+        <ul id="selected-seats-list"></ul>
+        <p id="datetime-info"></p>
+
+        <a href="payments.html">
+            <button id="buy-button" style="display: none;">Buy</button>
+        </a>
+    </div>
+    <script src="../IE4717/assets/js/seats.js"></script>
+
+</body>
+</html>
