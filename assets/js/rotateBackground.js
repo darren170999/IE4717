@@ -1,12 +1,29 @@
-const images = ["assets/img/movie-poster.png", "assets/img/movie-poster2.png"]
-
+const advertisementEndpoint = "getAdvertisements.php";
+let images = [];
 let index = 0;
 
-function changeBackground() {
-    document.getElementById('background-carousel').style.backgroundImage = `url(${images[index]})`;
-
-    index = (index + 1) % images.length;
-    setTimeout(changeBackground, 30000); // Change image every 5 seconds (adjust as needed)
+function fetchAdvertisements() {
+    fetch(advertisementEndpoint)
+        .then((response) => response.json())
+        .then((data) => {
+            images = data; // Update the images array with the fetched data
+        })
+        .catch((error) => console.error("Error fetching advertisements:", error))
+        .finally(() => {
+            changeBackground(); // Start the background rotation after fetching the images
+        });
 }
 
-changeBackground();
+function changeBackground() {
+    if (images.length > 0) {
+        const imageURL = `data:image/jpeg;base64,${images[index].data}`;
+        document.getElementById('background-carousel').style.backgroundImage = `url(${imageURL})`;
+
+        index = (index + 1) % images.length;
+    }
+
+    setTimeout(changeBackground, 10000); // Change image every 10 seconds
+}
+
+// Call the fetchAdvertisements function to populate the images array
+fetchAdvertisements();
