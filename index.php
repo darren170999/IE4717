@@ -27,14 +27,9 @@
             <p>xxx.</p>
         </div>
     </div>
-    <div class="new-movies-headers">
-        Upcoming Movies
-    </div>
-
-    <div class="movie-list" id="movie-list">
 
     </div>
-    <div class="navbar" ">
+    <div class="navbar">
         <button class="tab-button" data-day="monday">Monday</button>
         <button class="tab-button" data-day="tuesday">Tuesday</button>
         <button class="tab-button" data-day="wednesday">Wednesday</button>
@@ -91,11 +86,19 @@
         </div>
     </div>
 
+    <div class="new-movies-headers">
+        Upcoming Movies
+    </div>
+
+    <div class="movie-list" id="movie-list">
+
+    </div>
+
     <script src="../IE4717/assets/js/rotateBackground.js"></script>
     <script src="../IE4717/assets/js/dayMoviesScreening.js"></script>
     <script src="../IE4717/assets/js/showUpcomingMovies.js"></script>
 </body>
-<footer>
+<footer>    
     <div id="footer-copyright">
         <small><i>Copyright &copy; 2023 PureFrames</i></small>
     </div>
