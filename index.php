@@ -15,15 +15,29 @@
             </a>
         </div>
         <ul class="nav-list">
-            <li><a href="#Location">Location</a></li>
-            <li><a href="#Contact">Contact</a></li>
-            <li><a href="#UserProfile">UserProfile</a></li>
-            <li><a href="#loginSignUp">Login/SignUp</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="profile.html">UserProfile</a></li>
+            <?php
+            session_start();
+            if (isset($_SESSION['valid_user'])) {
+                echo '<li><a href="logout.php">Logout</a></li>';
+            } else {
+                echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
+            }
+            ?>
+            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
     <div class="section" id="background-carousel">
         <div class="content">
             <h1>Welcome to Pureframes</h1>
+            <?php 
+            session_start();
+            if (isset($_SESSION['valid_user'])) {
+                echo 'Welcome, ' . $_SESSION['valid_user'];
+            }
+        ?>
             <p>xxx.</p>
         </div>
     </div>
