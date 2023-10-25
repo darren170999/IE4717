@@ -24,15 +24,15 @@
         Select image to upload:
         <input type="file" name="fileToUpload" id="fileToUpload"><br>
         Movie title
-        <input type="text" name="movie_name" id="movie_name"><br>
+        <input type="text" name="movie_title" id="movie_title"><br>
         sypnopsis
         <input type="text" name="sypnopsis" id="sypnopsis"><br>
         casts
         <input type="text" name="casts" id="casts"><br>
-        days
-        <input type="date" name="screening_days" id="screening_days"><br>
-        timings
-        <input type="date" name="screening_time" id="screening_time"><br>
+        date
+        <input type="date" name="screening_date" id="screening_date"><br>
+        <!-- timings
+        <input type="time" name="screening_time" id="screening_time"><br> -->
         price
         <input type="number" name="price" id="price"><br>
         ratings

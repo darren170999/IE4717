@@ -46,15 +46,7 @@
     </div>
 
     </div>
-    <div class="navbar">
-        <button class="tab-button" data-day="monday">Monday</button>
-        <button class="tab-button" data-day="tuesday">Tuesday</button>
-        <button class="tab-button" data-day="wednesday">Wednesday</button>
-        <button class="tab-button" data-day="thursday">Thursday</button>
-        <button class="tab-button" data-day="friday">Friday</button>
-        <button class="tab-button" data-day="saturday">Saturday</button>
-        <button class="tab-button" data-day="sunday">Sunday</button>
-    </div>
+    <div class="navbar"></div>
     <div class="movies" id="weekly-movie-listings">
         <!-- Get from DB -->
         <div div class="day-movies" id="monday-movies">
