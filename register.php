@@ -23,7 +23,7 @@ if(isset($_POST["submit"])) {
     
     $password = password_hash($password, PASSWORD_DEFAULT);
     $stmt = $conn->prepare("INSERT INTO users (username, password, email, contact, created_at) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssiss", $username, $password, $email, $contact, $created_at);
+    $stmt->bind_param("sssis", $username, $password, $email, $contact, $created_at);
     
     if ($stmt->execute()) {
         echo "account was successfully recorded.";
