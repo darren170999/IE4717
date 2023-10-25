@@ -165,12 +165,16 @@ body {
     display: flex;
 }
 
-.seat {
+/* Add this rule to set the background image for the seat elements */
+.seating-plan .seat {
     width: 30px;
     height: 30px;
-    margin: 5px;
-    background-color: lightgray;
+    margin: 10px;
+    background-image: url('../IE4717/assets/img/seat-2-32.png'); /* Update with the correct path */
+    background-size: cover; /* Cover the entire seat element with the image */
     cursor: pointer;
+    border: none; /* Remove the square border */
+    background-color: white;
 }
 
 .seat.selected {
@@ -200,7 +204,7 @@ body {
 
 .legend {
     background: black;
-    padding: 10px;
+    /* padding: 10px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -215,7 +219,8 @@ body {
     color: white;
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 10px 10px 10px 10px;
+    /* padding-right: 10px; */
 }
 
 .color-code {
@@ -227,6 +232,7 @@ body {
 
 .selected {
     background-color: green;
+    /* padding-right: 10px; */
 }
 .booked {
     background-color: grey;
@@ -236,9 +242,17 @@ body {
 }
 
 .selected-seats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Add this line to vertically center it */
     background-color: black;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 150px;
+    position: fixed;
+    top: 50%; /* Move it to the vertical center */
+    left: 50%; /* Move it to the horizontal center */
+    transform: translate(-50%, -50%); /* Correct its position */
 }
 
 .selected-seats-container h3 {

@@ -42,7 +42,7 @@ CREATE Table halls
 (
     id INT AUTO_INCREMENT PRIMARY KEY,
     hall_id int unsigned not null,
-    dates date,
+    timings TIME,
     arrangements JSON,
     created_at timestamp
 );
@@ -120,3 +120,36 @@ SELECT m.movie_id, m.movie_title, m.sypnopsis, m.casts, m.weekDays, m.screening_
        mp.movie_data, mp.movie_name
 FROM movies m
 INNER JOIN moviePosters mp ON m.movie_id = mp.movie_id;
+
+-- Insert into halls
+INSERT INTO halls (hall_id, timings, arrangements, created_at)
+VALUES
+    (1, '09:00:00', JSON_ARRAY(), NOW()),
+    (1, '12:00:00', JSON_ARRAY(), NOW()),
+    (1, '15:00:00', JSON_ARRAY(), NOW()),
+    (1, '18:00:00', JSON_ARRAY(), NOW()),
+    (1, '21:00:00', JSON_ARRAY(), NOW()),
+
+    (2, '09:30:00', JSON_ARRAY(), NOW()),
+    (2, '12:30:00', JSON_ARRAY(), NOW()),
+    (2, '15:30:00', JSON_ARRAY(), NOW()),
+    (2, '18:30:00', JSON_ARRAY(), NOW()),
+    (2, '21:30:00', JSON_ARRAY(), NOW()),
+
+    (3, '10:00:00', JSON_ARRAY(), NOW()),
+    (3, '13:00:00', JSON_ARRAY(), NOW()),
+    (3, '16:00:00', JSON_ARRAY(), NOW()),
+    (3, '19:00:00', JSON_ARRAY(), NOW()),
+    (3, '22:00:00', JSON_ARRAY(), NOW()),
+
+    (4, '10:30:00', JSON_ARRAY(), NOW()),
+    (4, '13:30:00', JSON_ARRAY(), NOW()),
+    (4, '16:30:00', JSON_ARRAY(), NOW()),
+    (4, '19:30:00', JSON_ARRAY(), NOW()),
+    (4, '22:30:00', JSON_ARRAY(), NOW()),
+
+    (5, '11:00:00', JSON_ARRAY(), NOW()),
+    (5, '14:00:00', JSON_ARRAY(), NOW()),
+    (5, '17:00:00', JSON_ARRAY(), NOW()),
+    (5, '20:00:00', JSON_ARRAY(), NOW()),
+    (5, '23:00:00', JSON_ARRAY(), NOW());
