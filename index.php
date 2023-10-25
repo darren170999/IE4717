@@ -49,49 +49,21 @@
     <div class="navbar"></div>
     <div class="movies" id="weekly-movie-listings">
         <!-- Get from DB -->
-        <div div class="day-movies" id="monday-movies">
-            <h3>Monday's Movies</h3>
-            <ul>
-                <!-- <li class="movie-poster">
-                    <img class="movie-image" src="../IE4717/assets/img/avengers.png" alt="Monday Movie 1">
-                </li> -->
-            </ul>
+        <div class="day-movies" id="Monday-movies">
+        <h3>Monday's Movies</h3>
+        <ul></ul>
         </div>
-        <div div class="day-movies" id="tuesday-movies">
-            <h3>Tuesday's Movies</h3>
-            <ul>
-                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
-            </ul>
+        <div class="day-movies" id="Tuesday-movies">
+        <h3>Tuesday's Movies</h3>
+        <ul></ul>
         </div>
-        <div div class="day-movies" id="wednesday-movies">
-            <h3>Wednesday's Movies</h3>
-            <ul>
-                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
-            </ul>
+        <div class="day-movies" id="Wednesday-movies">
+        <h3>Wednesday's Movies</h3>
+        <ul></ul>
         </div>
-        <div div class="day-movies" id="thursday-movies">
-            <h3>Thursday's Movies</h3>
-            <ul>
-                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
-            </ul>
-        </div>
-        <div div class="day-movies" id="friday-movies">
-            <h3>Friday's Movies</h3>
-            <ul>
-                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
-            </ul>
-        </div>
-        <div div class="day-movies" id="saturday-movies">
-            <h3>Saturday's Movies</h3>
-            <ul>
-                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
-            </ul>
-        </div>
-        <div div class="day-movies" id="sunday-movies">
-            <h3>Sunday's Movies</h3>
-            <ul>
-                <!-- <li class="movie-poster"><img class="movie-image" src="../IE4717/assets/img/barbie.png" alt="Monday Movie 1"></li> -->
-            </ul>
+        <div class="day-movies" id="Thursday-movies">
+        <h3>Thursday's Movies</h3>
+        <ul></ul>
         </div>
     </div>
 
@@ -102,10 +74,11 @@
     <div class="movie-list" id="movie-list">
 
     </div>
-
+    <!-- <script src="../IE4717/assets/js/fetchMovies.js"></script> -->
     <script src="../IE4717/assets/js/rotateBackground.js"></script>
-    <script src="../IE4717/assets/js/dayMoviesScreening.js"></script>
+    <script src="../IE4717/assets/js/createRoutineNavbar.js"></script>
     <script src="../IE4717/assets/js/showUpcomingMovies.js"></script>
+    <script src="../IE4717/assets/js/dayMoviesScreening.js"></script>
 </body>
 <footer>    
     <div id="footer-copyright">

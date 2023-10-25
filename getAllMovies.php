@@ -25,13 +25,14 @@ if ($stmt->execute()) {
     $movies = array();
 
     while ($stmt->fetch()) {
+        $formattedDate = date('l', strtotime($screening_date)); // Get the day of the week
         $movie = array(
             "movie_id" => $movie_id,
             "movie_title" => $movie_title,
             "sypnopsis" => $sypnopsis,
             "casts" => $casts,
             "screening_date" => $screening_date,
-            // "screening_time" => $screening_time,
+            "days" => $formattedDate, //Map day based on date
             "price" => $price,
             "ratings" => $ratings,
             "movie_data" => base64_encode($movie_data),
