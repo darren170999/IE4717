@@ -18,7 +18,6 @@ if(isset($_POST["submit"])) {
     if($password != $password2) {
         echo "Sorry password must be the same";
         exit;
-    
     }
     
     $password = password_hash($password, PASSWORD_DEFAULT);

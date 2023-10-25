@@ -21,6 +21,9 @@
             <?php
             session_start();
             if (isset($_SESSION['valid_user'])) {
+                if($_SESSION['valid_user'] === 'SuperAdmin'){
+                    echo '<li><a href="admin.php">Admin</a></li>';
+                }
                 echo '<li><a href="logout.php">Logout</a></li>';
             } else {
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
