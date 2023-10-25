@@ -65,6 +65,18 @@
         <h3>Thursday's Movies</h3>
         <ul></ul>
         </div>
+        <div class="day-movies" id="Friday-movies">
+        <h3>Friday's Movies</h3>
+        <ul></ul>
+        </div>
+        <div class="day-movies" id="Saturday-movies">
+        <h3>Saturday's Movies</h3>
+        <ul></ul>
+        </div>
+        <div class="day-movies" id="Sunday-movies">
+        <h3>Sunday's Movies</h3>
+        <ul></ul>
+        </div>
     </div>
 
     <div class="new-movies-headers">

@@ -32,7 +32,8 @@ function createPosters() {
             movieImage.className = 'movie-image';
             movieImage.src = imageURL;
             movieImage.alt = `Movie ${i + 1}`;
-
+            // movieImage.style.width = '100px';
+            // movieImage.style.height = '150px';
             const movieTitle = document.createElement('h3');
             movieTitle.className = 'movie-title';
             movieTitle.textContent = `Movie Title ${i + 1}`;

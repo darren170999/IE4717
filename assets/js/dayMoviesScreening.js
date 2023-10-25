@@ -15,6 +15,7 @@ fetchMovies();
 document.addEventListener('DOMContentLoaded', function() {
     
     const tabButtons = document.querySelectorAll('.tab-button');
+    const wml = document.getElementById('weekly-movie-listings');
     tabButtons.forEach(button => {
         console.log(button)
         button.addEventListener('click', () => {
@@ -37,19 +38,28 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(movies)
 
             const moviesForSelectedDay = movies.filter(movie => movie.days === selectedDay);
-            moviesForSelectedDay.forEach(movie => {
-                const moviePoster = document.createElement('li');
-                moviePoster.className = 'movie-poster';
-                const movieLink = document.createElement('a');
-                movieLink.href = 'booking.html';
-                const movieImage = document.createElement('img');
-                movieImage.className = 'movie-image';
-                movieImage.src = 'data:image/jpeg;base64,' + movie.movie_data;
-                movieImage.alt = movie.movie_title;
-                movieLink.appendChild(movieImage);
-                moviePoster.appendChild(movieLink);
-                selectedDayMovies.querySelector('ul').appendChild(moviePoster);
-            });
+            if(moviesForSelectedDay.length > 0){
+                moviesForSelectedDay.forEach(movie => {
+                    const moviePoster = document.createElement('li');
+                    moviePoster.className = 'movie-poster';
+                    const movieLink = document.createElement('a');
+                    movieLink.href = 'booking.html';
+                    const movieImage = document.createElement('img');
+                    movieImage.className = 'movie-image';
+                    movieImage.src = 'data:image/jpeg;base64,' + movie.movie_data;
+                    movieImage.alt = movie.movie_title;
+                    movieImage.style.width = '500px';
+                    movieLink.appendChild(movieImage);
+                    moviePoster.appendChild(movieLink);
+                    selectedDayMovies.querySelector('ul').appendChild(moviePoster);
+                    
+                });
+            } else {
+                //No Movies
+                const noMoviesText = document.createElement('p');
+                noMoviesText.textContent = "No movies showing today";
+                selectedDayMovies.querySelector('ul').appendChild(noMoviesText);
+            }
         });
     });
 });

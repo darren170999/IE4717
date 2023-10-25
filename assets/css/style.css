@@ -110,7 +110,7 @@ p{
     margin: 10px;
 }
 .movie-list .movie-image {
-    width: 80%;
+    width: 500px;
 }
 
 .navbar {
@@ -128,10 +128,18 @@ p{
 }
 
 .movies {
-    padding: 20px;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
     background-color: black;
 }
-
+.movies .movie-poster {
+    display: inline-block;
+    margin: 10px;
+}
+.movies .movie-image {
+    width: 500px;
+}
 .day-movies{
     display: none;
 }
