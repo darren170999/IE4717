@@ -42,8 +42,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 moviesForSelectedDay.forEach(movie => {
                     const moviePoster = document.createElement('li');
                     moviePoster.className = 'movie-poster';
+
+                    moviePoster.addEventListener('click', () => {
+                        localStorage.setItem('selectedMovieName', movie.movie_title);
+                        window.location.href = `booking.html?selectedMovieName=${encodeURIComponent(movie.movie_title)}`;
+                    });
+
                     const movieLink = document.createElement('a');
-                    movieLink.href = 'booking.html';
+                    movieLink.href = 'javascript:void(0)';
                     const movieImage = document.createElement('img');
                     movieImage.className = 'movie-image';
                     movieImage.src = 'data:image/jpeg;base64,' + movie.movie_data;

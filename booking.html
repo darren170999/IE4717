@@ -6,67 +6,9 @@
     <title>Pure Frames Booking Page</title>
 
     <link rel="stylesheet" href="style_yinqi.css"> 
-    <style>
-    body {
-    margin: 0;
-    padding: 0;
-    background-image: url('../IE4717/assets/img/booking-page-poster.png');
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    }
-
-    #synopsis {
-        font-size: 18px;
-        font-weight: bold;
-        color: #FFFFFF; /* White from your palette */
-        max-width: 850px; /* The same width as your date boxes */
-        margin: auto; /* To center the block */
-        text-align: center;
-        
-    }
-
-    #instructions {
-        font-size: 25px;
-        color: #ffffff;
-        font-weight: bold;
-    }
-
-    .date-box, .time-box {
-        display: inline-block;
-        background-color: rgba(255, 255, 255, 0.5); /* semi-transparent white */
-        margin: 10px;
-        padding: 10px;
-        color: #FFFFFF; /* White text */
-    }
-
-    .date-box.active, .time-box.active {
-        display: inline-block;
-        background-color: rgba(255, 195, 0, 0.7); /* semi-transparent yellow */
-        margin: 10px;
-        padding: 10px;
-        color: #000000; /* Black text */
-    }
-
-
-    .date-box, .date-box.active {
-        width: 100px;
-        height: 40px;
-        border-radius: 10px;
-        font-weight: bold;
-        padding: 50px 0;
-    }
-
-    .time-box, .time-box.active {
-        width: 80px;
-        height: 20px;
-        border-radius: 10px;
-        font-weight: bold;
-    }
-    </style>
 </head>
 <!-- This image should be pulled from the DB so that the picture will always be relevant -->
-<body style="background-image: url('../IE4717/assets/img/booking-page-poster.png');">
+<body >
     <div class="header">
         <div class="logo">
             <a href="index.php">
@@ -84,7 +26,7 @@
     
     <!--Content-->
     <div class="main-content">
-        <h1 id="title">OPPENHEIMER</h1>
+        <h1 id="title"></h1>
         <p id="synopsis">During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project. Oppenheimer and a team of scientists spend years developing and designing the atomic bomb. Their work comes to fruition on July 16, 1945, as they witness the world's first nuclear explosion, forever changing the course of history.</p>
         <p id="instructions">Select time and date</p>
         
@@ -107,5 +49,6 @@
     </div>
 
     <script src="../IE4717/assets/js/scriptBooking.js"></script>
+    <script src="../IE4717/assets/js/fetchAssetsForBookings.js"></script>
 </body>
 </html>

@@ -77,4 +77,4 @@ function addEventListeners() {
 // Call the functions to set up the page
 generateDateBoxes();
 addEventListeners();
-console.log(localStorage)
+// console.log(localStorage)

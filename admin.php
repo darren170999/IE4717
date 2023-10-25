@@ -19,6 +19,12 @@
         <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit" value="Upload Image" name="submitPoster">
     </form>
+    <h1>Upload Long Posters</h1>
+    <form action="createLongPosters.php" method="post" enctype="multipart/form-data">
+        Select image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submitPoster">
+    </form>
     <h1>Upload Current Movies</h1>
     <form action="createCurrentMovies.php" method="post" enctype="multipart/form-data">
         Select image to upload:
