@@ -47,7 +47,7 @@ function generateDateBoxes() {
     const currentDate = new Date();
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 5; i++) {
         const dateBox = document.createElement('div');
         dateBox.classList.add('date-box');
         dateBox.textContent = `${dayNames[currentDate.getDay()]} ${currentDate.getMonth() + 1}/${currentDate.getDate()}`;

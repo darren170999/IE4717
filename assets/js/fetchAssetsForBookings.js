@@ -1,18 +1,17 @@
 const moviesEndpoint = "getSelectedMovies.php";
 let selectedMovie = [];
 
-function fetchMovies(selectedMovieName) {
+async function fetchMovies(selectedMovieName) {
     const url = `${moviesEndpoint}?selectedMovieName=${selectedMovieName}`;
     
-    return fetch(url) // Magic of the fetch promise
-        .then((response) => response.json())
-        .then((data) => {
-            return data;
-        })
-        .catch((error) => {
-            console.error("Error fetching movies:", error);
-            return null; // Return null just in case error
-        });
+    try {
+        const response = await fetch(url); // Magic of the fetch promise;
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+        return null;
+    }
 }
 
 function setBackgroundImage(imageUrl) {
@@ -42,6 +41,10 @@ if (selectedMovieName) {
             if (data !== null) {
                 selectedMovie = data;
                 anythingLah();
+                console.log(selectedMovie[0].movie_title)
+                localStorage.setItem('movie_title', selectedMovie[0].movie_title)
+                localStorage.setItem('hall_id', selectedMovie[0].hall_id)
+                // console.log(localStorage);
             }
         });
 }

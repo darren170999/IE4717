@@ -43,6 +43,8 @@
         <input type="number" name="price" id="price"><br>
         ratings
         <input type="number" name="ratings" id="ratings"><br>
+        hall_id
+        <input type="number" name="hall_id" id="hall_id"><br>
         
         <input type="submit" value="Upload Image" name="submitMovie">
     </form>

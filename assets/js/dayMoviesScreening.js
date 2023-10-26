@@ -5,7 +5,7 @@ function fetchMovies() {
     fetch(moviesEndpoint)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
+            // console.log(data)
             movies = data; // Update the posters array with the fetched data
         })
         .catch((error) => console.error("Error fetching movies:", error));
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabButtons = document.querySelectorAll('.tab-button');
     const wml = document.getElementById('weekly-movie-listings');
     tabButtons.forEach(button => {
-        console.log(button)
+        // console.log(button)
         button.addEventListener('click', () => {
             // Hide all movie listings
             const dayMovies = document.querySelectorAll('.day-movies');

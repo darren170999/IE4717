@@ -1,5 +1,10 @@
 function toggleSeatColor(event) {
     const seat = event.target;
+
+    if (seat.classList.contains('booked')) {
+        return; // Exit the function and do nothing for reserved seats
+    }
+    // console.log(seat)
     const seatID = seat.id;
     const selectedSeatsList = document.getElementById('selected-seats-list');
     const jsonObject = JSON.parse(localStorage.selectedDateTime);
@@ -37,7 +42,6 @@ function toggleSeatColor(event) {
 
         selectedSeatsList.appendChild(dateTimeItem);
     }
-
     // Check if the seat is already selected
     const isSelected = seat.classList.contains('selected');
 
@@ -72,6 +76,7 @@ function toggleSeatColor(event) {
         const buyButton = document.getElementById('buy-button');
         buyButton.style.display = 'block';
     }
+
 }
 
 const seats = document.querySelectorAll('.seat');

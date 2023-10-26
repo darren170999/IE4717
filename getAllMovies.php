@@ -7,20 +7,20 @@ $currentDate = date('Y-m-d');
 // Calculate the date 7 days from today
 $endDate = date('Y-m-d', strtotime('+7 days', strtotime($currentDate)));
 
-$stmt = $conn->prepare("SELECT m.movie_id, m.movie_title, m.sypnopsis, m.casts, m.screening_date, m.price, m.ratings, mp.movie_data, mp.movie_name
+$stmt = $conn->prepare("SELECT m.movie_id, m.movie_title, m.sypnopsis, m.casts, m.screening_date, m.price, m.ratings,m.hall_id, mp.movie_data, mp.movie_name
 FROM movies m
 INNER JOIN moviePosters mp ON m.movie_id = mp.movie_id
 WHERE m.screening_date >= ? AND m.screening_date <= ?;");
 $stmt->bind_param("ss", $currentDate, $endDate);
 $stmt->execute();
 $stmt->store_result();
-$stmt->bind_result($movie_id, $movie_title, $sypnopsis, $casts, $screening_date, $price, $ratings, $movie_data, $movie_name);
+$stmt->bind_result($movie_id, $movie_title, $sypnopsis, $casts, $screening_date, $price, $ratings,$hall_id, $movie_data, $movie_name);
 
 $movies = array();
 
 if ($stmt->execute()) {
     $stmt->store_result();
-    $stmt->bind_result($movie_id, $movie_title, $sypnopsis, $casts, $screening_date, $price, $ratings, $movie_data, $movie_name);
+    $stmt->bind_result($movie_id, $movie_title, $sypnopsis, $casts, $screening_date, $price, $ratings,$hall_id, $movie_data, $movie_name);
 
     $movies = array();
 
@@ -35,6 +35,7 @@ if ($stmt->execute()) {
             "days" => $formattedDate, //Map day based on date
             "price" => $price,
             "ratings" => $ratings,
+            "hall_id" => $hall_id,
             "movie_data" => base64_encode($movie_data),
             "movie_name" => $movie_name
         );

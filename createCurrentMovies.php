@@ -12,15 +12,12 @@ if (isset($_POST["submitMovie"])) {
     $movie_title = $_POST["movie_title"];
     $movie_casts = $_POST["casts"]; // Add this line to get the casts
     $screening_date = $_POST["screening_date"]; // Add this line to get the screening date
-    // $screening_time_input = $_POST["screening_time"]; // Add this line to get the screening time
-    // $screening_time = date('H:i:s', strtotime($screening_time_input));
-    // echo $screening_time;
-    // echo $screening_time_input;
+    $hall_id = $POST["hall_id"];
     $price = $_POST["price"]; // Add this line to get the price
     $ratings = $_POST["ratings"]; // Add this line to get the ratings
 
-    $stmt = $conn->prepare("INSERT INTO movies (movie_title, sypnopsis, casts, screening_date, price, ratings) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssdi", $movie_title, $movie_sypnopsis, $movie_casts, $screening_date, $price, $ratings);
+    $stmt = $conn->prepare("INSERT INTO movies (movie_title, sypnopsis, casts, screening_date, price, ratings, hall_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssdii", $movie_title, $movie_sypnopsis, $movie_casts, $screening_date, $price, $ratings, $hall_id);
 
     if ($stmt->execute()) {
         echo "Movie scheduled successfully.";
