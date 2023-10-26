@@ -24,19 +24,18 @@ function toggleSeatColor(event) {
 
         // Create a span element for styling text
         const dateText = document.createElement('span');
-        dateText.style.fontSize = '18px'; // Adjust the font size as needed
-        dateText.style.color = 'yellow'; // Set the text color to yellow
+        dateText.style.fontSize = '18px'; 
+        dateText.style.color = 'yellow'; 
         dateText.textContent = `Date: ${jsonObject.date}`;
         dateTimeItem.appendChild(dateText);
 
-        // Create an icon for Time
         const timeIcon = document.createElement('img');
-        timeIcon.src = '../IE4717/assets/img/hourglass.png'; // Path to your custom clock icon
+        timeIcon.src = '../IE4717/assets/img/hourglass.png'; 
         dateTimeItem.appendChild(timeIcon);
 
         const timeText = document.createElement('span');
-        timeText.style.fontSize = '18px'; // Adjust the font size as needed
-        timeText.style.color = 'yellow'; // Set the text color to yellow
+        timeText.style.fontSize = '18px'; 
+        timeText.style.color = 'yellow'; 
         timeText.textContent = ` Time: ${jsonObject.time}`;
         dateTimeItem.appendChild(timeText);
 
@@ -53,33 +52,54 @@ function toggleSeatColor(event) {
         const listItem = Array.from(selectedSeatsList.children).find(item => {
             return item.textContent.includes(`Seat ID: ${seatID}`);
         });
-
+    
         if (listItem) {
             listItem.remove();
         }
+        
+        // Update the seatingArray to 0 for a deselected seat
+        const seatNumber = parseInt(seatID.replace('seat', ''));
+        let seatingArray = localStorage.seatingArray.split(',').map(Number);
+        seatingArray[seatNumber - 1] = 0;
+        console.log(seatingArray)
+        const stringToSave = seatingArray.join(',');
+        localStorage.setItem('seatingArray', stringToSave);
     } else {
         // Seat is not selected, so select it
         seat.classList.add('selected');
-
-        // Add the seat ID to the list
         const listItem = document.createElement('li');
+    
 
-        // Create an icon for Seat
         const seatIcon = document.createElement('img');
-        seatIcon.src = '../IE4717/assets/img/ticket.png'; // Path to your custom seat icon
+        seatIcon.src = '../IE4717/assets/img/ticket.png'; 
         listItem.appendChild(seatIcon);
-
+    
         listItem.textContent = ` Seat ID: ${seatID}`;
         selectedSeatsList.appendChild(listItem);
-
+    
         // Check if Buy button should be displayed
         const buyButton = document.getElementById('buy-button');
         buyButton.style.display = 'block';
+    
+        // Update the seatingArray to 2 for a selected seat
+        const seatNumber = parseInt(seatID.replace('seat', ''));
+        let seatingArray = localStorage.seatingArray.split(',').map(Number);
+        seatingArray[seatNumber - 1] = 2;
+        console.log(seatingArray)
+        const stringToSave = seatingArray.join(',');
+        localStorage.setItem('seatingArray', stringToSave);
     }
+    console.log(localStorage)
+    // Combine the seatingArray into a string and save to localStorage without trailing comma
+    // const stringToSave = seatingArray.join(',');
+    // localStorage.setItem('seatingArray', stringToSave);
+    // console.log(stringToSave)
+    // console.log(localStorage.seatingArray)
 
 }
 
 const seats = document.querySelectorAll('.seat');
 seats.forEach(seat => {
     seat.addEventListener('click', toggleSeatColor);
+    console.log(localStorage.seatingArray);
 });
