@@ -86,7 +86,7 @@
         </div>
         <div class="buttons">
             <a href="index.php" class="btn" id="home">Back to Home</a>
-            <a href="tickets.php" class="btn" id="ticket">My Bookings</a>
+            <a href="profile.php" class="btn" id="ticket">My Bookings</a>
         </div>
     </div>
 </body>

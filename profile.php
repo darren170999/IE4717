@@ -1,3 +1,4 @@
+<?php include('assets/php/connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -194,7 +195,6 @@
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
             }
             ?>
-            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
 
