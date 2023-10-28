@@ -402,6 +402,6 @@ include('assets/php/connect.php'); ?>
 
         </div>
     </div>
-    <script src="profile.js"></script>
+    <script src="../IE4717/assets/js/profile.js"></script>
 </body>
 </html>

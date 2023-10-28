@@ -264,7 +264,7 @@
             </div>
         </div>
     </div>
-    <script src="payment.js"></script>
+    <script src="../IE4717/assets/js/payment.js"></script>
     <script src="../IE4717/assets/js/submitPayment.js"></script>
 </body>
 </html>
