@@ -1,6 +1,11 @@
 <?php include('assets/php/connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    session_start();
+    if (isset($_SESSION['valid_user'])) {
+        if($_SESSION['valid_user'] === 'SuperAdmin'){
+?>
 <head>
     <title>Pure Frames</title>
 	<meta charset="utf-8">
@@ -50,3 +55,22 @@
     </form>
 </body>
 </html>
+<?php
+        }
+    } else {
+?>
+
+<head>
+    <title>Pure Frames</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <h1>YOU ARE NOT AN ADMIN </h1>
+
+</body>
+</html>
+<?php
+
+}
+?>
