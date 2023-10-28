@@ -3,6 +3,75 @@ body {
     color: yellow;
     font-family: Arial, sans-serif;
 }
+.header {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* background-color: #333; */
+}
+
+.header .logo {
+    float: left;
+}
+
+.header .logo a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.header ul.nav-list {
+    float: right;
+}
+
+.header ul.nav-list li {
+    float: left;
+}
+
+.header ul.nav-list li a {
+    display: block;
+    color: #FFC300;
+    text-align: center;
+    padding: 30px 20px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.header ul.nav-list li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.section {
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    padding-top: 70px;
+    text-align: left;
+    color:white;
+}
+
+.content {
+    text-align: left;
+    padding: 20px;
+}
+
+#home-logo {
+    width: 50px;
+    
+}
 h1 {
     color: yellow;
 }

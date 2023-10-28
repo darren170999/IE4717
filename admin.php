@@ -14,6 +14,32 @@ if (isset($_SESSION['valid_user'])) {
     <link rel="stylesheet" href="assets/css/adminStyle.css">
 </head>
 <body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.php">
+                <img id="home-logo" src="../IE4717/assets/img/pureframeofficiallogodesign-1.png">
+                <img id="home-logo" src="../IE4717/assets/img/name-only-11.png"> 
+            </a>
+        </div>
+        <ul class="nav-list">
+            <li><a href="location.php">Location</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="profile.php">UserProfile</a></li>
+            <?php
+            session_start();
+            if (isset($_SESSION['valid_user'])) {
+                if($_SESSION['valid_user'] === 'SuperAdmin'){
+                    echo '<li><a href="admin.php">Admin</a></li>';
+                }
+                echo '<li><a href="logout.php">Logout</a></li>';
+            } else {
+                echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
+            }
+            ?>
+            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
+        </ul>
+    </div>
+    <br>
     <div class="form-container">
         <h1>Upload Advertisements</h1>
         <form action="createAds.php" method="post" enctype="multipart/form-data">
