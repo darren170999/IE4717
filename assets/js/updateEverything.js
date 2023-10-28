@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             if (data !== null) {
                                 everything = data;
                                 console.log(data)
-                                window.location.href = "payment.html";
+                                window.location.href = "payment.php";
                                 // seatingArray = JSON.parse(data.arrangements);
                                 // localStorage.setItem('seatingArray', seatingArray);
                             }

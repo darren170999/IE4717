@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
             submitBtn.disabled = false;
             submitBtn.style.backgroundColor = "#FFC300";
             submitBtn.addEventListener('click', function() {
-                window.location.href = 'confirmation.html';
+                window.location.href = 'confirmation.php';
             });
         } else {
             submitBtn.disabled = true;

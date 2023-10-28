@@ -15,9 +15,9 @@
             </a>
         </div>
         <ul class="nav-list">
-            <li><a href="location.html">Location</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="profile.html">UserProfile</a></li>
+            <li><a href="location.php">Location</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="profile.php">UserProfile</a></li>
             <?php
             session_start();
             if (isset($_SESSION['valid_user'])) {

@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             if (data !== null) {
                                 everything = data;
                                 console.log(data)
-                                window.location.href = "confirmation.html";
+                                window.location.href = "confirmation.php";
                             }
                         });
                 }

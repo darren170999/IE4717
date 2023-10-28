@@ -17,10 +17,21 @@
             </a>
         </div>
         <ul class="nav-list">
-            <li><a href="#Location">Location</a></li>
-            <li><a href="#Contact">Contact</a></li>
-            <li><a href="#UserProfile">User Profile</a></li>
-            <li><a href="#loginSignUp">Login / SignUp</a></li>
+            <li><a href="location.php">Location</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="profile.php">UserProfile</a></li>
+            <?php
+            session_start();
+            if (isset($_SESSION['valid_user'])) {
+                if($_SESSION['valid_user'] === 'SuperAdmin'){
+                    echo '<li><a href="admin.php">Admin</a></li>';
+                }
+                echo '<li><a href="logout.php">Logout</a></li>';
+            } else {
+                echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
+            }
+            ?>
+            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
     
@@ -44,7 +55,7 @@
         
         <div class="buttons">
             <a href="index.php" class="btn" id="back">Back</a>
-            <a href="seating.html" class="btn" id="reserve">Make Reservation</a>
+            <a href="seating.php" class="btn" id="reserve">Make Reservation</a>
         </div>
     </div>
 

@@ -1,6 +1,5 @@
 const getHallsEndpoint = "getHalls.php";
 // let seatingArray = [0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0];
-// window.location.href = "seating.html";
 async function fetchHalls(hallId, dates, timings) {
     const url = `${getHallsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}`;
     try {

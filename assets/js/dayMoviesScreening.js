@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     moviePoster.addEventListener('click', () => {
                         localStorage.setItem('selectedMovieName', movie.movie_title);
-                        window.location.href = `booking.html?selectedMovieName=${encodeURIComponent(movie.movie_title)}`;
+                        window.location.href = `booking.php?selectedMovieName=${encodeURIComponent(movie.movie_title)}`;
                     });
 
                     const movieLink = document.createElement('a');

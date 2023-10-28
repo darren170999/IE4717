@@ -13,7 +13,7 @@ if ($arrangements !== null && $hall_id !== null && $dates !== null && $timings !
     $stmt->bind_param("siss", $arrangements, $hall_id, $dates, $timings);
     if ($stmt->execute()) {
         echo json_encode(["success" => "Data updated successfully"]);
-        // header("Location: payment.html");
+
     } else {
         echo json_encode(["error" => "Failed to update data"]);
     }

@@ -49,10 +49,21 @@
             </a>
         </div>
         <ul class="nav-list">
-            <li><a href="#Location">Location</a></li>
-            <li><a href="#Contact">Contact</a></li>
-            <li><a href="#UserProfile">User Profile</a></li>
-            <li><a href="#loginSignUp">Login / SignUp</a></li>
+            <li><a href="location.php">Location</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="profile.php">UserProfile</a></li>
+            <?php
+            session_start();
+            if (isset($_SESSION['valid_user'])) {
+                if($_SESSION['valid_user'] === 'SuperAdmin'){
+                    echo '<li><a href="admin.php">Admin</a></li>';
+                }
+                echo '<li><a href="logout.php">Logout</a></li>';
+            } else {
+                echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
+            }
+            ?>
+            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
     
@@ -71,11 +82,11 @@
             <hr class="confirmation-line">
             
             <!-- Resend Email or Contact Us -->
-            <p>If you did not receive the tickets, <strong class="highlight-text">resend email confirmation</strong> or <strong><a href="contact.html" class="highlight-text link">contact us</a></strong>.</p>
+            <p>If you did not receive the tickets, <strong class="highlight-text">resend email confirmation</strong> or <strong><a href="contact.php" class="highlight-text link">contact us</a></strong>.</p>
         </div>
         <div class="buttons">
             <a href="index.php" class="btn" id="home">Back to Home</a>
-            <a href="tickets.html" class="btn" id="ticket">My Bookings</a>
+            <a href="tickets.php" class="btn" id="ticket">My Bookings</a>
         </div>
     </div>
 </body>
