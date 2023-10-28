@@ -11,7 +11,6 @@ async function fetchHalls(hallId, dates, timings) {
         return null;
     }
 }
-
 const hallId = localStorage.getItem('hall_id');
 const jsonObject = JSON.parse(localStorage.selectedDateTime);
 const dates = jsonObject.date;
@@ -76,41 +75,44 @@ if (hallId && dates && timings) {
                     // everything = data;
                     seatingArray = JSON.parse(data.arrangements);
                     localStorage.setItem('seatingArray', seatingArray);
+                    const zeroString = localStorage.getItem('seatingArray');
+                    const zeroArray = zeroString.split(',').map(Number);
+                    arrange(zeroArray);
+                    // location.reload();
                     
                 }
             });
     }
 }
-
-// Your array of seating information
-const zeroString = localStorage.getItem('seatingArray');
-const zeroArray = zeroString.split(',').map(Number);
-// console.log(zeroArray);
-let seatingArray = zeroArray;
-// Get the seating plan container element
-const seatingPlanContainer = document.querySelector('.seating-plan');
-
-// Loop through the array and create rows and seats
-for (let i = 0; i < seatingArray.length; i++) {
-  // Create a new row div for every 10 seats
-  if (i % 10 === 0) {
-    const rowDiv = document.createElement('div');
-    rowDiv.classList.add('row');
-    seatingPlanContainer.appendChild(rowDiv);
-  }
-
-  // Create a new seat div
-  const seatDiv = document.createElement('div');
-  seatDiv.id = 'seat' + (i + 1);
-
-  // Check if the seat is booked and add the appropriate class
-  if (seatingArray[i] === 1) {
-    seatDiv.classList.add('seatBooked');
-  } else {
-    seatDiv.classList.add('seat');
-  }
-
-  // Append the seat to the last row
-  const lastRow = seatingPlanContainer.lastChild;
-  lastRow.appendChild(seatDiv);
+function arrange(zeroArray){
+    let seatingArray = zeroArray;
+    // Get the seating plan container element
+    const seatingPlanContainer = document.querySelector('.seating-plan');
+    
+    // Loop through the array and create rows and seats
+    for (let i = 0; i < seatingArray.length; i++) {
+      // Create a new row div for every 10 seats
+      if (i % 10 === 0) {
+        const rowDiv = document.createElement('div');
+        rowDiv.classList.add('row');
+        seatingPlanContainer.appendChild(rowDiv);
+      }
+    
+      // Create a new seat div
+      const seatDiv = document.createElement('div');
+      seatDiv.id = 'seat' + (i + 1);
+    
+      // Check if the seat is booked and add the appropriate class
+      if (seatingArray[i] === 1) {
+        seatDiv.classList.add('seatBooked');
+      } else {
+        seatDiv.classList.add('seat');
+      }
+    
+      // Append the seat to the last row
+      const lastRow = seatingPlanContainer.lastChild;
+      lastRow.appendChild(seatDiv);
+    }
 }
+// Your array of seating information
+// location.reload();

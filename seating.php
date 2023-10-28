@@ -67,6 +67,7 @@
         </form>
     </div>
     <script src="../IE4717/assets/js/arrangements.js"></script>
+    <!-- <script src="../IE4717/assets/js/refresh.js"></script> -->
     <script src="../IE4717/assets/js/seats.js"></script>
     <script src="../IE4717/assets/js/updateEverything.js"></script>
 </body>
