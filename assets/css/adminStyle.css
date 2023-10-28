@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    color: yellow;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: yellow;
+}
+.form-container {
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+}
+.form-container h1 {
+    color: yellow;
+}
+.form-container input[type="file"],
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    background: white;
+    color: black;
+}
+.form-container input[type="submit"] {
+    background-color: '#FFF000';
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+.form-container input[type="submit"]:hover {
+    background-color: yellow;
+    color: white;
+}
