@@ -68,7 +68,7 @@ if (isset($_SESSION['valid_user'])) {
             Synopsis
             <input type="text" name="sypnopsis" id="sypnopsis"><br>
             Casts
-            <input type="text" name "casts" id="casts"><br>
+            <input type="text" name="casts" id="casts"><br>
             Date
             <input type="date" name="screening_date" id="screening_date"><br>
             <!-- Timings

@@ -1,4 +1,6 @@
-<?php include('assets/php/connect.php'); ?>
+<?php 
+session_start();
+include('assets/php/connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -206,7 +208,7 @@
         font-weight: bold;
         font-size: 30px;
         }
-    </style>    
+    </style>
 </head>
 <body>
 <div class="header">
@@ -221,7 +223,6 @@
             <li><a href="contact.php">Contact</a></li>
             <li><a href="profile.php">UserProfile</a></li>
             <?php
-            session_start();
             if (isset($_SESSION['valid_user'])) {
                 if($_SESSION['valid_user'] === 'SuperAdmin'){
                     echo '<li><a href="admin.php">Admin</a></li>';
