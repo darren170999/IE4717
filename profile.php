@@ -170,10 +170,46 @@
         .user-review {
             margin-top: 10px;
         }
+
+        /* The Modal */
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed position */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        background-color: rgba(0,0,0,0.4); /* Black with opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+        position: relative;  
+        background-color: #000;
+        color: #FFF;
+        margin: 15% auto; /* Center it */
+        padding: 20px;
+        border: 1px solid #FFC300;
+        border-radius: 20px;
+        width: 40%; /* Could be more or less, depending on screen size */
+        }
+
+        #modal-qr {
+        width: 40%;  /* You can adjust this */
+        height: auto;
+        }
+        .close {
+        position: absolute;
+        top: 30px;
+        right: 30px;  /* Changed from 'left' to 'right' */
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 30px;
+        }
     </style>    
 </head>
 <body>
-    <div class="header">
+<div class="header">
         <div class="logo">
             <a href="index.php">
                 <img id="home-logo" src="../IE4717/assets/img/pureframeofficiallogodesign-1.png">
@@ -195,6 +231,7 @@
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
             }
             ?>
+            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
 
@@ -246,17 +283,17 @@
             <div class="panel">
                 <div class="booking-history">
                     <div class="booking-item">
-                        <img src="./assets/img/movie_posters/Oppenheimer.png">
+                    <img src="./assets/img/movie_posters/Oppenheimer.png" id="oppenheimer-poster">
                         <p>Oppenheimer</p>
                         <img src="./assets/img/ratings/5_star_rating.png" id="rating">
                     </div>
                     <div class="booking-item">
-                        <img src="./assets/img/movie_posters/Black Panther.png">
+                        <img src="./assets/img/movie_posters/Black Panther.png" id="blackpanther-poster">
                         <p>Black Panther</p>
                         <img src="./assets/img/ratings/4_star_rating.png" id="rating">
                     </div>
                     <div class="booking-item">
-                        <img src="./assets/img/movie_posters/Barbie.png">
+                        <img src="./assets/img/movie_posters/Barbie.png" id="barbie-poster">
                         <p>Barbie</p>
                         <img src="./assets/img/ratings/3_star_rating.png" id="rating">
                     </div>
@@ -348,6 +385,19 @@
                     <a href="#" class="btn" id="deleteAccount">Delete</a>
                 </div>
             </div>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- The Modal Content -->
+                <div class="modal-content" style="text-align: center;">
+                    <span class="close">&times;</span>
+                    <h2 id="modal-title" style="color:#FFC300; font-weight: bold;">OPPENHEIMER</h2>
+                    <p style="padding:10px;">The QR Code that has been generated is your ticket to the cinema hall. 
+                        <br>Scan the QR code at entry gate of cinema hall to enter.</p>
+                    <img id="modal-qr" src="./assets/img/movie_qr.png" alt="QR Code">
+                </div>
+            </div>
+
 
         </div>
     </div>

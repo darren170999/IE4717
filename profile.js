@@ -79,3 +79,50 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
+  
+// JavaScript for the Modal
+document.addEventListener("DOMContentLoaded", function() {
+   // Get the modal
+   const modal = document.getElementById("myModal");
+
+   // Get the modal title
+   const modalTitle = document.getElementById("modal-title");
+ 
+   // Get all the posters
+   const oppenheimerPoster = document.getElementById("oppenheimer-poster");
+   const blackPantherPoster = document.getElementById("blackpanther-poster");
+   const barbiePoster = document.getElementById("barbie-poster");
+ 
+   // When Oppenheimer poster is clicked
+   oppenheimerPoster.addEventListener("click", function() {
+     modal.style.display = "block";
+     modalTitle.innerHTML = '<span style="color:#FFC300; font-weight: bold;">OPPENHEIMER</span>';
+   });
+ 
+   // When Black Panther poster is clicked
+   blackPantherPoster.addEventListener("click", function() {
+     modal.style.display = "block";
+     modalTitle.innerHTML = '<span style="color:#FFC300; font-weight: bold;">BLACK PANTHER</span>';
+   });
+ 
+   // When Barbie poster is clicked
+   barbiePoster.addEventListener("click", function() {
+     modal.style.display = "block";
+     modalTitle.innerHTML = '<span style="color:#FFC300; font-weight: bold;">BARBIE</span>';
+   });
+ 
+   // Get the close button
+   const closeBtn = document.querySelector(".close");
+ 
+   // Close the modal when the close button is clicked
+   closeBtn.addEventListener("click", function() {
+     modal.style.display = "none";
+   });
+ 
+   // Close the modal when clicking outside of it
+   window.addEventListener("click", function(event) {
+     if (event.target === modal) {
+       modal.style.display = "none";
+     }
+   });
+});
