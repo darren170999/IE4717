@@ -1,5 +1,7 @@
+
 function toggleSeatColor(event) {
     const seat = event.target;
+    console.log(seat);
 
     if (seat.classList.contains('booked')) {
         return; // Exit the function and do nothing for reserved seats
@@ -97,9 +99,11 @@ function toggleSeatColor(event) {
     // console.log(localStorage.seatingArray)
 
 }
-
+// console.log(document.querySelectorAll('.seat'));
+// console.log(document.querySelectorAll('.seat'))
 const seats = document.querySelectorAll('.seat');
 seats.forEach(seat => {
+
     seat.addEventListener('click', toggleSeatColor);
     console.log(localStorage.seatingArray);
 });

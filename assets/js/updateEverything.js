@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const buyButton = document.getElementById("buy-button");
-    console.log(buyButton)
+    // console.log(buyButton)
     if(buyButton){
         buyButton.addEventListener("click", function(event){
             event.preventDefault();

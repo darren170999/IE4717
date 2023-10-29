@@ -18,7 +18,7 @@ const timings = jsonObject.time;
 // console.log(localStorage)
 
 if (hallId && dates && timings) {
-    console.log(hallId);
+    // console.log(hallId);
 
     // Function to format the date to "YYYY-MM-DD" format
     const formatDate = (inputDate) => {
@@ -64,26 +64,35 @@ if (hallId && dates && timings) {
     const formattedDate = formatDate(dates); // Format the date
     const formattedTime = formatTime(timings); // Format the time
 
-    if (formattedDate && formattedTime) {
-        console.log(formattedDate); // The date is in "YYYY-MM-DD" format
-        console.log(formattedTime); // The time is in 24-hour format
-        // console.log(URL)
-        // You can proceed with the fetchHalls function with the formattedDate and formattedTime
+    // if (formattedDate && formattedTime) {
+        // fetch arrangement
         fetchHalls(hallId, formattedDate, formattedTime)
             .then((data) => {
                 if (data !== null) {
                     // everything = data;
                     seatingArray = JSON.parse(data.arrangements);
+                    // console.log(seatingArray)
+                    // const zeroArray = seatingArray.split(',').map(Number);
                     localStorage.setItem('seatingArray', seatingArray);
-                    const zeroString = localStorage.getItem('seatingArray');
-                    const zeroArray = zeroString.split(',').map(Number);
-                    arrange(zeroArray);
+                    // console.log(localStorage)
+                    // const zeroString = localStorage.getItem('seatingArray');
+                    // const zeroArray = zeroString.split(',').map(Number);
+                    // arrange(zeroArray); 
+                    // console.log("fecthed")
                     // location.reload();
                     
                 }
             });
-    }
+
+        
+    // }
 }
+const zeroString = localStorage.getItem('seatingArray');
+const zeroArray = zeroString.split(',').map(Number);
+// console.log(zeroArray)
+arrange(zeroArray); // everytime i want to have a new arrangment i do this
+
+
 function arrange(zeroArray){
     let seatingArray = zeroArray;
     // Get the seating plan container element
