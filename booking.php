@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pure Frames Booking Page</title>
 
-    <link rel="stylesheet" href="style_yinqi.css"> 
+    <link rel="stylesheet" href="assets/css/style_yinqi_copy.css"> 
 </head>
-<!-- This image should be pulled from the DB so that the picture will always be relevant -->
 <body >
     <div class="header">
         <div class="logo">
@@ -31,11 +30,9 @@
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
             }
             ?>
-            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
     
-    <!--Content-->
     <div class="main-content">
         <h1 id="title"></h1>
         <p id="synopsis">During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project. Oppenheimer and a team of scientists spend years developing and designing the atomic bomb. Their work comes to fruition on July 16, 1945, as they witness the world's first nuclear explosion, forever changing the course of history.</p>
@@ -45,7 +42,6 @@
         </div>
         
         <div class="time-boxes">
-            <!-- 5 time boxes -->
             <div class="time-box">12:00 PM</div>
             <div class="time-box">03:00 PM</div>
             <div class="time-box active">05:00 PM</div>
@@ -61,6 +57,5 @@
 
     <script src="../IE4717/assets/js/scriptBooking.js"></script>
     <script src="../IE4717/assets/js/fetchAssetsForBookings.js"></script>
-    <!-- <script src="../IE4717/assets/js/holdingDates.js"></script> -->
 </body>
 </html>
