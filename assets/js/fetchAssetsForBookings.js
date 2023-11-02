@@ -41,9 +41,10 @@ if (selectedMovieName) {
             if (data !== null) {
                 selectedMovie = data;
                 anythingLah();
-                console.log(selectedMovie[0].movie_title)
+                console.log(selectedMovie[0].location_id)
                 localStorage.setItem('movie_title', selectedMovie[0].movie_title)
                 localStorage.setItem('hall_id', selectedMovie[0].hall_id)
+                localStorage.setItem('location_id', selectedMovie[0].location_id)
                 // console.log(localStorage);
             }
         });

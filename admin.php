@@ -59,7 +59,7 @@ if (isset($_SESSION['valid_user'])) {
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" value="Upload Image" name="submitPoster">
         </form>
-        <h1>Upload Current Movies</h1>
+        <h1>Upload Movies</h1>
         <form action="createCurrentMovies.php" method="post" enctype="multipart/form-data">
             Select image to upload:
             <input type="file" name="fileToUpload" id="fileToUpload"><br>
@@ -71,14 +71,14 @@ if (isset($_SESSION['valid_user'])) {
             <input type="text" name="casts" id="casts"><br>
             Date
             <input type="date" name="screening_date" id="screening_date"><br>
-            <!-- Timings
-            <input type="time" name="screening_time" id="screening_time"><br> -->
             Price
             <input type="number" name="price" id="price"><br>
             Ratings
             <input type="number" name="ratings" id="ratings"><br>
             Hall ID
             <input type="number" name="hall_id" id="hall_id"><br>
+            Location ID
+            <input type="number" name="location_id" id="location_id"><br>
 
             <input type="submit" value="Upload Image" name="submitMovie">
         </form>

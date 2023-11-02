@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     const paymentButton = document.getElementById("paymentButton");
-    console.log(paymentButton)
+    // console.log(paymentButton)
     if(paymentButton){
         paymentButton.addEventListener("click", function(event){
             event.preventDefault();
             const confirmArrangementsEndpoint = "confirmArrangements.php";
             
-            async function fetchHalls(arrangements, hallId, dates, timings) {
-                const url = `${confirmArrangementsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}`;
+            async function fetchHalls(arrangements, hallId, dates, timings, location_id) {
+                const url = `${confirmArrangementsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}&location_id=${location_id}`;
                 try {
                     const response = await fetch(url);
                     const data = await response.json();
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             
             const hallId = localStorage.getItem('hall_id');
+            const location_id = localStorage.getItem('location_id');
             const jsonObject = JSON.parse(localStorage.selectedDateTime);
             const dates = jsonObject.date;
             const timings = jsonObject.time;
@@ -26,9 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const decrementedArray = arrangements.map(item => (item === 2 ? 1 : item));
             const arrangement = JSON.stringify(decrementedArray);
             
-            if (arrangement && hallId && dates && timings) {
-                console.log(hallId);
-            
+            if (arrangement && hallId && dates && timings && location_id) {
+                console.log(location_id);
                 // Function to format the date to "YYYY-MM-DD" format
                 const formatDate = (inputDate) => {
                     const date = new Date(inputDate);
@@ -79,14 +79,30 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log(arrangement)
                     console.log(hallId)
                     // You can proceed with the fetchHalls function with the formattedDate and formattedTime
-                    fetchHalls(arrangement, hallId, formattedDate, formattedTime)
-                        .then((data) => {
-                            if (data !== null) {
+                    fetchHalls(arrangement, hallId, formattedDate, formattedTime, location_id)
+                    .then((data) => {
+                        if (data !== null) {
+                            console.log("Data received:", data);
+
+                            if (data.error) {
+                                console.error("Error from the server:", data.error);
+                                // Handle the error or show a message to the user
+                            } else {
+                                // Assuming the server response is valid JSON
                                 everything = data;
-                                console.log(data)
-                                window.location.href = "confirmation.php";
+                                window.location.href = "payment.php";
+                                // seatingArray = JSON.parse(data.arrangements);
+                                // localStorage.setItem('seatingArray', seatingArray);
                             }
-                        });
+                        } else {
+                            console.error("No data received from the server.");
+                            // Handle the absence of data or show an appropriate message to the user
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Fetch error:", error);
+                        // Handle the fetch error or show an appropriate message to the user
+                    });
                 }
             }
         })

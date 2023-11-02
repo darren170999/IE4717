@@ -5,14 +5,14 @@ include('assets/php/connect.php');
 if (isset($_GET['selectedMovieName'])) { // Check for the query parameter
     $title = $_GET['selectedMovieName'];
 
-    $stmt = $conn->prepare("SELECT m.movie_id, m.movie_title, m.sypnopsis, m.casts, m.screening_date, m.price, m.ratings, m.hall_id, mp.movie_data, mp.movie_name
+    $stmt = $conn->prepare("SELECT m.movie_id, m.movie_title, m.sypnopsis, m.casts, m.screening_date, m.price, m.ratings, m.hall_id, m.location_id, mp.movie_data, mp.movie_name
     FROM movies m
     INNER JOIN longPosters mp ON m.movie_id = mp.movie_id
     WHERE m.movie_title = ?");
     $stmt->bind_param("s", $title);
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($movie_id, $movie_title, $sypnopsis, $casts, $screening_date, $price, $ratings, $hall_id, $movie_data, $movie_name);
+    $stmt->bind_result($movie_id, $movie_title, $sypnopsis, $casts, $screening_date, $price, $ratings, $hall_id, $location_id, $movie_data, $movie_name);
     $selectedMovie = array(); // Create an array to hold image data
 
     while ($stmt->fetch()) {
@@ -27,6 +27,7 @@ if (isset($_GET['selectedMovieName'])) { // Check for the query parameter
             "price" => $price,
             "ratings" => $ratings,
             "hall_id" => $hall_id,
+            "location_id" => $location_id,
             "movie_data" => base64_encode($movie_data),
             "movie_name" => $movie_name
         );

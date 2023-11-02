@@ -5,7 +5,7 @@ function fetchMoviePosters() {
     fetch(moviePostersEndpoint)
         .then((response) => response.json())
         .then((data) => {
-            // console.log(data)
+            console.log(data)
             posters = data; // Update the posters array with the fetched data
         })
         .catch((error) => console.error("Error fetching advertisements:", error))

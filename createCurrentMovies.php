@@ -8,16 +8,17 @@ ini_set('display_errors', 1);
 if (isset($_POST["submitMovie"])) {
     $name = $_FILES["fileToUpload"]["name"];
     $movie_data = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
-    $movie_sypnopsis = $_POST["sypnopsis"]; // Add this line to get the synopsis
+    $movie_sypnopsis = $_POST["sypnopsis"];
     $movie_title = $_POST["movie_title"];
-    $movie_casts = $_POST["casts"]; // Add this line to get the casts
-    $screening_date = $_POST["screening_date"]; // Add this line to get the screening date
+    $movie_casts = $_POST["casts"];
+    $screening_date = $_POST["screening_date"];
+    $price = $_POST["price"];
+    $ratings = $_POST["ratings"];
     $hall_id = $POST["hall_id"];
-    $price = $_POST["price"]; // Add this line to get the price
-    $ratings = $_POST["ratings"]; // Add this line to get the ratings
+    $location_id = $POST["location_id"];
 
-    $stmt = $conn->prepare("INSERT INTO movies (movie_title, sypnopsis, casts, screening_date, price, ratings, hall_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssdii", $movie_title, $movie_sypnopsis, $movie_casts, $screening_date, $price, $ratings, $hall_id);
+    $stmt = $conn->prepare("INSERT INTO movies (movie_title, sypnopsis, casts, screening_date, price, ratings, hall_id, location_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssdiii", $movie_title, $movie_sypnopsis, $movie_casts, $screening_date, $price, $ratings, $hall_id, $location_id);
 
     if ($stmt->execute()) {
         echo "Movie scheduled successfully.";

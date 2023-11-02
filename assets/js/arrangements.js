@@ -1,7 +1,7 @@
 const getHallsEndpoint = "getHalls.php";
 // let seatingArray = [0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0];
-async function fetchHalls(hallId, dates, timings) {
-    const url = `${getHallsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}`;
+async function fetchHalls(hallId, dates, timings, location_id) {
+    const url = `${getHallsEndpoint}?hall_id=${hallId}&location_id=${location_id}&dates=${dates}&timings=${timings}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -12,12 +12,13 @@ async function fetchHalls(hallId, dates, timings) {
     }
 }
 const hallId = localStorage.getItem('hall_id');
+const location_id = localStorage.getItem('location_id');
 const jsonObject = JSON.parse(localStorage.selectedDateTime);
 const dates = jsonObject.date;
 const timings = jsonObject.time;
 // console.log(localStorage)
 
-if (hallId && dates && timings) {
+if (hallId && dates && timings && location_id) {
     // console.log(hallId);
 
     // Function to format the date to "YYYY-MM-DD" format
@@ -66,7 +67,7 @@ if (hallId && dates && timings) {
 
     // if (formattedDate && formattedTime) {
         // fetch arrangement
-        fetchHalls(hallId, formattedDate, formattedTime)
+        fetchHalls(hallId, formattedDate, formattedTime, location_id)
             .then((data) => {
                 if (data !== null) {
                     // everything = data;

@@ -6,12 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             const updateArrangementsEndpoint = "updateArrangements.php";
             
-            async function fetchHalls(arrangements, hallId, dates, timings) {
-                // console.log(arrangements); // The date is in "YYYY-MM-DD" format
-                // console.log(hallId); // The time is in 24-hour format
-                // console.log(dates)
-                // console.log(timings)
-                const url = `${updateArrangementsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}`;
+            async function fetchHalls(arrangements, hallId, dates, timings, location_id) {
+
+                const url = `${updateArrangementsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}&location_id=${location_id}`;
+                // console.log(url)
                 try {
                     const response = await fetch(url);
                     const data = await response.json();
@@ -23,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             
             const hallId = localStorage.getItem('hall_id');
+            const location_id = localStorage.getItem('location_id');
             const jsonObject = JSON.parse(localStorage.selectedDateTime);
             const dates = jsonObject.date;
             const timings = jsonObject.time;
@@ -31,9 +30,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const arrangement = JSON.stringify(arrangements);
             // console.log(localStorage)
             
-            if (arrangement && hallId && dates && timings) {
-                console.log(hallId);
-            
+            if (arrangement && hallId && dates && timings && location_id) {
+                // console.log(hallId);
+                // console.log(location_id);
                 // Function to format the date to "YYYY-MM-DD" format
                 const formatDate = (inputDate) => {
                     const date = new Date(inputDate);
@@ -83,17 +82,42 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log(formattedTime); // The time is in 24-hour format
                     console.log(arrangement)
                     console.log(hallId)
+                    console.log(location_id)
                     // You can proceed with the fetchHalls function with the formattedDate and formattedTime
-                    fetchHalls(arrangement, hallId, formattedDate, formattedTime)
-                        .then((data) => {
-                            if (data !== null) {
+                    // fetchHalls(arrangement, hallId, formattedDate, formattedTime, location_id)
+                    //     .then((data) => {
+                    //         if (data !== null) {
+                    //             everything = data;
+                    //             console.log(data)
+                    //             window.location.href = "payment.php";
+                    //             // seatingArray = JSON.parse(data.arrangements);
+                    //             // localStorage.setItem('seatingArray', seatingArray);
+                    //         }
+                    //     });
+                    fetchHalls(arrangement, hallId, formattedDate, formattedTime, location_id)
+                    .then((data) => {
+                        if (data !== null) {
+                            console.log("Data received:", data);
+
+                            if (data.error) {
+                                console.error("Error from the server:", data.error);
+                                // Handle the error or show a message to the user
+                            } else {
+                                // Assuming the server response is valid JSON
                                 everything = data;
-                                console.log(data)
                                 window.location.href = "payment.php";
                                 // seatingArray = JSON.parse(data.arrangements);
                                 // localStorage.setItem('seatingArray', seatingArray);
                             }
-                        });
+                        } else {
+                            console.error("No data received from the server.");
+                            // Handle the absence of data or show an appropriate message to the user
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Fetch error:", error);
+                        // Handle the fetch error or show an appropriate message to the user
+                    });
                 }
             }
         })

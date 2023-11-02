@@ -1,7 +1,7 @@
 const updateArrangementsEndpoint = "updateArrangements.php";
             
-async function fetchHalls(arrangements, hallId, dates, timings) {
-const url = `${updateArrangementsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}`;
+async function fetchHalls(arrangements, hallId, dates, timings, location_id) {
+const url = `${updateArrangementsEndpoint}?hall_id=${hallId}&location_id=${location_id}&dates=${dates}&timings=${timings}&arrangements=${arrangements}`;
 try {
     const response = await fetch(url);
     const data = await response.json();
@@ -13,6 +13,7 @@ try {
 }
 
 const hallId = localStorage.getItem('hall_id');
+const location_id = localStorage.getItem('location_id');
 const jsonObject = JSON.parse(localStorage.selectedDateTime);
 const dates = jsonObject.date;
 const timings = jsonObject.time;
@@ -21,7 +22,7 @@ const arrangements = localStorage.seatingArray.split(",").map(Number);
 const arrangement = JSON.stringify(arrangements);
 // console.log(localStorage)
 
-if (arrangement && hallId && dates && timings) {
+if (arrangement && hallId && dates && timings && location_id) {
 console.log(hallId);
 
 // Function to format the date to "YYYY-MM-DD" format
@@ -73,7 +74,7 @@ if (formattedDate && formattedTime) {
     console.log(formattedTime); // The time is in 24-hour format
     // console.log(URL)
     // You can proceed with the fetchHalls function with the formattedDate and formattedTime
-    fetchHalls(arrangement, hallId, formattedDate, formattedTime)
+    fetchHalls(arrangement, hallId, formattedDate, formattedTime, location_id)
         .then((data) => {
             if (data !== null) {
                 everything = data;
