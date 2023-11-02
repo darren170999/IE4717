@@ -45,7 +45,9 @@ if (selectedMovieName) {
                 localStorage.setItem('movie_title', selectedMovie[0].movie_title)
                 localStorage.setItem('hall_id', selectedMovie[0].hall_id)
                 localStorage.setItem('location_id', selectedMovie[0].location_id)
-                // console.log(localStorage);
+                localStorage.setItem('price', selectedMovie[0].price)
+                localStorage.setItem('ratings', selectedMovie[0].ratings)
+                // localStorage.setItem('movie_data', selectedMovie[0].movie_data)
             }
         });
 }

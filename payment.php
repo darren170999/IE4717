@@ -151,24 +151,22 @@
     <!--Content-->
     <div class="main-content">
         <div class="left-column">
-            <!-- Movie Poster Placeholder -->
-            <img src="./assets/img/movie_posters/Oppenheimer.png" alt="Movie Poster" width="100%" style="padding-bottom: 20px;">
 
             <!-- Payment Details -->
             <div class="payment-details">PAYMENT DETAILS</div>
             
             <!-- Movie Information -->
             <div class="movie-info">
-                <strong>OPPENHEIMER</strong><br>
-                (PG 13 Some Violence & Drug References)
+                <!-- <strong>OPPENHEIMER</strong><br>
+                (PG 13 Some Violence & Drug References) -->
             </div>
             <hr>
 
             <!-- Booking Info -->
             <div class="booking-info">
-                Thu 10/26 08:30 PM <br>
+                <!-- Thu 10/26 08:30 PM <br>
                 PUREFRAME JURONG POINT HALL 2 <br>
-                Seat ID: SEAT 4 SEAT 5
+                Seat ID: SEAT 4 SEAT 5 -->
             </div>
             <hr>
 
@@ -179,12 +177,12 @@
                     <span></span> <!-- Empty span for alignment -->
                 </div>
                 <div class="price-line">
-                    <span>1 x Ticket(s)</span>
-                    <span>S$10.00</span>
+                    <!-- <span>1 x Ticket(s)</span>
+                    <span>S$10.00</span> -->
                 </div>
                 <div class="price-line">
-                    <span>Convenience Fee</span>
-                    <span>S$1.00</span>
+                    <!-- <span>Convenience Fee</span>
+                    <span>S$1.00</span> -->
                 </div>
             </div>
             <hr>
@@ -192,8 +190,8 @@
             <!-- Total Price -->
             <div class="total-price">
                 <div class="price-line">
-                    <span>TOTAL PRICE</span>
-                    <span>S$11.00</span>
+                    <!-- <span>TOTAL PRICE</span>
+                    <span>S$11.00</span> -->
                 </div>
             </div>
         </div>
@@ -256,15 +254,19 @@
 
             <!-- Buttons -->
             <div class="buttons" style="margin-top: 20px;">                
-                <button type="button" class="btn" id="cancel" style="width: 30%;">Cancel</button>
-                <button type="button" class="btn" id="submit" style="width: 30%;" disabled>Submit</button>
                 <form id="update" action="submitPayment.js" method="POST">
-                    <input type="submit" name="paymentButton" value="Submit" id="paymentButton">
+                    <button type="button" class="btn" id="cancel" style="width: 30%;">Cancel</button>
+                    <button type="button" class="btn" id="submit" style="width: 30%;" disabled>
+                    
+                    </button>
+                <input type="submit" name="paymentButton" value="Submit" id="paymentButton"> 
+                <!-- YINQI help style this submit button to look nice -->
                 </form>
             </div>
         </div>
     </div>
     <script src="../IE4717/assets/js/payment.js"></script>
     <script src="../IE4717/assets/js/submitPayment.js"></script>
+    <script src="../IE4717/assets/js/ticketDetails.js"></script>
 </body>
 </html>

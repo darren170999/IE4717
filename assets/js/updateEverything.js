@@ -78,22 +78,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 const formattedTime = formatTime(timings); // Format the time
             
                 if (formattedDate && formattedTime) {
-                    console.log(formattedDate); // The date is in "YYYY-MM-DD" format
-                    console.log(formattedTime); // The time is in 24-hour format
-                    console.log(arrangement)
-                    console.log(hallId)
-                    console.log(location_id)
-                    // You can proceed with the fetchHalls function with the formattedDate and formattedTime
-                    // fetchHalls(arrangement, hallId, formattedDate, formattedTime, location_id)
-                    //     .then((data) => {
-                    //         if (data !== null) {
-                    //             everything = data;
-                    //             console.log(data)
-                    //             window.location.href = "payment.php";
-                    //             // seatingArray = JSON.parse(data.arrangements);
-                    //             // localStorage.setItem('seatingArray', seatingArray);
-                    //         }
-                    //     });
                     fetchHalls(arrangement, hallId, formattedDate, formattedTime, location_id)
                     .then((data) => {
                         if (data !== null) {
