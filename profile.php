@@ -1,6 +1,19 @@
 <?php 
+include('assets/php/connect.php'); 
 session_start();
-include('assets/php/connect.php'); ?>
+if (isset($_SESSION['valid_user'])) {
+    $username = $_SESSION['valid_user'];
+}
+$stmt = $conn->prepare("SELECT username, email, contact FROM users WHERE username = ?");
+$stmt->bind_param("s", $username);
+if ($stmt->execute()) {
+    error_log("Fetch users successful");
+    $stmt->bind_result($username, $email, $contact);
+    $stmt->fetch();
+    $stmt->close();
+}
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -242,7 +255,7 @@ include('assets/php/connect.php'); ?>
         <!-- Upper Section -->
         <div class="upper-section">
             <img src="./assets/img/profile_picture.png" style="width: 30%;">
-            <h1>Hello, Chang!</h1>
+            <h1>Hello, <?php echo $username ?>!</h1>
         </div>
         
         <!-- Lower Section -->
@@ -252,25 +265,20 @@ include('assets/php/connect.php'); ?>
             <button class="accordion">Personal Information</button>
             <div class="panel">
             <div class="info-line">
-                <strong>Name:</strong>
-                <span id="nameSpan">Chang Ah Kau</span>
+                <strong>User Name:</strong>
+                <span id="nameSpan"><?php echo $username ?></span>
                 <input type="text" id="nameInput" style="display:none;">
             </div>
             <div class="info-line">
                 <strong>Email Address:</strong>
-                <span id="emailSpan">changahkau@gmail.com</span>
+                <span id="emailSpan"><?php echo $email ?></span>
                 <input type="text" id="emailInput" style="display:none;">
             </div>
             <div class="info-line">
                 <strong>Contact Information:</strong>
-                <span id="contactSpan">+65 1234 5678</span>
+                <span id="contactSpan"><?php echo $contact ?></span>
                 <input type="text" id="contactInput" style="display:none;">
             </div>
-            <div class="info-line">
-                <strong>Preferred Genre:</strong>
-                <span id="genreSpan">Action, Comedy</span>
-                <input type="text" id="genreInput" style="display:none;">
-              </div>              
             <div class="info-line">
                 <strong>Account Creation Date:</strong>
                 <span id="dateSpan">23 October 2023</span>
@@ -404,5 +412,6 @@ include('assets/php/connect.php'); ?>
         </div>
     </div>
     <script src="../IE4717/assets/js/profile.js"></script>
+    <script src="../IE4717/assets/js/fetchUserDetails.js"></script>
 </body>
 </html>

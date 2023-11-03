@@ -19,9 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const calculatedPrice = price * indicesWithValue2.length;
     const total = calculatedPrice + 1.00;
     localStorage.setItem('total', total);
-    // Check if the data exists in localStorage
     if (movieTitle) {
-        // Update the HTML elements with the retrieved values
         document.querySelector('.movie-info').innerHTML = `
             <strong>${movieTitle}</strong><br>
             Ratings: ${ratings}
@@ -31,11 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
             Hall: ${hall} <br>
             Seat ID: ${indicesWithValue2}
         `;
-        
-        // Update the price details
-        // const ticketPrice = bookingDetails.ticketPrice;
-        // const convenienceFee = bookingDetails.convenienceFee;
-        // const totalPrice = ticketPrice + convenienceFee;
         
         document.querySelectorAll('.price-line')[1].innerHTML = `
             <span>${indicesWithValue2.length} x Ticket(s)</span>

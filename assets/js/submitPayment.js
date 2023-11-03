@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 // localStorage.setItem('seatingArray', seatingArray);
                             }
                         } else {
-                            // console.error("No data received from the server.");
+                            console.error("No data received from the server.");
                             // Handle the absence of data or show an appropriate message to the user
                         }
                     })

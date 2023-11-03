@@ -26,10 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
     const contactSpan = document.getElementById("contactSpan");
     const contactInput = document.getElementById("contactInput");
-
-    const genreSpan = document.getElementById("genreSpan");
-    const genreInput = document.getElementById("genreInput");
-  
+    const username = nameSpan.textContent;
+    // console.log(username);
     editBtn.addEventListener("click", function() {
       // Hide spans and show input fields
       nameSpan.style.display = "none";
@@ -43,10 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
       contactSpan.style.display = "none";
       contactInput.style.display = "block";
       contactInput.value = contactSpan.textContent;
-  
-      genreSpan.style.display = "none";
-      genreInput.style.display = "block";
-      genreInput.value = genreSpan.textContent;
 
       // Swap buttons
       editBtn.style.display = "none";
@@ -54,13 +48,49 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   
     saveBtn.addEventListener("click", function() {
-      // Update spans from input fields
-      nameSpan.textContent = nameInput.value;
-      emailSpan.textContent = emailInput.value;
-      contactSpan.textContent = contactInput.value;
-      genreSpan.textContent = genreInput.value;
 
-      // Hide input fields and show spans
+      const updateUserEndpoint = "updateUser.php";
+      var newUsername = nameInput.value;
+      var email = emailInput.value;
+      var contact = contactInput.value;
+      console.log(username);
+      async function updateUserDetails(username, newUsername, email, contact) {
+        const url = `${updateUserEndpoint}?username=${username}&newUsername=${newUsername}&email=${email}&contact=${contact}`;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error("Error fetching arrangements:", error);
+            return null;
+        }
+      }
+      updateUserDetails(username, newUsername, email, contact)
+      .then((data) => {
+          if (data !== null) {
+              console.log("Data received:", data);
+
+              if (data.error) {
+                  console.error("Error from the server:", data.error);
+                  // Handle the error or show a message to the user
+              } else {
+                  // Assuming the server response is valid JSON
+                  console.log("HERE")
+                  everything = data;
+                  window.location.href = "profile.php";
+                  // seatingArray = JSON.parse(data.arrangements);
+                  // localStorage.setItem('seatingArray', seatingArray);
+              }
+          } else {
+              console.error("No data received from the server.");
+              // Handle the absence of data or show an appropriate message to the user
+          }
+      })
+      .catch((error) => {
+          console.error("Fetch error:", error);
+          // Handle the fetch error or show an appropriate message to the user
+      });
+
       nameInput.style.display = "none";
       nameSpan.style.display = "block";
   
@@ -69,9 +99,6 @@ document.addEventListener("DOMContentLoaded", function() {
   
       contactInput.style.display = "none";
       contactSpan.style.display = "block";
-
-      genreInput.style.display = "none";
-      genreSpan.style.display = "block";
   
       // Swap buttons
       saveBtn.style.display = "none";
