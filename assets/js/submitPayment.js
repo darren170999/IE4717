@@ -5,19 +5,31 @@ document.addEventListener("DOMContentLoaded", function() {
         paymentButton.addEventListener("click", function(event){
             event.preventDefault();
             const confirmArrangementsEndpoint = "confirmArrangements.php";
-            
-            async function fetchHalls(arrangements, hallId, dates, timings, location_id) {
-                const url = `${confirmArrangementsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}&location_id=${location_id}`;
+            const sendPurchaseEndpoint = "sendPurchase.php";
+            async function fetchHalls(arrangements, hallId, dates, timings, location_id, username, total) {
+                const url = `${confirmArrangementsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}&location_id=${location_id}&username=${username}&total=${total}`;
+                console.log(url)
                 try {
-                    const response = await fetch(url);
-                    const data = await response.json();
-                    return data;
+                const response = await fetch(url);
+                const data = await response.json();
+                return data;
                 } catch (error) {
                     console.error("Error fetching arrangements:", error);
                     return null;
                 }
             }
-            
+            async function sendPurchase(arrangements, hallId, dates, timings, location_id, username, total) {
+                const url = `${sendPurchaseEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}&location_id=${location_id}&username=${username}&total=${total}`;
+                console.log(url)
+                try {
+                const response = await fetch(url);
+                const data = await response.json();
+                return data;
+                } catch (error) {
+                    console.error("Error fetching arrangements:", error);
+                    return null;
+                }
+            }
             const hallId = localStorage.getItem('hall_id');
             const location_id = localStorage.getItem('location_id');
             const jsonObject = JSON.parse(localStorage.selectedDateTime);
@@ -26,6 +38,12 @@ document.addEventListener("DOMContentLoaded", function() {
             const arrangements = localStorage.seatingArray.split(",").map(Number);
             const decrementedArray = arrangements.map(item => (item === 2 ? 1 : item));
             const arrangement = JSON.stringify(decrementedArray);
+
+            const total = localStorage.getItem('total');
+            const str = document.querySelector('.user-details').textContent;
+            const strrrr = str.replace('User Details:\n', '');
+            const username = strrrr.trim();
+            console.log(username)
             
             if (arrangement && hallId && dates && timings && location_id) {
                 console.log(location_id);
@@ -74,12 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const formattedTime = formatTime(timings); // Format the time
             
                 if (formattedDate && formattedTime) {
-                    console.log(formattedDate); // The date is in "YYYY-MM-DD" format
-                    console.log(formattedTime); // The time is in 24-hour format
-                    console.log(arrangement)
-                    console.log(hallId)
-                    // You can proceed with the fetchHalls function with the formattedDate and formattedTime
-                    fetchHalls(arrangement, hallId, formattedDate, formattedTime, location_id)
+                    sendPurchase(arrangement, hallId, formattedDate, formattedTime, location_id, username, total)
                     .then((data) => {
                         if (data !== null) {
                             console.log("Data received:", data);
@@ -89,13 +102,14 @@ document.addEventListener("DOMContentLoaded", function() {
                                 // Handle the error or show a message to the user
                             } else {
                                 // Assuming the server response is valid JSON
+                                console.log("HERE")
                                 everything = data;
-                                window.location.href = "payment.php";
+                                // window.location.href = "confirmation.php";
                                 // seatingArray = JSON.parse(data.arrangements);
                                 // localStorage.setItem('seatingArray', seatingArray);
                             }
                         } else {
-                            console.error("No data received from the server.");
+                            // console.error("No data received from the server.");
                             // Handle the absence of data or show an appropriate message to the user
                         }
                     })
@@ -103,6 +117,33 @@ document.addEventListener("DOMContentLoaded", function() {
                         console.error("Fetch error:", error);
                         // Handle the fetch error or show an appropriate message to the user
                     });
+                    // You can proceed with the fetchHalls function with the formattedDate and formattedTime
+                    fetchHalls(arrangement, hallId, formattedDate, formattedTime, location_id, username, total)
+                    .then((data) => {
+                        if (data !== null) {
+                            console.log("Data received:", data);
+
+                            if (data.error) {
+                                console.error("Error from the server:", data.error);
+                                // Handle the error or show a message to the user
+                            } else {
+                                // Assuming the server response is valid JSON
+                                console.log("HERE")
+                                everything = data;
+                                window.location.href = "confirmation.php";
+                                // seatingArray = JSON.parse(data.arrangements);
+                                // localStorage.setItem('seatingArray', seatingArray);
+                            }
+                        } else {
+                            // console.error("No data received from the server.");
+                            // Handle the absence of data or show an appropriate message to the user
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Fetch error:", error);
+                        // Handle the fetch error or show an appropriate message to the user
+                    });
+
                 }
             }
         })

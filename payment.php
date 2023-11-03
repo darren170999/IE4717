@@ -1,3 +1,15 @@
+<?php
+session_start(); // Start the session (if not already started)
+
+if (isset($_SESSION['valid_user'])) {
+    $username = $_SESSION['valid_user'];
+    // You now have the user's username in the $username variable
+} else {
+    // The session 'valid_user' is not set, so the user is not logged in.
+    // You can handle this case as needed, e.g., redirect to a login page.
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +45,7 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
-        .movie-info, .booking-info {
+        .movie-info, .booking-info{
             text-align: left;
             margin-bottom: 20px;
             padding: 10px;
@@ -74,6 +86,11 @@
         .payment-methods img {
             width: 20%;
             margin: 2px;
+        }
+        .user-details {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 10px;
         }
         .card-info {
             display: none; /* Hidden by default */
@@ -151,10 +168,21 @@
     <!--Content-->
     <div class="main-content">
         <div class="left-column">
-
             <!-- Payment Details -->
             <div class="payment-details">PAYMENT DETAILS</div>
             
+            <!-- User Details -->
+            <div class="user-details">User Details:
+            <?php
+            if (isset($_SESSION['valid_user'])) {
+                $username = $_SESSION['valid_user'];
+                echo "$username";
+            } else {
+                echo "Guest"; // Display a default message for users who are not logged in.
+            }
+            ?>
+            </div>
+
             <!-- Movie Information -->
             <div class="movie-info">
                 <!-- <strong>OPPENHEIMER</strong><br>
@@ -256,11 +284,9 @@
             <div class="buttons" style="margin-top: 20px;">                
                 <form id="update" action="submitPayment.js" method="POST">
                     <button type="button" class="btn" id="cancel" style="width: 30%;">Cancel</button>
-                    <button type="button" class="btn" id="submit" style="width: 30%;" disabled>
-                    
-                    </button>
-                <input type="submit" name="paymentButton" value="Submit" id="paymentButton"> 
-                <!-- YINQI help style this submit button to look nice -->
+                    <button type="button" class="btn" id="submit" style="width: 30%;" disabled></button>
+                    <input type="submit" name="paymentButton" value="Submit" id="paymentButton"> 
+                    <!-- YINQI help style this submit button to look nice -->
                 </form>
             </div>
         </div>

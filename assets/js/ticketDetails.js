@@ -6,10 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const timings = jsonObject.time;
     const ticketNumbersArr = localStorage.getItem('seatingArray');
     const integers = ticketNumbersArr.split(',').map(Number);
-    const price = parseFloat(localStorage.getItem('price'));
     const ratings = localStorage.getItem('ratings');
     const hall = localStorage.getItem('hall_id');
-    const total = price + 1.00;
     // Find the indices where the value is 2
     const indicesWithValue2 = [];
     for (let i = 0; i < integers.length; i++) {
@@ -17,6 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
             indicesWithValue2.push(i);
         }
     }
+    const price = parseFloat(localStorage.getItem('price'));
+    const calculatedPrice = price * indicesWithValue2.length;
+    const total = calculatedPrice + 1.00;
+    localStorage.setItem('total', total);
     // Check if the data exists in localStorage
     if (movieTitle) {
         // Update the HTML elements with the retrieved values
@@ -37,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.querySelectorAll('.price-line')[1].innerHTML = `
             <span>${indicesWithValue2.length} x Ticket(s)</span>
-            <span>S$${price}</span>
+            <span>S$${calculatedPrice}</span>
         `;
         
         document.querySelectorAll('.price-line')[2].innerHTML = `
