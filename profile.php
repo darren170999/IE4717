@@ -19,209 +19,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Your Profile</title>
-    <link rel="stylesheet" href="style_yinqi.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;  /* 100% of the viewport height */
-            background-color: #000000;
-        }
-
-        .main-content {
-            width: 80%;
-            height: 80%;
-            display: flex;
-            flex-direction: column;
-            border: 2px solid #000;
-        }
-
-        .upper-section {
-            flex: 0.5;  /* 50% */
-            background-image: url("./assets/img/profile_background.png");
-            padding: 20px;
-            color: #ffffff;
-        }
-
-        .lower-section {
-            flex: 0.5;  /* 50% */
-            background-color: #000;
-            padding: 20px;
-            color: #ffffff;
-        }
-        /* Style the buttons that are used to open and close the accordion panel */
-        .accordion {
-            background-color: #000;
-            color: #FFF;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: solid 1px #FFC300;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        /* Add a background color to the button if it is clicked on (add the .active class with JS) */
-        .active, .accordion:hover {
-            background-color: #FFC300;
-            color: #000000;
-        }
-
-        /* Style the accordion panel. Note: hidden by default */
-        .panel {
-            padding: 10px 18px;
-            background-color: #262626;
-            display: none;
-            overflow: hidden;
-        }
-
-        .booking-history {
-            display: flex;
-            justify-content: flex-start;  /* This will align the items to the left */
-        }
-
-        .booking-item {
-            flex: 0 0 auto;  
-            text-align: center;
-            margin-right: 20px;
-            max-width: 150px;  /* Constrain the size */
-        }
-
-        .booking-item img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-        .booking-item p {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .booking-item img:last-child {
-            width: auto;
-            height: auto;
-        }
-
-        #rating{
-            width:30%;
-        }
-
-        .setting-row {
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-            margin-bottom: 15px;
-        }
-
-        .setting-title {
-            align-self: flex-start;
-        }
-
-        input, select, button {
-            width: 100%;
-        }
-        .delete-account-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .info-line {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        #buttonContainer {
-            display: flex;
-            justify-content: center;
-        }
-
-        .review-container {
-            display: flex;
-            justify-content: space-between;
-            border: 1px solid #FFC300;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        .review-left, .review-right {
-            padding: 10px;
-        }
-
-        .review-left {
-            flex: 0.2;
-        }
-
-        .review-right {
-            flex: 0.8;
-            text-align: left;
-        }
-
-        .movie-poster {
-            width: 60%;
-            height: auto;
-        }
-
-        .movie-title {
-            font-size: 24px;
-            margin-top: 0;
-        }
-
-        .star-ratings {
-            width: 15%;
-            height: auto;
-        }
-
-        .movie-genre {
-            font-style: italic;
-            font-size: small;
-        }
-
-        .user-review {
-            margin-top: 10px;
-        }
-
-        /* The Modal */
-        .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed position */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        background-color: rgba(0,0,0,0.4); /* Black with opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-        position: relative;  
-        background-color: #000;
-        color: #FFF;
-        margin: 15% auto; /* Center it */
-        padding: 20px;
-        border: 1px solid #FFC300;
-        border-radius: 20px;
-        width: 40%; /* Could be more or less, depending on screen size */
-        }
-
-        #modal-qr {
-        width: 40%;  /* You can adjust this */
-        height: auto;
-        }
-        .close {
-        position: absolute;
-        top: 30px;
-        right: 30px;  /* Changed from 'left' to 'right' */
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="../IE4717/assets/css/style_profile.css">
 </head>
 <body>
 <div class="header">
@@ -254,7 +52,7 @@ $conn->close();
     <div class="main-content">
         <!-- Upper Section -->
         <div class="upper-section">
-            <img src="./assets/img/profile_picture.png" style="width: 30%;">
+            <img src="./assets/img/profile_pictures/natalie.png" style="width: 30%;">
             <h1>Hello, <?php echo $username ?>!</h1>
         </div>
         
@@ -414,4 +212,48 @@ $conn->close();
     <script src="../IE4717/assets/js/profile.js"></script>
     <script src="../IE4717/assets/js/fetchUserDetails.js"></script>
 </body>
+
+<!--FOOTER-->
+<footer class="footer">
+        <div class="footer-column">
+            <div class="footer-logo">
+                <a href="index.php">
+                <img src="../IE4717/assets/img/full_logo.png" alt="Cinema Logo" />
+                </a>
+            </div>
+            <div class="social-icons">
+            <img src="../IE4717/assets/img/social_media_icons/facebook.png" alt="Facebook" />
+            <img src="../IE4717/assets/img/social_media_icons/twitter.png" alt="Twitter" />
+            <img src="../IE4717/assets/img/social_media_icons/instagram.png" alt="Instagram" />
+            <img src="../IE4717/assets/img/social_media_icons/youtube.png" alt="YouTube" />
+            <img src="../IE4717/assets/img/social_media_icons/tiktok.png" alt="Tik Tok" />
+        </div>
+        </div>
+
+        <div class="footer-column sitemap">
+            <!-- Sitemap links -->
+            <a href="index.php">Our Movies</a>
+            <a href="location.php">Our Locations</a>
+            <a href="contact.php">Contact Us</a>
+        </div>
+
+        <div class="footer-column newsletter">
+            <form id="newsletter-form">
+                <label for="email-subscription">Subscribe To Our Newsletter</label>
+                <div class="newsletter-input-group">
+                <input type="email" id="email-subscription" placeholder="Enter your email" required />
+                <button type="submit">Subscribe</button>
+                </div>
+                <p id="subscription-thankyou" style="display: none;">Thanks for subscribing!</p>
+            </form>
+        </div>
+
+        <div class="footer-bottom">
+            <small>
+            <i>&copy; Copyright November 2023 by Darren Soh and Yin Qi Heng</i>
+            </small>
+        </div>
+    </footer>
+    <script src="../IE4717/assets/js/newsletter.js"></script>
+
 </html>

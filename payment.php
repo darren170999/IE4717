@@ -15,128 +15,7 @@ if (isset($_SESSION['valid_user'])) {
 <head>
     <meta charset="UTF-8">
     <title>Payment Page</title>
-    <link rel="stylesheet" href="style_yinqi.css">
-    <style>
-        body {
-            background-color: #000000;  /* Black background */
-            color: #FFFFFF;  /* White text */
-        }
-        .main-content {
-            max-width: 1200px; /* or whatever max-width you want */
-            margin: auto; /* This will center the content */
-            display: flex;
-            justify-content: space-between;
-        }
-        .left-column {
-            width: 40%;
-            padding: 20px;
-        }
-        .right-column {
-            width: 60%;
-            padding: 20px;
-        }
-        .payment-details {
-            background-color: #FFC300; /* Yellow background */
-            color: black; /* Black text */
-            font-weight: bold;
-            font-size: 20px;
-            padding: 10px;
-            text-align: left;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        .movie-info, .booking-info{
-            text-align: left;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-        hr {
-            width: 100%;
-        }
-        .price-details {
-            text-align: left;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-        .price-line {
-            display: flex;
-            justify-content: space-between;
-        }
-        .total-price {
-            text-align: left;
-            margin-bottom: 20px;
-            padding: 10px;
-            font-weight: bold;
-            color: #FFC300;
-        }
-        .apple-pay-button {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 15px 0px 15px 0px;
-            margin-bottom: 20px;
-            text-align: center;
-            width: 100%;  /* Match the width of the card-input */
-        }
-        .or-pay-using {
-            text-align: center;
-            color: #FFC300;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .payment-methods img {
-            width: 20%;
-            margin: 2px;
-        }
-        .user-details {
-            text-align: left;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-        .card-info {
-            display: none; /* Hidden by default */
-            margin-bottom: 20px;
-        }
-        .info-header {
-            color: #FFC300;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .name-input, .card-input, .country-select {
-            background-color: #ffffff;
-            border-radius: 8px;
-            width: 100%; 
-            float: left;
-            padding: 10px 0px 10px 0px;
-            margin: 10px 0px;
-        }
-        .date-input {
-            background-color: #ffffff;
-            border-radius: 8px;
-            width: 40%; 
-            float: left;
-            padding: 10px;
-            margin: 10px 0px;
-        }
-        .cvc-input {
-            background-color: #ffffff;
-            border-radius: 8px;
-            width: 40%; 
-            float: right;
-            padding: 10px;
-            margin: 10px 0px;
-        }
-        .zip-input {
-            background-color: #ffffff;
-            border-radius: 8px;
-            width: 50%; 
-            float: left;
-            padding: 10px;
-            margin: 10px 0px;
-        }
-        .buttons {
-            margin-top: 20px;
-        }
-    </style>    
+    <link rel="stylesheet" href="../IE4717/assets/css/style_payment.css">
 </head>
 <body>
     <div class="header">
@@ -285,7 +164,7 @@ if (isset($_SESSION['valid_user'])) {
             <div class="buttons" style="margin-top: 20px;">                
                 <form id="update" action="submitPayment.js" method="POST">
                     <button type="button" class="btn" id="cancel" style="width: 30%;">Cancel</button>
-                    <button type="button" class="btn" id="submit" style="width: 30%;" disabled></button>
+                    <!--<button type="button" class="btn" id="submit" style="width: 30%;" disabled></button>-->
                     <input type="submit" name="paymentButton" value="Submit" id="paymentButton"> 
                     <!-- YINQI help style this submit button to look nice -->
                 </form>
@@ -296,4 +175,47 @@ if (isset($_SESSION['valid_user'])) {
     <script src="../IE4717/assets/js/submitPayment.js"></script>
     <script src="../IE4717/assets/js/ticketDetails.js"></script>
 </body>
+<!--FOOTER-->
+<footer class="footer">
+        <div class="footer-column">
+            <div class="footer-logo">
+                <a href="index.php">
+                <img src="../IE4717/assets/img/full_logo.png" alt="Cinema Logo" />
+                </a>
+            </div>
+            <div class="social-icons">
+            <img src="../IE4717/assets/img/social_media_icons/facebook.png" alt="Facebook" />
+            <img src="../IE4717/assets/img/social_media_icons/twitter.png" alt="Twitter" />
+            <img src="../IE4717/assets/img/social_media_icons/instagram.png" alt="Instagram" />
+            <img src="../IE4717/assets/img/social_media_icons/youtube.png" alt="YouTube" />
+            <img src="../IE4717/assets/img/social_media_icons/tiktok.png" alt="Tik Tok" />
+        </div>
+        </div>
+
+        <div class="footer-column sitemap">
+            <!-- Sitemap links -->
+            <a href="index.php">Our Movies</a>
+            <a href="location.php">Our Locations</a>
+            <a href="contact.php">Contact Us</a>
+        </div>
+
+        <div class="footer-column newsletter">
+            <form id="newsletter-form">
+                <label for="email-subscription">Subscribe To Our Newsletter</label>
+                <div class="newsletter-input-group">
+                <input type="email" id="email-subscription" placeholder="Enter your email" required />
+                <button type="submit">Subscribe</button>
+                </div>
+                <p id="subscription-thankyou" style="display: none;">Thanks for subscribing!</p>
+            </form>
+        </div>
+
+        <div class="footer-bottom">
+            <small>
+            <i>&copy; Copyright November 2023 by Darren Soh and Yin Qi Heng</i>
+            </small>
+        </div>
+    </footer>
+    <script src="../IE4717/assets/js/newsletter.js"></script>
+
 </html>

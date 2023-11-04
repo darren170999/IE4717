@@ -5,21 +5,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html {
-    height: 100%; /* Ensure that the html and body are at least the height of the viewport */
-}
-
-
 body {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Use minimum height for viewport height */
-    background-color: #000000;
-}
+    background-color: #000000;  /* Black background */
+    color: #FFFFFF;  /* White text */
+    }
 
 .header {
     background: rgba(0, 0, 0, 0.7);
@@ -28,7 +19,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
-    height: 80px; /* Adjust this to your actual header height */
+    height: 80px;   
 }
 
 .header ul {
@@ -79,52 +70,34 @@ body {
 }
 
 .main-content {
-    flex-grow: 1; /* This allows the main content to expand and fill the available space */
-    width: 100%; /* Ensure the content takes the full width */
+    text-align: center;
+    padding-top: 100px;
+    max-width: 1200px; 
+    margin: auto; 
+    display: flex;
+    justify-content: space-between;
 }
 
 #title {
     font-size: 36px;
-    color: #FFC300; /* #FFC300 from your palette */
-}
-
-
-.main-content {
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.image-container img {
-    max-width: 40%;
-}
-
-.instructions {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0 40px; /* Increased padding for spacing from the edges */
+    color: #FFC300;
 }
 
 .btn {
-    flex-basis: calc(33.333% - 100px); /* Adjusted basis for button width */
-    text-align: center;
-    background-color: #FFC300;
+    display: inline-block;
+    width: 200px;  /* Set a fixed width */
+    text-align: center;  /* Center the text inside */
+    background-color: #FFC300; /* #FFC300 background */
     border: none;
     border-radius: 10px;
-    color: #000000;
+    color: #000000; /* Black text */
     font-weight: bold;
-    padding: 15px;
+    padding: 20px 20px 20px 20px;
+    text-decoration: none;
     font-size: 16px;
-    margin: 10px; /* Adjusted margin for spacing between buttons */
+    margin: 40px 40px 4px 40px;
     cursor: pointer;
 }
-
 
 .footer {
     display: flex;
@@ -262,31 +235,57 @@ body {
         margin: 5px 0; /* Spacing for mobile layout */
     }
 }
- 
+  
 /*------------------------------------
-----------LOCATION STYLING-----------
+----------CONTACT STYLING-----------
 -------------------------------------*/
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-    position: relative;
-    margin: 10% auto;
+.left-side, .right-side {
     padding: 20px;
-    background-color: #fff;
-    width: 50%;
+    text-align: left;
+}
+.left-side {
+    width: 40%;
+}
+.right-side {
+    width: 60%;
 }
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+/* Additional styles for form elements */
+.contact-form label,
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    margin-bottom: 1.5em;
+    width: 100%; /* This makes sure they are the same width */
+    box-sizing: border-box; /* This ensures padding is included in the width */
+    text-align: left; /* Aligns text to the left */
+}
+
+.form-input {
+    padding: 0.5em;
+}
+
+.form-textarea {
+    height: 100px; 
+    padding: 0.5em;
+}
+
+input[type="submit"] {
+    background-color: #FFC300;  /* Yellow background */
+    color: black;  /* Black text */
+    padding: 10px 20px;
+    border: none;
     cursor: pointer;
+    font-weight: bold;
+    width: auto;  /* Resetting the width for the submit button */
+}
+
+h2, h3 {
+    color: #FFC300;
+}
+.contact-form label {
+    font-weight: bold;  /* Makes text bold */
+    margin-bottom: 8px;  /* Adds some space below the label */
+    color: #FFC300;  /* Changes text color to yellow */
+    font-size: 14px;  /* Sets font size */
 }

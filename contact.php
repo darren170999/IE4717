@@ -3,69 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="style_yinqi.css">
-    <style>
-        body {
-            background-color: #000000;  /* Black background */
-            color: #FFFFFF;  /* White text */
-        }
-        .main-content {
-            max-width: 1200px; 
-            margin: auto; 
-            display: flex;
-            justify-content: space-between;
-        }
-        .left-side, .right-side {
-            padding: 20px;
-            text-align: left;
-        }
-        .left-side {
-            width: 40%;
-        }
-        .right-side {
-            width: 60%;
-        }
-    
-        /* Additional styles for form elements */
-        .contact-form label,
-        .contact-form input,
-        .contact-form textarea {
-            display: block;
-            margin-bottom: 1.5em;
-            width: 100%; /* This makes sure they are the same width */
-            box-sizing: border-box; /* This ensures padding is included in the width */
-            text-align: left; /* Aligns text to the left */
-        }
-    
-        .form-input {
-            padding: 0.5em;
-        }
-    
-        .form-textarea {
-            height: 100px; 
-            padding: 0.5em;
-        }
-    
-        input[type="submit"] {
-            background-color: #FFC300;  /* Yellow background */
-            color: black;  /* Black text */
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            width: auto;  /* Resetting the width for the submit button */
-        }
-
-        h2, h3 {
-            color: #FFC300;
-        }
-        .contact-form label {
-            font-weight: bold;  /* Makes text bold */
-            margin-bottom: 8px;  /* Adds some space below the label */
-            color: #FFC300;  /* Changes text color to yellow */
-            font-size: 14px;  /* Sets font size */
-        }
-    </style>
+    <link rel="stylesheet" href="../IE4717/assets/css/style_contact.css">
 </head>
 <body>
     <div class="header">
@@ -127,5 +65,49 @@
             </form>
         </div>
     </div>
+
 </body>
+<!--FOOTER-->
+<footer class="footer">
+        <div class="footer-column">
+            <div class="footer-logo">
+                <a href="index.php">
+                <img src="../IE4717/assets/img/full_logo.png" alt="Cinema Logo" />
+                </a>
+            </div>
+            <div class="social-icons">
+            <img src="../IE4717/assets/img/social_media_icons/facebook.png" alt="Facebook" />
+            <img src="../IE4717/assets/img/social_media_icons/twitter.png" alt="Twitter" />
+            <img src="../IE4717/assets/img/social_media_icons/instagram.png" alt="Instagram" />
+            <img src="../IE4717/assets/img/social_media_icons/youtube.png" alt="YouTube" />
+            <img src="../IE4717/assets/img/social_media_icons/tiktok.png" alt="Tik Tok" />
+        </div>
+        </div>
+
+        <div class="footer-column sitemap">
+            <!-- Sitemap links -->
+            <a href="index.php">Our Movies</a>
+            <a href="location.php">Our Locations</a>
+            <a href="contact.php">Contact Us</a>
+        </div>
+
+        <div class="footer-column newsletter">
+            <form id="newsletter-form">
+                <label for="email-subscription">Subscribe To Our Newsletter</label>
+                <div class="newsletter-input-group">
+                <input type="email" id="email-subscription" placeholder="Enter your email" required />
+                <button type="submit">Subscribe</button>
+                </div>
+                <p id="subscription-thankyou" style="display: none;">Thanks for subscribing!</p>
+            </form>
+        </div>
+
+        <div class="footer-bottom">
+            <small>
+            <i>&copy; Copyright November 2023 by Darren Soh and Yin Qi Heng</i>
+            </small>
+        </div>
+    </footer>
+    <script src="../IE4717/assets/js/newsletter.js"></script>
+
 </html>

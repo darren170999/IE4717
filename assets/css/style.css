@@ -144,14 +144,139 @@ p{
     display: none;
 }
 
-footer {
-    background-color: black;
-	padding: 2em;
+.footer {
+    display: flex;
+    flex-wrap: wrap; /* Allow the flex items to wrap onto the next line */
+    justify-content: space-between;
 	margin: auto;
-	text-align: center;
+	padding: 2em;
+    background-color: #000000;
     color: white;
-}
+    align-items: flex-start; /* Align items to the start */
+    border-top: 2px solid white; /* White line on top of the footer */
+  }
+  
+  .footer-column {
+    display: flex;
+    justify-content: center; /* Center content horizontally for all columns */
+    align-items: center; /* Vertically center the content of all columns */
+    flex: 1; /* Give an equal amount of space to all columns */
+    flex-direction: column;
+    padding: 20px; /* Add padding if needed */
+  }
+  
+  .social-icons img {
+    width: 30px; /* You set a specific size for social icons */
+    padding: 5px;
+  }
+  
+  .footer-logo img {
+    width: 100%; /* Full width of the column */
+    max-width: 200px; /* Maximum width of the logo */
+  }
+  
+  .sitemap {
+    display: flex; /* Make sure this is also a flex container */
+    flex-direction: row; /* Keep sitemap links in a row */
+    justify-content: center; /* Center links horizontally */
+    align-self: center; /* Center the sitemap itself within the flex container */
+  }
+  
+  .sitemap a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px; /* Spacing between links */
+    font-weight: bold;
+  }
+  
+  .sitemap a:hover {
+    color: #FFC300;
+  }
+  
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items to the center */
+  }
+  
+  .newsletter label {
+    margin-bottom: 10px; /* Space between label and input group */
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: #FFC300;
+  }
+  
+  .newsletter-input-group {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    flex-grow: 1; /* Input field takes up available space */
+    margin-right: 5px; /* Spacing between input and button */
+  }
+  
+  .newsletter button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFC300;
+    color: #000000;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    width: 100%; /* Take up the full width for its own row */
+    margin-top: 20px;
+    font-size: 0.75em;
+    order: 4; /* Ensures this is always at the bottom */
+  }
+  
+  .footer-bottom small {
+    display: inline-block; /* Allows for text alignment */
+  }
+  
+  .footer-bottom i {
+    font-style: italic;
+  }
+  
+ /* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center; /* Center align items for mobile */
+    }
 
-.copyright {
-	color: white;
+    .footer-column {
+        /* Ensure the columns stretch to full width on smaller screens */
+        width: 100%;
+        padding: 10px 0; /* Adjust padding for mobile layout */
+    }
+
+    .sitemap {
+        /* Stack sitemap links vertically on smaller screens */
+        flex-direction: column;
+        align-items: center; /* Center links vertically */
+        margin-top: 10px;
+    }
+
+    .newsletter-input-group {
+        /* Align newsletter inputs and button on mobile */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        width: 100%; /* Full width for mobile layout */
+        margin: 5px 0; /* Spacing for mobile layout */
+    }
 }

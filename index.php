@@ -93,9 +93,47 @@
     <script src="../IE4717/assets/js/showUpcomingMovies.js"></script>
     <script src="../IE4717/assets/js/dayMoviesScreening.js"></script>
 </body>
-<footer>    
-    <div id="footer-copyright">
-        <small><i>Copyright &copy; 2023 PureFrames</i></small>
-    </div>
-</footer>
+<!--FOOTER-->
+<footer class="footer">
+        <div class="footer-column">
+            <div class="footer-logo">
+                <a href="index.php">
+                <img src="../IE4717/assets/img/full_logo.png" alt="Cinema Logo" />
+                </a>
+            </div>
+            <div class="social-icons">
+            <img src="../IE4717/assets/img/social_media_icons/facebook.png" alt="Facebook" />
+            <img src="../IE4717/assets/img/social_media_icons/twitter.png" alt="Twitter" />
+            <img src="../IE4717/assets/img/social_media_icons/instagram.png" alt="Instagram" />
+            <img src="../IE4717/assets/img/social_media_icons/youtube.png" alt="YouTube" />
+            <img src="../IE4717/assets/img/social_media_icons/tiktok.png" alt="Tik Tok" />
+        </div>
+        </div>
+
+        <div class="footer-column sitemap">
+            <!-- Sitemap links -->
+            <a href="index.php">Our Movies</a>
+            <a href="location.php">Our Locations</a>
+            <a href="contact.php">Contact Us</a>
+        </div>
+
+        <div class="footer-column newsletter">
+            <form id="newsletter-form">
+                <label for="email-subscription">Subscribe To Our Newsletter</label>
+                <div class="newsletter-input-group">
+                <input type="email" id="email-subscription" placeholder="Enter your email" required />
+                <button type="submit">Subscribe</button>
+                </div>
+                <p id="subscription-thankyou" style="display: none;">Thanks for subscribing!</p>
+            </form>
+        </div>
+
+        <div class="footer-bottom">
+            <small>
+            <i>&copy; Copyright November 2023 by Darren Soh and Yin Qi Heng</i>
+            </small>
+        </div>
+    </footer>
+    <script src="../IE4717/assets/js/newsletter.js"></script>
+
 </html>

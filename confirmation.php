@@ -5,40 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Confirmed</title>
 
-    <link rel="stylesheet" href="style_yinqi.css"> 
-    <style>
-    body {
-        background-color: #000000;  /* Black background */
-        color: #FFFFFF;  /* White text */
-    }
-    .email-confirmation {
-        text-align: center;
-        padding: 2em 2em 2em 2em;  /* Added top padding */
-        color: #FFFFFF;  /* White text */
-    }
-
-    .email-icon {
-        width: 50px;
-    }
-
-    .confirmation-line {
-        width: 60%;
-        margin: auto;
-    }
-
-    .highlight-text {
-        color: #FFC300; /* From your color palette */
-    }
-
-    .link {
-        text-decoration: none;
-        color: #FFC300; /* From your color palette */
-    }
-
-    h1 {
-    color: #FFC300; /* Yellow from your palette */
-    }
-    </style>
+    <link rel="stylesheet" href="../IE4717/assets/css/style_confirmation.css"> 
 </head>
 <body>
     <div class="header">
@@ -91,4 +58,48 @@
         </div>
     </div>
 </body>
+
+<!--FOOTER-->
+<footer class="footer">
+        <div class="footer-column">
+            <div class="footer-logo">
+                <a href="index.php">
+                <img src="../IE4717/assets/img/full_logo.png" alt="Cinema Logo" />
+                </a>
+            </div>
+            <div class="social-icons">
+            <img src="../IE4717/assets/img/social_media_icons/facebook.png" alt="Facebook" />
+            <img src="../IE4717/assets/img/social_media_icons/twitter.png" alt="Twitter" />
+            <img src="../IE4717/assets/img/social_media_icons/instagram.png" alt="Instagram" />
+            <img src="../IE4717/assets/img/social_media_icons/youtube.png" alt="YouTube" />
+            <img src="../IE4717/assets/img/social_media_icons/tiktok.png" alt="Tik Tok" />
+        </div>
+        </div>
+
+        <div class="footer-column sitemap">
+            <!-- Sitemap links -->
+            <a href="index.php">Our Movies</a>
+            <a href="location.php">Our Locations</a>
+            <a href="contact.php">Contact Us</a>
+        </div>
+
+        <div class="footer-column newsletter">
+            <form id="newsletter-form">
+                <label for="email-subscription">Subscribe To Our Newsletter</label>
+                <div class="newsletter-input-group">
+                <input type="email" id="email-subscription" placeholder="Enter your email" required />
+                <button type="submit">Subscribe</button>
+                </div>
+                <p id="subscription-thankyou" style="display: none;">Thanks for subscribing!</p>
+            </form>
+        </div>
+
+        <div class="footer-bottom">
+            <small>
+            <i>&copy; Copyright November 2023 by Darren Soh and Yin Qi Heng</i>
+            </small>
+        </div>
+    </footer>
+    <script src="../IE4717/assets/js/newsletter.js"></script>
+
 </html>

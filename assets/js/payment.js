@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const cvcField = document.querySelector('.cvc-input');
     const zipField = document.querySelector('.zip-input');
     const countryField = document.querySelector('.country-select'); // New input field
-    // Submit button
-    const submitBtn = document.getElementById("submit");
-    submitBtn.style.backgroundColor = "grey"; // Set the initial background color to grey
+    
+    // Submit input reference
+    const paymentButton = document.getElementById("paymentButton");
 
     // Set the minimum date as tomorrow
     let today = new Date();
@@ -102,32 +102,30 @@ document.addEventListener("DOMContentLoaded", function() {
         checkAllFields();
     });
 
-    // Function to enable or disable the submit button
-    function checkAllFields() {
-        if (
-            nameError.textContent === "" &&
-            cardNumberError.textContent === "" &&
-            dateError.textContent === "" &&
-            cvcError.textContent === "" &&
-            zipError.textContent === "" &&
-            countryError.textContent === ""
-        ) {
-            submitBtn.disabled = false;
-            submitBtn.style.backgroundColor = "#FFC300";
-            submitBtn.addEventListener('click', function() {
-                window.location.href = 'confirmation.php';
-            });
-        } else {
-            submitBtn.disabled = true;
-            submitBtn.style.backgroundColor = "grey";
+    // Function to enable or disable the submit input
+        function checkAllFields() {
+            if (
+                nameError.textContent === "" &&
+                cardNumberError.textContent === "" &&
+                dateError.textContent === "" &&
+                cvcError.textContent === "" &&
+                zipError.textContent === "" &&
+                countryError.textContent === ""
+            ) {
+                paymentButton.disabled = false;
+            } else {
+                paymentButton.disabled = true;
+            }
         }
-    }
 
-    // Call checkAllFields function whenever any field is updated
-    nameField.addEventListener('input', checkAllFields);
-    cardField.addEventListener('input', checkAllFields);
-    dateField.addEventListener('input', checkAllFields);
-    cvcField.addEventListener('input', checkAllFields);
-    zipField.addEventListener('input', checkAllFields);
-    countryField.addEventListener('change', checkAllFields);
-});
+        // Initially call checkAllFields to set the correct state of the paymentButton
+        checkAllFields();
+
+        // Call checkAllFields function whenever any field is updated
+        nameField.addEventListener('input', checkAllFields);
+        cardField.addEventListener('input', checkAllFields);
+        dateField.addEventListener('input', checkAllFields);
+        cvcField.addEventListener('input', checkAllFields);
+        zipField.addEventListener('input', checkAllFields);
+        countryField.addEventListener('change', checkAllFields);
+    });
