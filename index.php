@@ -36,12 +36,11 @@
     <div class="section" id="background-carousel">
         <div class="content">
             <h1>Welcome to Pureframes</h1>
-            <?php 
-            // session_start();
-            if (isset($_SESSION['valid_user'])) {
-                echo 'Welcome, ' . $_SESSION['valid_user'];
-            }
-        ?>
+            <?php
+                if (isset($_SESSION['valid_user'])) {
+                    echo '<div class="welcome-message">Hello, ' . htmlspecialchars($_SESSION['valid_user']) . ' !</div>';
+                }
+            ?>
             <p>xxx.</p>
         </div>
     </div>

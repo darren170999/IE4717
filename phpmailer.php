@@ -21,7 +21,7 @@ try {
 
     //Recipients
     $mail->setFrom('yqheng69@gmail.com', 'Pureframes');
-    $mail->addAddress('yqheng69+natalie@gmail.com', 'Natalie'); // Add a recipient
+    $mail->addAddress('darrensohjunhan@gmail.com', 'Darren'); // Add a recipient
 
     // Content
     $mail->isHTML(true); // Set email format to HTML
