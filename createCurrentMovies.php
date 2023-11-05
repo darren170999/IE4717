@@ -14,8 +14,8 @@ if (isset($_POST["submitMovie"])) {
     $screening_date = $_POST["screening_date"];
     $price = $_POST["price"];
     $ratings = $_POST["ratings"];
-    $hall_id = $POST["hall_id"];
-    $location_id = $POST["location_id"];
+    $hall_id = $_POST["hall_id"];
+    $location_id = $_POST["location_id"];
 
     $stmt = $conn->prepare("INSERT INTO movies (movie_title, sypnopsis, casts, screening_date, price, ratings, hall_id, location_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssdiii", $movie_title, $movie_sypnopsis, $movie_casts, $screening_date, $price, $ratings, $hall_id, $location_id);
