@@ -169,8 +169,7 @@ function toggleSeatColor(event) {
         // Create a span element for styling text
         const dateText = document.createElement('span');
         dateText.style.fontSize = '18px'; 
-        dateText.style.color = '#FCC300'; 
-        dateText.textContent = `Date: ${jsonObject.date}`;
+dateText.style.color = '#FCC300';         dateText.textContent = `Date: ${jsonObject.date}`;
         dateTimeItem.appendChild(dateText);
 
         const timeIcon = document.createElement('img');
