@@ -64,7 +64,7 @@
         <ul id="selected-seats-list"></ul>
         <p id="datetime-info"></p>
         <form id="update" action="updateEverything.js" method="POST">
-            <input type="submit" name="buy-button" value="Confirm" id="buy-button">
+        <input type="submit" name="buy-button" value="Confirm" id="buy-button">
         </form>
     </div>
     <script src="../IE4717/assets/js/arrangements.js"></script>
