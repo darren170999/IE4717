@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Show the selected day's movies
             const selectedDay = button.getAttribute('data-day');
-            console.log(selectedDay)
+            // console.log(selectedDay)
             const selectedDayMovies = document.getElementById(selectedDay + '-movies');
             selectedDayMovies.style.display = 'block';
 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             while (selectedDayMovies.querySelector('ul').firstChild) {
                 selectedDayMovies.querySelector('ul').removeChild(selectedDayMovies.querySelector('ul').firstChild);
             }
-            console.log(movies)
+            // console.log(movies)
 
             const moviesForSelectedDay = movies.filter(movie => movie.days === selectedDay);
             if(moviesForSelectedDay.length > 0){

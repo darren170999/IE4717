@@ -34,6 +34,7 @@ if (isset($_SESSION['valid_user'])) {
                 echo '<li><a href="profile.php">UserProfile</a></li>';
                 if($_SESSION['valid_user'] === 'SuperAdmin'){
                     echo '<li><a href="admin.php">Admin</a></li>';
+                    echo '<li><a href="report.php">Report</a></li>';
                 }
                 echo '<li><a href="logout.php">Logout</a></li>';
             } else {
