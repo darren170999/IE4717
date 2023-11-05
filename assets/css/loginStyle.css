@@ -303,3 +303,19 @@ footer {
 .copyright {
 	color: white;
 }
+
+#signIn_button, #signUp_button{
+    background-color: #FFC300; /* Gold background */
+    display: inline-block;
+    width: 200px;  /* Set a fixed width */
+    text-align: center;  /* Center the text inside */
+    border: none;
+    border-radius: 10px;
+    color: #000000; /* Black text */
+    font-weight: bold;
+    padding: 20px 20px 20px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 40px 40px 4px 40px;
+    cursor: pointer;
+}

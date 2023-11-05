@@ -49,9 +49,7 @@
                 <input type="password" placeholder="Re-enter password" name="password2"/>
                 <input type="email" placeholder="email" name="email" />
                 <input type="int" placeholder="contact" name="contact" />
-                <button>
-                    <input type="submit" name="submit" value="Sign Up">
-                </button>
+                <input type="submit" name="submit" value="Sign Up" id="signUp_button">
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -66,9 +64,7 @@
                 <input type="text" placeholder="username" name="username"/>
                 <input type="password" placeholder="password" name="password"/>
                 <a href="#">Forgot your password?</a>
-                <button>
-                    <input type="submit" name="signin" value="Sign in">
-                </button>
+                <input type="submit" name="signin" value="Sign in" id="signIn_button">
             </form>
         </div>
         <div class="overlay-container">

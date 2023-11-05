@@ -165,7 +165,6 @@ if (isset($_SESSION['valid_user'])) {
                     <button type="button" class="btn" id="cancel" style="width: 30%;">Cancel</button>
                     <!--<button type="button" class="btn" id="submit" style="width: 30%;" disabled></button>-->
                     <input type="submit" name="paymentButton" value="Submit" id="paymentButton"> 
-                    <!-- YINQI help style this submit button to look nice -->
                 </form>
             </div>
         </div>
