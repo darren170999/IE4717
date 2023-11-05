@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 //No Movies
                 const noMoviesText = document.createElement('p');
-                noMoviesText.textContent = "No movies showing today";
+                noMoviesText.textContent = "No movies showing for this date";
                 selectedDayMovies.querySelector('ul').appendChild(noMoviesText);
             }
         });

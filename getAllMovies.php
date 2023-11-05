@@ -10,7 +10,7 @@ $endDate = date('Y-m-d', strtotime('+7 days', strtotime($currentDate)));
 $stmt = $conn->prepare("SELECT m.movie_id, m.movie_title, m.sypnopsis, m.casts, m.screening_date, m.price, m.ratings, m.hall_id, m.location_id, mp.movie_data, mp.movie_name
 FROM movies m
 INNER JOIN moviePosters mp ON m.movie_id = mp.movie_id
-WHERE m.screening_date >= ? AND m.screening_date <= ?;");
+WHERE m.screening_date >= ? AND m.screening_date < ?;");
 $stmt->bind_param("ss", $currentDate, $endDate);
 $stmt->execute();
 $stmt->store_result();
