@@ -430,3 +430,20 @@ cursor: pointer;
 font-weight: bold;
 font-size: 30px;
 }
+
+#deleteAccountButton{
+    background-color: #FFC300; /* Gold background */
+    display: inline-block;
+    width: 200px;  /* Set a fixed width */
+    height: auto;
+    text-align: center;  /* Center the text inside */
+    border: none;
+    border-radius: 10px;
+    color: #000000; /* Black text */
+    font-weight: bold;
+    padding: 20px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
