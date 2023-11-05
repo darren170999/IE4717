@@ -108,7 +108,10 @@ h3{
 }
 
 p{
-    color: #FFC300;
+    color: #ffffff;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
 }
 
 .movie-list {
