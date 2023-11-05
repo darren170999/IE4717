@@ -97,16 +97,16 @@ body {
 }
 
 .footer {
-    display: flex;
-    flex-wrap: wrap; /* Allow the flex items to wrap onto the next line */
-    justify-content: space-between;
-    margin: 20px;
-    padding: 20px;
-    background-color: #000000;
-    color: white;
-    align-items: flex-start; /* Align items to the start */
-    border-top: 2px solid white; /* White line on top of the footer */
-  }
+  display: flex;
+  flex-wrap: wrap; /* Allow the flex items to wrap onto the next line */
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #000000;
+  color: white;
+  align-items: flex-start; /* Align items to the start */
+  border-top: 2px solid white; /* White line on top of the footer */
+}
   
   .footer-column {
     display: flex;

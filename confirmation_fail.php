@@ -1,10 +1,11 @@
-<?php include('assets/php/connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Pure Frames</title>
-	<meta charset="utf-8">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Failed</title>
+
+    <link rel="stylesheet" href="../IE4717/assets/css/style_confirmation.css"> 
 </head>
 <body>
     <div class="header">
@@ -33,65 +34,31 @@
             <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
-    <div class="section" id="background-carousel">
-        <div class="content">
-            <h1>Welcome to Pureframes</h1>
-            <?php 
-            if (isset($_SESSION['valid_user'])) {
-                echo 'Welcome, ' . $_SESSION['valid_user'];
-            }
-        ?>
-            <p>xxx.</p>
+    
+    <!--Content-->
+    <div class="main-content">
+        <h1 id="title">EMAIL CONFIRMATION</h1>
+        <div class="email-confirmation">
+            <!-- Email Icon -->
+            <img src="./assets/img/mail.png" alt="Mail Icon" class="email-icon">
+            
+            <!-- Thank You Message -->
+            <h1>Sorry for the issue.</h1>
+            <p>We tried sending the e-tickets to your email but it seems to be unsuccessful.</p>
+            
+            <!-- Horizontal Line -->
+            <hr class="confirmation-line">
+            
+            <!-- Resend Email or Contact Us -->
+            <p>Kindly request for<strong><a href="phpmailer.php" class="highlight-text link"> resend of email confirmation</a></strong> or <strong><a href="contact.php" class="highlight-text link">contact us</a></strong>.</p>
+        </div>
+        <div class="buttons">
+            <a href="index.php" class="btn" id="home">Back to Home</a>
+            <a href="profile.php" class="btn" id="ticket">My Bookings</a>
         </div>
     </div>
-
-    </div>
-    <div class="navbar"></div>
-    <div class="movies" id="weekly-movie-listings">
-        <!-- Get from DB -->
-        <div class="day-movies" id="Monday-movies">
-        <h3>Monday's Movies</h3>
-        <ul></ul>
-        </div>
-        <div class="day-movies" id="Tuesday-movies">
-        <h3>Tuesday's Movies</h3>
-        <ul></ul>
-        </div>
-        <div class="day-movies" id="Wednesday-movies">
-        <h3>Wednesday's Movies</h3>
-        <ul></ul>
-        </div>
-        <div class="day-movies" id="Thursday-movies">
-        <h3>Thursday's Movies</h3>
-        <ul></ul>
-        </div>
-        <div class="day-movies" id="Friday-movies">
-        <h3>Friday's Movies</h3>
-        <ul></ul>
-        </div>
-        <div class="day-movies" id="Saturday-movies">
-        <h3>Saturday's Movies</h3>
-        <ul></ul>
-        </div>
-        <div class="day-movies" id="Sunday-movies">
-        <h3>Sunday's Movies</h3>
-        <ul></ul>
-        </div>
-    </div>
-
-    <div class="new-movies-headers">
-        Upcoming Movies
-    </div>
-
-    <div class="movie-list" id="movie-list">
-
-    </div>
-    <!-- <script src="../IE4717/assets/js/fetchMovies.js"></script> -->
-    <script src="../IE4717/assets/js/rotateBackground.js"></script>
-    <script src="../IE4717/assets/js/createRoutineNavbar.js"></script>
-    <script src="../IE4717/assets/js/showUpcomingMovies.js"></script>
-    <script src="../IE4717/assets/js/dayMoviesScreening.js"></script>
 </body>
+
 <!--FOOTER-->
 <footer class="footer">
         <div class="footer-column">

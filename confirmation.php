@@ -50,7 +50,7 @@
             <hr class="confirmation-line">
             
             <!-- Resend Email or Contact Us -->
-            <p>If you did not receive the tickets, <strong class="highlight-text">resend email confirmation</strong> or <strong><a href="contact.php" class="highlight-text link">contact us</a></strong>.</p>
+            <p>If you did not receive the tickets, <strong><a href="phpmailer.php" class="highlight-text link">resend email confirmation</a></strong> or <strong><a href="contact.php" class="highlight-text link">contact us</a></strong>.</p>
         </div>
         <div class="buttons">
             <a href="index.php" class="btn" id="home">Back to Home</a>
