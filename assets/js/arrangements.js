@@ -112,30 +112,81 @@ function arrange(zeroArray){
     let seatingArray = zeroArray;
     // Get the seating plan container element
     const seatingPlanContainer = document.querySelector('.seating-plan');
-    
+    console.log(localStorage)
+    var hall_id = localStorage.getItem("hall_id");
     // Loop through the array and create rows and seats
-    for (let i = 0; i < seatingArray.length; i++) {
-      // Create a new row div for every 10 seats
-      if (i % 10 === 0) {
-        const rowDiv = document.createElement('div');
-        rowDiv.classList.add('row');
-        seatingPlanContainer.appendChild(rowDiv);
-      }
-    
-      // Create a new seat div
-      const seatDiv = document.createElement('div');
-      seatDiv.id = 'seat' + (i + 1);
-    
-      // Check if the seat is booked and add the appropriate class
-      if (seatingArray[i] === 1) {
-        seatDiv.classList.add('seatBooked');
-      } else {
-        seatDiv.classList.add('seat');
-      }
-    
-      // Append the seat to the last row
-      const lastRow = seatingPlanContainer.lastChild;
-      lastRow.appendChild(seatDiv);
+    if (hall_id == 1){
+        for (let i = 0; i < seatingArray.length; i++) {
+          // Create a new row div for every 10 seats
+          if (i % 5 === 0) {
+            const rowDiv = document.createElement('div');
+            rowDiv.classList.add('row');
+            seatingPlanContainer.appendChild(rowDiv);
+          }
+        
+          // Create a new seat div
+          const seatDiv = document.createElement('div');
+          seatDiv.id = 'seat' + (i + 1);
+        
+          // Check if the seat is booked and add the appropriate class
+          if (seatingArray[i] === 1) {
+            seatDiv.classList.add('seatBooked');
+          } else {
+            seatDiv.classList.add('seat');
+          }
+        
+          // Append the seat to the last row
+          const lastRow = seatingPlanContainer.lastChild;
+          lastRow.appendChild(seatDiv);
+        }
+    } else if (hall_id == 2) {
+        for (let i = 0; i < seatingArray.length; i++) {
+            // Create a new row div for every 10 seats
+            if (i % 7 === 0) {
+              const rowDiv = document.createElement('div');
+              rowDiv.classList.add('row');
+              seatingPlanContainer.appendChild(rowDiv);
+            }
+          
+            // Create a new seat div
+            const seatDiv = document.createElement('div');
+            seatDiv.id = 'seat' + (i + 1);
+          
+            // Check if the seat is booked and add the appropriate class
+            if (seatingArray[i] === 1) {
+              seatDiv.classList.add('seatBooked');
+            } else {
+              seatDiv.classList.add('seat');
+            }
+          
+            // Append the seat to the last row
+            const lastRow = seatingPlanContainer.lastChild;
+            lastRow.appendChild(seatDiv);
+          }
+    } else {
+        for (let i = 0; i < seatingArray.length; i++) {
+            // Create a new row div for every 10 seats
+            if (i % 10 === 0) {
+              const rowDiv = document.createElement('div');
+              rowDiv.classList.add('row');
+              seatingPlanContainer.appendChild(rowDiv);
+            }
+          
+            // Create a new seat div
+            const seatDiv = document.createElement('div');
+            seatDiv.id = 'seat' + (i + 1);
+          
+            // Check if the seat is booked and add the appropriate class
+            if (seatingArray[i] === 1) {
+              seatDiv.classList.add('seatBooked');
+            } else {
+              seatDiv.classList.add('seat');
+            }
+          
+            // Append the seat to the last row
+            const lastRow = seatingPlanContainer.lastChild;
+            lastRow.appendChild(seatDiv);
+          }
     }
 }
 // Your array of seating information
