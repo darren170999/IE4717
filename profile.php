@@ -189,9 +189,16 @@ $conn->close();
             <button class="accordion">Delete Account</button>
             <div class="panel">                
                 <!-- Delete Account -->
-                <div class="setting-row delete-account-row">
-                    <a href="#" class="btn" id="deleteAccount">Delete</a>
-                </div>
+                <form action="deleteAccount.php" method="POST">
+                    <div class="setting-row delete-account-row">
+                        Confirm your username to delete:
+                        <input type="text" name="delConfirmUsername" id="delConfirmUsername"><br>
+                       Confirm your Password to delete:
+                        <input type="password" name="delConfirmPassword" id="delConfirmPassword"><br>
+                        <input type="submit" id="deleteAccountButton" name="deleteAccountButton" value="Delete">
+                        <!-- <a href="#" class="btn" id="deleteAccount">Delete</a> -->
+                    </div>
+                </form>
             </div>
 
             <!-- The Modal -->
@@ -211,6 +218,7 @@ $conn->close();
     </div>
     <script src="../IE4717/assets/js/profile.js"></script>
     <script src="../IE4717/assets/js/fetchUserDetails.js"></script>
+    <!-- <script src="../IE4717/assets/js/deleteAccount.js"></script> -->
 </body>
 
 <!--FOOTER-->
