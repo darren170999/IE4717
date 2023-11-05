@@ -126,9 +126,11 @@ p{
     margin: 10px;
 }
 .movie-list .movie-image {
-    width: 500px;
+    width: 250px;
 }
-
+.movie-image {
+    width: 250px;
+}
 .navbar {
     background-color: black;
     text-align: left;

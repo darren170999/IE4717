@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     movieImage.className = 'movie-image';
                     movieImage.src = 'data:image/jpeg;base64,' + movie.movie_data;
                     movieImage.alt = movie.movie_title;
-                    movieImage.style.width = '500px';
+                    movieImage.style.width = '250px';
                     movieLink.appendChild(movieImage);
                     moviePoster.appendChild(movieLink);
                     selectedDayMovies.querySelector('ul').appendChild(moviePoster);
