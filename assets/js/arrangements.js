@@ -169,7 +169,7 @@ function toggleSeatColor(event) {
         // Create a span element for styling text
         const dateText = document.createElement('span');
         dateText.style.fontSize = '18px'; 
-        dateText.style.color = 'yellow'; 
+        dateText.style.color = '#FCC300'; 
         dateText.textContent = `Date: ${jsonObject.date}`;
         dateTimeItem.appendChild(dateText);
 
@@ -179,7 +179,7 @@ function toggleSeatColor(event) {
 
         const timeText = document.createElement('span');
         timeText.style.fontSize = '18px'; 
-        timeText.style.color = 'yellow'; 
+        timeText.style.color = '#FCC300'; 
         timeText.textContent = ` Time: ${jsonObject.time}`;
         dateTimeItem.appendChild(timeText);
 

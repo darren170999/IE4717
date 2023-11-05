@@ -271,7 +271,7 @@ body {
 }
 
 input[type="submit"] {
-    background-color: #FFC300;  /* Yellow background */
+    background-color: #FFC300;  /* #FCC300 background */
     color: black;  /* Black text */
     padding: 10px 20px;
     border: none;
@@ -286,6 +286,6 @@ h2, h3 {
 .contact-form label {
     font-weight: bold;  /* Makes text bold */
     margin-bottom: 8px;  /* Adds some space below the label */
-    color: #FFC300;  /* Changes text color to yellow */
+    color: #FFC300;  /* Changes text color to #FCC300 */
     font-size: 14px;  /* Sets font size */
 }

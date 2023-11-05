@@ -267,7 +267,7 @@ body {
 
 .date-box.active, .time-box.active {
     display: inline-block;
-    background-color: rgba(255, 195, 0, 0.7); /* semi-transparent yellow */
+    background-color: rgba(255, 195, 0, 0.7); /* semi-transparent #FCC300 */
     margin: 10px;
     padding: 10px;
     color: #000000; /* Black text */
