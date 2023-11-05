@@ -1,5 +1,19 @@
 <?php
+include('assets/php/connect.php');
+session_start();
+if (isset($_SESSION['valid_user'])) {
+    $username = $_SESSION['valid_user'];
+}
+$query = "SELECT email FROM users WHERE username = ?"; // You may need to adjust the condition depending on your table structure
 
+// Prepare the statement
+$stmt = $conn->prepare($query);
+$stmt->bind_param("s", $username);
+if ($stmt->execute()) {
+    $stmt->bind_result($email);
+    $stmt->fetch();
+    $stmt->close();
+}
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -12,16 +26,24 @@ $mail = new PHPMailer(true);
 try {
     //Server settings
     $mail->isSMTP();
+    // $mail->Host       = 'smtp.gmail.com';
+    // $mail->SMTPAuth   = true;
+    // $mail->Username   = 'yqheng69@gmail.com'; // SMTP username
+    // $mail->Password = 'jjqahyadxrbyzyuq'; // SMTP password
+    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    // $mail->Port       = 587;
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'yqheng69@gmail.com'; // SMTP username
-    $mail->Password = 'jjqahyadxrbyzyuq'; // SMTP password
+    $mail->Username   = 'darrensohjunhan@gmail.com'; // SMTP username
+    $mail->Password = 'nwddrzsvpyyqmsyl'; // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
     //Recipients
-    $mail->setFrom('yqheng69@gmail.com', 'Pureframes');
-    $mail->addAddress('darrensohjunhan@gmail.com', 'Darren'); // Add a recipient
+    // $mail->setFrom('yqheng69@gmail.com', 'Pureframes');
+    // $mail->addAddress('darrensohjunhan@gmail.com', 'Darren');
+    $mail->setFrom('darrensohjunhan@gmail.com', 'Pureframes');
+    $mail->addAddress($email, 'Darren'); // Add a recipient
 
     // Content
     $mail->isHTML(true); // Set email format to HTML
