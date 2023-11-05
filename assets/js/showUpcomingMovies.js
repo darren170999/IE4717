@@ -36,11 +36,11 @@ function createPosters() {
             // movieImage.style.height = '150px';
             const movieTitle = document.createElement('h3');
             movieTitle.className = 'movie-title';
-            movieTitle.textContent = `Movie Title ${i + 1}`;
+            movieTitle.textContent = `${posters[i].title}`;
 
             const movieRating = document.createElement('p');
             movieRating.className = 'movie-rating';
-            movieRating.textContent = 'Rating: 4.5';
+            movieRating.textContent = `${posters[i].ratings}`;
 
             moviePosterDiv.appendChild(movieImage);
             moviePosterDiv.appendChild(movieTitle);
