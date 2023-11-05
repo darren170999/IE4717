@@ -154,7 +154,10 @@ p{
     margin: 10px;
 }
 .movies .movie-image {
-    width: 500px;
+    width: 250px;
+}
+.movie-image {
+    width: 250px;
 }
 
 .day-movies{
