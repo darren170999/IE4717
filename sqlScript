@@ -289,8 +289,3 @@ VALUES
 (4, "Junction 8 Bishan"),
 (5, "Suntec City"),
 (6, "I12 Katong")
-
-INSERT INTO `movies` (`movie_id`, `movie_title`, `sypnopsis`, `casts`, `screening_date`, `price`, `ratings`, `hall_id`, `location_id`) 
-VALUES 
-(NULL, 'Barbie', 'Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-05 12:00:00', '10.00', '4', '1', '2');
-(NULL, 'Barbie', 'Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-05 12:00:00', '10.00', '4', '1', '2');
