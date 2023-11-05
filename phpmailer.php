@@ -28,8 +28,8 @@ try {
     $mail->Subject = 'Pureframes: Confirmation ID/Movie Tix (Quick Tix™)';
 
     // Assuming $path_to_qr_code is the filesystem path to the QR code image
-    $path_to_qr_code = '../IE4717/assets/img/movie_qr.png';
-    $mail->AddEmbeddedImage($path_to_qr_code, 'qr_code', 'qr-code-image.png');
+    $path_to_email_message = '../IE4717/assets/img/email_message.png';
+    $mail->AddEmbeddedImage($path_to_email_message, 'message', 'email_message.png');
 
 
     $mail->Body = '
@@ -37,7 +37,7 @@ try {
     <body>
         <p>This is your movie ticket. Scan the QR code below at the usher point for entry.</p>
         <div style="text-align: center;">
-            <img src="cid:qr_code" alt="QR Code" style="width: 150px; height: 150px;">
+            <img src="cid:message" alt="booking ticket" style="width:100%; height: auto;">
         </div>
     </body>
     </html>';
