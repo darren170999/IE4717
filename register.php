@@ -31,6 +31,8 @@ if(isset($_POST["submit"])) {
     } else {
     
         echo "Failed to record the account.";
+        header("Location: ChangeYourUsername.php");
+        exit;
     }
     
     $stmt->close();
