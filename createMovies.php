@@ -23,4 +23,3 @@ if (isset($_POST["submitPoster"])) {
 
 $conn->close();
 ?>
-<!-- CLEINT CLIENT_SESSION ---- SERVER_SESSION SERVER ----- DB -->

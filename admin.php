@@ -3,8 +3,8 @@ include('assets/php/connect.php');
 session_start();
 
 if (isset($_SESSION['valid_user'])) {
+    // User is a SuperAdmin
     if ($_SESSION['valid_user'] === 'SuperAdmin') {
-        // User is a SuperAdmin
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,6 @@ if (isset($_SESSION['valid_user'])) {
         <ul class="nav-list">
             <li><a href="location.php">Location</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <!-- <li><a href="profile.php">UserProfile</a></li> -->
             <?php
             if (isset($_SESSION['valid_user'])) {
                 echo '<li><a href="profile.php">UserProfile</a></li>';
@@ -37,7 +36,6 @@ if (isset($_SESSION['valid_user'])) {
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
             }
             ?>
-            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
     <br>
@@ -88,7 +86,7 @@ if (isset($_SESSION['valid_user'])) {
 </html>
 <?php
     } else {
-        // User is not a SuperAdmin
+    // User is not a SuperAdmin
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pure Frames Booking Page</title>
-
     <link rel="stylesheet" href="assets/css/style_booking.css"> 
 </head>
 <body >
@@ -18,7 +17,6 @@
         <ul class="nav-list">
             <li><a href="location.php">Location</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <!-- <li><a href="profile.php">UserProfile</a></li> -->
             <?php
             session_start();
             if (isset($_SESSION['valid_user'])) {
@@ -73,7 +71,6 @@
         </div>
 
         <div class="footer-column sitemap">
-            <!-- Sitemap links -->
             <a href="index.php">Our Movies</a>
             <a href="location.php">Our Locations</a>
             <a href="contact.php">Contact Us</a>

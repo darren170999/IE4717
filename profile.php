@@ -32,7 +32,6 @@ $conn->close();
         <ul class="nav-list">
             <li><a href="location.php">Location</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <!-- <li><a href="profile.php">UserProfile</a></li> -->
             <?php
             if (isset($_SESSION['valid_user'])) {
                 echo '<li><a href="profile.php">UserProfile</a></li>';
@@ -45,7 +44,6 @@ $conn->close();
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
             }
             ?>
-            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
 
@@ -201,7 +199,6 @@ $conn->close();
                     </div>
                 </form>
             </div>
-
             <!-- The Modal -->
             <div id="myModal" class="modal">
                 <!-- The Modal Content -->
@@ -213,8 +210,6 @@ $conn->close();
                     <img id="modal-qr" src="./assets/img/movie_qr.png" alt="QR Code">
                 </div>
             </div>
-
-
         </div>
     </div>
     <script src="../IE4717/assets/js/profile.js"></script>

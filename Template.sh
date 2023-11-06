@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Template that allows us to do batch update to cycle data into DB.
 # Database credentials
 DB_USER="your_username"
 DB_PASSWORD="your_password"

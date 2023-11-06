@@ -47,7 +47,7 @@ if ($stmt->execute()) {
 
     echo json_encode($movies);
 } else {
-    echo "Error: " . $stmt->error; // Output any MySQL errors
+    echo "Error: " . $stmt->error;
 }
 
 $stmt->close();

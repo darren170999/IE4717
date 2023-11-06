@@ -4,7 +4,6 @@
 <head>
     <title>Pure Frames</title>
 	<meta charset="utf-8">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
     <link rel="stylesheet" href="assets/css/loginStyle.css">
 </head>
 <body>
@@ -18,7 +17,6 @@
         <ul class="nav-list">
             <li><a href="location.php">Location</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <!-- <li><a href="profile.php">UserProfile</a></li> -->
             <?php
             session_start();
             if (isset($_SESSION['valid_user'])) {
@@ -32,7 +30,6 @@
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
             }
             ?>
-            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
     <div class="container" id="container">
@@ -40,9 +37,6 @@
             <form action="register.php" method="post">
                 <h1>Create Account</h1>
                 <div class="social-container">
-                    <!-- <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
                 </div>
                 <span>or use your email for registration</span>
                 <input type="text" placeholder="username" name="username"/>
@@ -56,11 +50,7 @@
         <div class="form-container sign-in-container">
             <form action="signIn.php" method="POST">
                 <h1>Sign in</h1>
-                <div class="social-container">
-                    <!-- <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
-                </div>
+                <div class="social-container"></div>
                 <span>or use your account</span>
                 <input type="text" placeholder="username" name="username"/>
                 <input type="password" placeholder="password" name="password"/>

@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     const paymentButton = document.getElementById("paymentButton");
-    // console.log(paymentButton)
     if(paymentButton){
         paymentButton.addEventListener("click", function(event){
             event.preventDefault();
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const sendPurchaseEndpoint = "sendPurchase.php";
             async function fetchHalls(arrangements, hallId, dates, timings, location_id, username, total) {
                 const url = `${confirmArrangementsEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}&location_id=${location_id}&username=${username}&total=${total}`;
-                console.log(url)
                 try {
                 const response = await fetch(url);
                 const data = await response.json();
@@ -20,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             async function sendPurchase(arrangements, hallId, dates, timings, location_id, username, total) {
                 const url = `${sendPurchaseEndpoint}?hall_id=${hallId}&dates=${dates}&timings=${timings}&arrangements=${arrangements}&location_id=${location_id}&username=${username}&total=${total}`;
-                console.log(url)
                 try {
                 const response = await fetch(url);
                 const data = await response.json();
@@ -38,19 +35,15 @@ document.addEventListener("DOMContentLoaded", function() {
             const arrangements = localStorage.seatingArray.split(",").map(Number);
             const decrementedArray = arrangements.map(item => (item === 2 ? 1 : item));
             const arrangement = JSON.stringify(decrementedArray);
-
             const total = localStorage.getItem('total');
             const str = document.querySelector('.user-details').textContent;
             const strrrr = str.replace('User Details:\n', '');
             const username = strrrr.trim();
-            console.log(username)
             
             if (arrangement && hallId && dates && timings && location_id) {
-                console.log(location_id);
                 // Function to format the date to "YYYY-MM-DD" format
                 const formatDate = (inputDate) => {
                     const date = new Date(inputDate);
-                    console.log(inputDate)
                     if (!isNaN(date.getTime())) {
                         // Valid date
                         date.setFullYear(2023);
@@ -71,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     const timeRegex = /^(\d{1,2}):(\d{2})\s*([APap][Mm])?$/;
                     const match = inputTime.match(timeRegex);
                     if (match) {
-                        // Valid time
                         let hours = parseInt(match[1], 10);
                         const minutes = match[2];
                         const period = match[3];
@@ -82,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         return formattedTime;
                     } else {
                         console.error('Invalid time');
-                        // Handle the error or show a message to the user
                         return null;
                     }
                 };
@@ -90,26 +81,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Format the date and time
                 const formattedDate = formatDate(dates); // Format the date
                 const formattedTime = formatTime(timings); // Format the time
-            
                 if (formattedDate && formattedTime) {
                     sendPurchase(arrangement, hallId, formattedDate, formattedTime, location_id, username, total)
                     .then((data) => {
                         if (data !== null) {
                             console.log("Data received:", data);
-
                             if (data.error) {
                                 console.error("Error from the server:", data.error);
                                 // Handle the error or show a message to the user
                             } else {
                                 // Assuming the server response is valid JSON
-                                console.log("HERE")
                                 everything = data;
-                                // window.location.href = "confirmation.php";
-                                // seatingArray = JSON.parse(data.arrangements);
-                                // localStorage.setItem('seatingArray', seatingArray);
                             }
                         } else {
-                            // console.error("No data received from the server.");
+                            console.error("No data received from the server.");
                             // Handle the absence of data or show an appropriate message to the user
                         }
                     })
@@ -127,12 +112,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                 console.error("Error from the server:", data.error);
                                 // Handle the error or show a message to the user
                             } else {
-                                // Assuming the server response is valid JSON
-                                console.log("HERE")
                                 everything = data;
                                 window.location.href = "confirmation.php";
-                                // seatingArray = JSON.parse(data.arrangements);
-                                // localStorage.setItem('seatingArray', seatingArray);
                             }
                         } else {
                             console.error("No data received from the server.");

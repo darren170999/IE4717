@@ -24,10 +24,7 @@ if ($username !== null && $total !== null){
     
         // Fetch the user data
         $stmt->fetch();
-        // echo("Contact: " . $contact);
-        // echo("Email: " . $email);
         $stmt->close();
-        // Now, you have the user's contact, email, and amount, and you can proceed with the INSERT operation
         $stmt = $conn->prepare('INSERT INTO sales (user_name, contact, email, total) VALUES (?, ?, ?, ?)');
     
         $stmt->bind_param("sisd", $username, $contact, $email, $total);

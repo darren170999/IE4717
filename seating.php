@@ -18,7 +18,6 @@
         <ul class="nav-list">
             <li><a href="location.php">Location</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <!-- <li><a href="profile.php">UserProfile</a></li> -->
             <?php
             session_start();
             if (isset($_SESSION['valid_user'])) {
@@ -32,7 +31,6 @@
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
             }
             ?>
-            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
     <br>
@@ -44,11 +42,7 @@
         </div>
     </div>
     <br><br>
-    <div class="seating-plan">
-        <!-- Example: 10 rows, each with 10 seats -->
-
-        <!-- Add more row divs for additional rows of seats -->
-    </div>
+    <div class="seating-plan"></div>
     <div class="legend">
         <h3>Legend</h3>
         <div class="legend-item">
@@ -69,11 +63,8 @@
         </form>
     </div>
     <script src="../IE4717/assets/js/arrangements.js"></script>
-    <!-- <script src="../IE4717/assets/js/refresh.js"></script> -->
-    <!-- <script defer src="../IE4717/assets/js/seats.js"></script> -->
     <script src="../IE4717/assets/js/updateEverything.js"></script>
 </body>
-<!--FOOTER-->
 <footer class="footer">
         <div class="footer-column">
             <div class="footer-logo">
@@ -91,7 +82,6 @@
         </div>
 
         <div class="footer-column sitemap">
-            <!-- Sitemap links -->
             <a href="index.php">Our Movies</a>
             <a href="location.php">Our Locations</a>
             <a href="contact.php">Contact Us</a>

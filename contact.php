@@ -16,7 +16,6 @@
         <ul class="nav-list">
             <li><a href="location.php">Location</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <!-- <li><a href="profile.php">UserProfile</a></li> -->
             <?php
             session_start();
             if (isset($_SESSION['valid_user'])) {
@@ -30,7 +29,6 @@
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
             }
             ?>
-            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
 
@@ -55,13 +53,10 @@
             <form class="contact-form">
                 <label for="name">NAME*:</label>
                 <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your name">
-
                 <label for="email">EMAIL*:</label>
                 <input type="email" id="email" name="email" class="form-input" required placeholder="Enter your email address">
-
                 <label for="message">MESSAGE*:</label>
                 <textarea id="message" name="message" class="form-textarea" required placeholder="Provide details to help us understand your problem"></textarea>
-
                 <button type="submit" class="btn">Send Message</button>
             </form>
         </div>

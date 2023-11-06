@@ -16,15 +16,11 @@ const location_id = localStorage.getItem('location_id');
 const jsonObject = JSON.parse(localStorage.selectedDateTime);
 const dates = jsonObject.date;
 const timings = jsonObject.time;
-// console.log(localStorage)
 
 if (hallId && dates && timings && location_id) {
-    // console.log(hallId);
-
     // Function to format the date to "YYYY-MM-DD" format
     const formatDate = (inputDate) => {
         const date = new Date(inputDate);
-        console.log(inputDate)
         if (!isNaN(date.getTime())) {
             // Valid date
             date.setFullYear(2023);
@@ -60,59 +56,37 @@ if (hallId && dates && timings && location_id) {
             return null;
         }
     };
-
     // Format the date and time
     const formattedDate = formatDate(dates); // Format the date
     const formattedTime = formatTime(timings); // Format the time
+    // fetch arrangement
+    fetchHalls(hallId, formattedDate, formattedTime, location_id)
+        .then((data) => {
+            if (data !== null) {
+                seatingArray = JSON.parse(data.arrangements);
+                localStorage.setItem('seatingArray', seatingArray);
+            }
 
-    // if (formattedDate && formattedTime) {
-        // fetch arrangement
-        fetchHalls(hallId, formattedDate, formattedTime, location_id)
-            .then((data) => {
-                if (data !== null) {
-                    // everything = data;
-                    seatingArray = JSON.parse(data.arrangements);
-                    // console.log(seatingArray)
-                    // const zeroArray = seatingArray.split(',').map(Number);
-                    localStorage.setItem('seatingArray', seatingArray);
-                    // console.log(localStorage)
-                    // const zeroString = localStorage.getItem('seatingArray');
-                    // const zeroArray = zeroString.split(',').map(Number);
-                    // arrange(zeroArray); 
-                    // console.log("fecthed")
-                    // location.reload();
-                    
-                }
+        })
+        .finally(() => {
+            const zeroString = localStorage.getItem('seatingArray');
+            const zeroArray = zeroString.split(',').map(Number);
+            // console.log(zeroArray)
+            arrange(zeroArray); // everytime i want to have a new arrangment i do this
 
-            })
-            .finally(() => {
-                const zeroString = localStorage.getItem('seatingArray');
-                const zeroArray = zeroString.split(',').map(Number);
-                // console.log(zeroArray)
-                arrange(zeroArray); // everytime i want to have a new arrangment i do this
+            const seats = document.querySelectorAll('.seat');
+            seats.forEach(seat => {
 
-                const seats = document.querySelectorAll('.seat');
-                seats.forEach(seat => {
-
-                    seat.addEventListener('click', toggleSeatColor);
-                    console.log(localStorage.seatingArray);
-                });
+                seat.addEventListener('click', toggleSeatColor);
+                console.log(localStorage.seatingArray);
             });
-
-        
-    // }
-}
-// const zeroString = localStorage.getItem('seatingArray');
-// const zeroArray = zeroString.split(',').map(Number);
-// // console.log(zeroArray)
-// arrange(zeroArray); // everytime i want to have a new arrangment i do this
-
+        });
+};
 
 function arrange(zeroArray){
     let seatingArray = zeroArray;
     // Get the seating plan container element
     const seatingPlanContainer = document.querySelector('.seating-plan');
-    console.log(localStorage)
     var hall_id = localStorage.getItem("hall_id");
     // Loop through the array and create rows and seats
     if (hall_id == 1){
@@ -123,18 +97,15 @@ function arrange(zeroArray){
             rowDiv.classList.add('row');
             seatingPlanContainer.appendChild(rowDiv);
           }
-        
           // Create a new seat div
           const seatDiv = document.createElement('div');
           seatDiv.id = 'seat' + (i + 1);
-        
           // Check if the seat is booked and add the appropriate class
           if (seatingArray[i] === 1) {
             seatDiv.classList.add('seatBooked');
           } else {
             seatDiv.classList.add('seat');
-          }
-        
+          };
           // Append the seat to the last row
           const lastRow = seatingPlanContainer.lastChild;
           lastRow.appendChild(seatDiv);
@@ -147,18 +118,15 @@ function arrange(zeroArray){
               rowDiv.classList.add('row');
               seatingPlanContainer.appendChild(rowDiv);
             }
-          
             // Create a new seat div
             const seatDiv = document.createElement('div');
             seatDiv.id = 'seat' + (i + 1);
-          
             // Check if the seat is booked and add the appropriate class
             if (seatingArray[i] === 1) {
               seatDiv.classList.add('seatBooked');
             } else {
               seatDiv.classList.add('seat');
             }
-          
             // Append the seat to the last row
             const lastRow = seatingPlanContainer.lastChild;
             lastRow.appendChild(seatDiv);
@@ -171,39 +139,30 @@ function arrange(zeroArray){
               rowDiv.classList.add('row');
               seatingPlanContainer.appendChild(rowDiv);
             }
-          
             // Create a new seat div
             const seatDiv = document.createElement('div');
             seatDiv.id = 'seat' + (i + 1);
-          
             // Check if the seat is booked and add the appropriate class
             if (seatingArray[i] === 1) {
               seatDiv.classList.add('seatBooked');
             } else {
               seatDiv.classList.add('seat');
             }
-          
             // Append the seat to the last row
             const lastRow = seatingPlanContainer.lastChild;
             lastRow.appendChild(seatDiv);
           }
     }
-}
-// Your array of seating information
-// location.reload();
+};
 
 function toggleSeatColor(event) {
     const seat = event.target;
-    console.log(seat);
-
     if (seat.classList.contains('booked')) {
         return; // Exit the function and do nothing for reserved seats
     }
-    // console.log(seat)
     const seatID = seat.id;
     const selectedSeatsList = document.getElementById('selected-seats-list');
     const jsonObject = JSON.parse(localStorage.selectedDateTime);
-    
     // Check if dateTimeItem already exists
     let dateTimeItem = selectedSeatsList.querySelector('.date-time-item');
     
@@ -242,40 +201,32 @@ function toggleSeatColor(event) {
     if (isSelected) {
         // Seat is currently selected, so unselect it
         seat.classList.remove('selected');
-        
         // Find and remove the corresponding seat ID from the list
         const listItem = Array.from(selectedSeatsList.children).find(item => {
             return item.textContent.includes(`Seat ID: ${seatID}`);
         });
-    
         if (listItem) {
             listItem.remove();
         }
-        
         // Update the seatingArray to 0 for a deselected seat
         const seatNumber = parseInt(seatID.replace('seat', ''));
         let seatingArray = localStorage.seatingArray.split(',').map(Number);
         seatingArray[seatNumber - 1] = 0;
-        console.log(seatingArray)
+        // console.log(seatingArray)
         const stringToSave = seatingArray.join(',');
         localStorage.setItem('seatingArray', stringToSave);
     } else {
         // Seat is not selected, so select it
         seat.classList.add('selected');
         const listItem = document.createElement('li');
-    
-
         const seatIcon = document.createElement('img');
         seatIcon.src = '../IE4717/assets/img/ticket.png'; 
         listItem.appendChild(seatIcon);
-    
         listItem.textContent = ` Seat ID: ${seatID}`;
         selectedSeatsList.appendChild(listItem);
-    
         // Check if Buy button should be displayed
         const buyButton = document.getElementById('buy-button');
         buyButton.style.display = 'block';
-    
         // Update the seatingArray to 2 for a selected seat
         const seatNumber = parseInt(seatID.replace('seat', ''));
         let seatingArray = localStorage.seatingArray.split(',').map(Number);
@@ -284,19 +235,4 @@ function toggleSeatColor(event) {
         const stringToSave = seatingArray.join(',');
         localStorage.setItem('seatingArray', stringToSave);
     }
-    console.log(localStorage)
-    // Combine the seatingArray into a string and save to localStorage without trailing comma
-    // const stringToSave = seatingArray.join(',');
-    // localStorage.setItem('seatingArray', stringToSave);
-    // console.log(stringToSave)
-    // console.log(localStorage.seatingArray)
-
 }
-// console.log(document.querySelectorAll('.seat'));
-// console.log(document.querySelectorAll('.seat'))
-// const seats = document.querySelectorAll('.seat');
-// seats.forEach(seat => {
-
-//     seat.addEventListener('click', toggleSeatColor);
-//     console.log(localStorage.seatingArray);
-// });

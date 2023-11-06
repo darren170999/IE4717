@@ -1,6 +1,5 @@
 <?php
 include('assets/php/connect.php');
-// session_start();
 
 if (isset($_POST["deleteAccountButton"])) {
     if (empty($_POST['delConfirmUsername']) || empty($_POST['delConfirmPassword'])) {
@@ -34,9 +33,6 @@ if (isset($_POST["deleteAccountButton"])) {
         
         header("Location: loginSignUp.php");
         exit();
-        // $_SESSION["valid_user"] = $username;
-        // header("Location: index.php");
-        // echo "Login successful.";
     } else {
         echo "You are an imposter!";
     }

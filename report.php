@@ -69,9 +69,7 @@ if (isset($_SESSION['valid_user'])) {
         } ?>
     </table>
     <canvas id="salesChart" width="400" height="200"></canvas>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-
     <script>
         function filterSales() {
             var input, filter, table, tr, td, i, txtValue;

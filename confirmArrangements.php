@@ -15,7 +15,6 @@ if ($arrangements !== null && $hall_id !== null && $dates !== null && $timings !
     // Use the parameters to update data in the "halls" table
     $stmt = $conn->prepare("UPDATE halls SET arrangements = ? WHERE hall_id = ? AND dates = ? AND timings = ? AND location_id = ?");
     $stmt->bind_param("sissi", $arrangements, $hall_id, $dates, $timings, $location_id);
-    
     if ($stmt->execute()) {
         // Log success message
         echo json_encode(["success" => "Data updated successfully"]);
@@ -23,9 +22,7 @@ if ($arrangements !== null && $hall_id !== null && $dates !== null && $timings !
         // Log error message
         echo json_encode(["error" => "Failed to update data"]);
     }
-
     $stmt->close();
-    
 } else {
     // Log missing parameters message
     echo json_encode(["error" => "Failed to update data"]);

@@ -18,7 +18,6 @@
         <ul class="nav-list">
             <li><a href="location.php">Location</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <!-- <li><a href="profile.php">UserProfile</a></li> -->
             <?php
             session_start();
             if (isset($_SESSION['valid_user'])) {
@@ -32,24 +31,19 @@
                 echo '<li><a href="loginSignUp.php">Login/SignUp</a></li>';
             }
             ?>
-            <!-- <li><a href="loginSignUp.php">Login/SignUp</a></li> -->
         </ul>
     </div>
-    
     <!--Content-->
     <div class="main-content">
         <h1 id="title">EMAIL CONFIRMATION</h1>
         <div class="email-confirmation">
             <!-- Email Icon -->
             <img src="./assets/img/mail.png" alt="Mail Icon" class="email-icon">
-            
             <!-- Thank You Message -->
             <h1>Thank you for booking with us!</h1>
             <p>The e-tickets have been sent to you via your email given to us.</p>
-            
             <!-- Horizontal Line -->
             <hr class="confirmation-line">
-            
             <!-- Resend Email or Contact Us -->
             <p>If you did not receive the tickets, <strong><a href="phpmailer.php" class="highlight-text link">resend email confirmation</a></strong> or <strong><a href="contact.php" class="highlight-text link">contact us</a></strong>.</p>
         </div>
