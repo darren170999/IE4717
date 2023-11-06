@@ -7,7 +7,6 @@ use PureFrames;
 INSERT INTO adminRoles
 VALUES (1, "customer"), (2, "admin"), (3, "superAdmin");
 
-
 CREATE TABLE users 
 (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -17,7 +16,6 @@ CREATE TABLE users
     contact INT NOT NULL,
     created_at TIMESTAMP NOT NULL
 );
-
 
 CREATE Table tickets 
 (
@@ -115,7 +113,6 @@ CREATE TABLE sales
     created_at timestamp
 );
 
-// Very important Query **
 SELECT m.movie_id, m.movie_title, m.sypnopsis, m.casts, m.weekDays, m.screening_time, m.price, m.ratings,
        mp.movie_data, mp.movie_name
 FROM movies m
