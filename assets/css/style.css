@@ -5,6 +5,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #000000;
 }
 
 .header {
@@ -174,7 +175,7 @@ p{
     display: flex;
     flex-wrap: wrap; /* Allow the flex items to wrap onto the next line */
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 20px;
     background-color: #000000;
     color: white;

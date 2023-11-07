@@ -286,3 +286,76 @@ VALUES
 (4, "Junction 8 Bishan"),
 (5, "Suntec City"),
 (6, "I12 Katong")
+
+INSERT INTO movies (movie_id, movie_title, sypnopsis, casts, screening_date, price, ratings, hall_id, location_id)
+VALUES
+-- DIFFERENT LOCATION
+-- LOCATION (1), 8 NOV
+(NULL, 'Barbie', 'Barbie and Ken enjoy life in Barbie Land but face new joys and challenges when they venture into the real world.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-08 12:00:00', '10.00', '4', '1', '1'),
+(NULL, 'Confinement', 'A pregnant painter moves into a temporary lodging and begins experiencing inexplicable incidents in the house when a confinement nanny is hired to take care of her and her newborn child.', 'Cynthia Koh, Rebecca Lim', '2023-11-08 12:00:00', '10.00', '3', '2', '1'),
+(NULL, 'Black Panther', 'In Black Panther, TChalla is crowned king of Wakanda following his fathers death, but he is challenged by Killmonger (Jordan), who plans to abandon the country isolationist policies and begin a global revolution.', 'Chadwick Boseman, Michael B. Jordan, Lupita Nyong O, Letitia Wright, Danai Gurira and more', '2023-11-08 12:00:00', '10.00', '3.5', '3', '1'),
+(NULL, 'Oppenheimer', 'During WWII, Leslie Groves chose J. Robert Oppenheimer to head the Manhattan Project. Their team created the first atomic bomb, detonated on July 16, 1945, reshaping history.', 'Cillian Murphy, Florence Pugh, Robert Downey Jr. Emily Blunt, Devon Bostick and more', '2023-11-08 12:00:00', '10.00', '4.5', '4', '1'),
+(NULL, 'Expend4ables', 'A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent. ', 'Sylvester Stallone, Jason Statham, Dolph Lundgren, Jet Li, Bruce Willis and more', '2023-11-08 12:00:00', '10.00', '5', '5', '1'),
+
+-- LOCATION (2), 8 NOV
+(NULL, 'Barbie', 'Barbie and Ken enjoy life in Barbie Land but face new joys and challenges when they venture into the real world.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-08 12:00:00', '10.00', '4', '1', '2'),
+(NULL, 'Confinement', 'A pregnant painter moves into a temporary lodging and begins experiencing inexplicable incidents in the house when a confinement nanny is hired to take care of her and her newborn child.', 'Cynthia Koh, Rebecca Lim', '2023-11-08 12:00:00', '10.00', '3', '2', '2'),
+(NULL, 'Black Panther', 'In Black Panther, TChalla is crowned king of Wakanda following his fathers death, but he is challenged by Killmonger (Jordan), who plans to abandon the country isolationist policies and begin a global revolution.', 'Chadwick Boseman, Michael B. Jordan, Lupita Nyong O, Letitia Wright, Danai Gurira and more', '2023-11-08 12:00:00', '10.00', '3.5', '3', '2'),
+(NULL, 'Oppenheimer', 'During WWII, Leslie Groves chose J. Robert Oppenheimer to head the Manhattan Project. Their team created the first atomic bomb, detonated on July 16, 1945, reshaping history.', 'Cillian Murphy, Florence Pugh, Robert Downey Jr. Emily Blunt, Devon Bostick and more', '2023-11-08 12:00:00', '10.00', '4.5', '4', '2'),
+(NULL, 'Expend4ables', 'A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent.', 'Sylvester Stallone, Jason Statham, Dolph Lundgren, Jet Li, Bruce Willis and more', '2023-11-08 12:00:00', '10.00', '5', '5', '2'),
+
+-- LOCATION (3), 8 NOV
+(NULL, 'Barbie', 'Barbie and Ken enjoy life in Barbie Land but face new joys and challenges when they venture into the real world.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-08 12:00:00', '10.00', '4', '1', '3'),
+(NULL, 'Confinement', 'A pregnant painter moves into a temporary lodging and begins experiencing inexplicable incidents in the house when a confinement nanny is hired to take care of her and her newborn child.', 'Cynthia Koh, Rebecca Lim', '2023-11-08 12:00:00', '10.00', '3', '2', '3'),
+(NULL, 'Black Panther', 'In Black Panther, TChalla is crowned king of Wakanda following his fathers death, but he is challenged by Killmonger (Jordan), who plans to abandon the country isolationist policies and begin a global revolution.', 'Chadwick Boseman, Michael B. Jordan, Lupita Nyong O, Letitia Wright, Danai Gurira and more', '2023-11-08 12:00:00', '10.00', '3.5', '3', '3'),
+(NULL, 'Oppenheimer', 'During WWII, Leslie Groves chose J. Robert Oppenheimer to head the Manhattan Project. Their team created the first atomic bomb, detonated on July 16, 1945, reshaping history.', 'Cillian Murphy, Florence Pugh, Robert Downey Jr. Emily Blunt, Devon Bostick and more', '2023-11-08 12:00:00', '10.00', '4.5', '4', '3'),
+(NULL, 'Expend4ables', 'A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent.', 'Sylvester Stallone, Jason Statham, Dolph Lundgren, Jet Li, Bruce Willis and more', '2023-11-08 12:00:00', '10.00', '5', '5', '3'),
+
+
+-- DIFFERENT TIMING
+-- LOCATION (4), 8 NOV
+(NULL, 'Barbie', 'Barbie and Ken enjoy life in Barbie Land but face new joys and challenges when they venture into the real world.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-08 12:00:00', '10.00', '4', '1', '4'),
+(NULL, 'Confinement', 'A pregnant painter moves into a temporary lodging and begins experiencing inexplicable incidents in the house when a confinement nanny is hired to take care of her and her newborn child.', 'Cynthia Koh, Rebecca Lim', '2023-11-08 15:00:00', '10.00', '3', '2', '4'),
+(NULL, 'Black Panther', 'In Black Panther, TChalla is crowned king of Wakanda following his fathers death, but he is challenged by Killmonger (Jordan), who plans to abandon the country isolationist policies and begin a global revolution.', 'Chadwick Boseman, Michael B. Jordan, Lupita Nyong O, Letitia Wright, Danai Gurira and more', '2023-11-08 17:00:00', '10.00', '3.5', '3', '4'),
+(NULL, 'Oppenheimer', 'During WWII, Leslie Groves chose J. Robert Oppenheimer to head the Manhattan Project. Their team created the first atomic bomb, detonated on July 16, 1945, reshaping history.', 'Cillian Murphy, Florence Pugh, Robert Downey Jr. Emily Blunt, Devon Bostick and more', '2023-11-08 20:30:00', '10.00', '4.5', '4', '4'),
+(NULL, 'Expend4ables', 'A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent.', 'Sylvester Stallone, Jason Statham, Dolph Lundgren, Jet Li, Bruce Willis and more', '2023-11-08 22:00:00', '10.00', '5', '5', '4'),
+
+-- LOCATION (5), 8 NOV
+(NULL, 'Barbie', 'Barbie and Ken enjoy life in Barbie Land but face new joys and challenges when they venture into the real world.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-08 12:00:00', '10.00', '4', '1', '5'),
+(NULL, 'Confinement', 'A pregnant painter moves into a temporary lodging and begins experiencing inexplicable incidents in the house when a confinement nanny is hired to take care of her and her newborn child.', 'Cynthia Koh, Rebecca Lim', '2023-11-08 15:00:00', '10.00', '3', '2', '5'),
+(NULL, 'Black Panther', 'In Black Panther, TChalla is crowned king of Wakanda following his fathers death, but he is challenged by Killmonger (Jordan), who plans to abandon the country isolationist policies and begin a global revolution.', 'Chadwick Boseman, Michael B. Jordan, Lupita Nyong O, Letitia Wright, Danai Gurira and more', '2023-11-08 17:00:00', '10.00', '3.5', '3', '5'),
+(NULL, 'Oppenheimer', 'During WWII, Leslie Groves chose J. Robert Oppenheimer to head the Manhattan Project. Their team created the first atomic bomb, detonated on July 16, 1945, reshaping history.', 'Cillian Murphy, Florence Pugh, Robert Downey Jr. Emily Blunt, Devon Bostick and more', '2023-11-08 20:30:00', '10.00', '4.5', '4', '5'),
+(NULL, 'Expend4ables', 'A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent.', 'Sylvester Stallone, Jason Statham, Dolph Lundgren, Jet Li, Bruce Willis and more', '2023-11-08 22:00:00', '10.00', '5', '5', '5'),
+
+-- LOCATION (6), 8 NOV
+(NULL, 'Barbie', 'Barbie and Ken enjoy life in Barbie Land but face new joys and challenges when they venture into the real world.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-08 12:00:00', '10.00', '4', '1', '6'),
+(NULL, 'Confinement', 'A pregnant painter moves into a temporary lodging and begins experiencing inexplicable incidents in the house when a confinement nanny is hired to take care of her and her newborn child.', 'Cynthia Koh, Rebecca Lim', '2023-11-08 12:00:00', '15.00', '3', '2', '6'),
+(NULL, 'Black Panther', 'In Black Panther, TChalla is crowned king of Wakanda following his fathers death, but he is challenged by Killmonger (Jordan), who plans to abandon the country isolationist policies and begin a global revolution.', 'Chadwick Boseman, Michael B. Jordan, Lupita Nyong O, Letitia Wright, Danai Gurira and more', '2023-11-08 17:00:00', '10.00', '3.5', '4', '6'),
+(NULL, 'Oppenheimer', 'During WWII, Leslie Groves chose J. Robert Oppenheimer to head the Manhattan Project. Their team created the first atomic bomb, detonated on July 16, 1945, reshaping history.', 'Cillian Murphy, Florence Pugh, Robert Downey Jr. Emily Blunt, Devon Bostick and more', '2023-11-08 20:30:00', '10.00', '4.5', '4', '6'),
+(NULL, 'Expend4ables', 'A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent.', 'Sylvester Stallone, Jason Statham, Dolph Lundgren, Jet Li, Bruce Willis and more', '2023-11-08 22:00:00', '10.00', '5', '5', '6'),
+
+
+
+-- DIFFERENT DAYS
+-- LOCATION (4), 9 NOV
+(NULL, 'Barbie', 'Barbie and Ken enjoy life in Barbie Land but face new joys and challenges when they venture into the real world.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-09 12:00:00', '10.00', '4', '1', '4'),
+(NULL, 'Confinement', 'A pregnant painter moves into a temporary lodging and begins experiencing inexplicable incidents in the house when a confinement nanny is hired to take care of her and her newborn child.', 'Cynthia Koh, Rebecca Lim', '2023-11-09 15:00:00', '10.00', '3', '2', '4'),
+(NULL, 'Black Panther', 'In Black Panther, TChalla is crowned king of Wakanda following his fathers death, but he is challenged by Killmonger (Jordan), who plans to abandon the country isolationist policies and begin a global revolution.', 'Chadwick Boseman, Michael B. Jordan, Lupita Nyong O, Letitia Wright, Danai Gurira and more', '2023-11-09 17:00:00', '10.00', '3.5', '3', '4'),
+(NULL, 'Oppenheimer', 'During WWII, Leslie Groves chose J. Robert Oppenheimer to head the Manhattan Project. Their team created the first atomic bomb, detonated on July 16, 1945, reshaping history.', 'Cillian Murphy, Florence Pugh, Robert Downey Jr. Emily Blunt, Devon Bostick and more', '2023-11-09 20:30:00', '10.00', '4.5', '4', '4'),
+(NULL, 'Expend4ables', 'A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent.', 'Sylvester Stallone, Jason Statham, Dolph Lundgren, Jet Li, Bruce Willis and more', '2023-11-09 22:00:00', '10.00', '5', '5', '4'),
+
+-- LOCATION (5), 18 NOV
+(NULL, 'Barbie', 'Barbie and Ken enjoy life in Barbie Land but face new joys and challenges when they venture into the real world.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-18 12:00:00', '10.00', '4', '1', '5'),
+(NULL, 'Confinement', 'A pregnant painter moves into a temporary lodging and begins experiencing inexplicable incidents in the house when a confinement nanny is hired to take care of her and her newborn child.', 'Cynthia Koh, Rebecca Lim', '2023-11-18 15:00:00', '10.00', '3', '2', '5'),
+(NULL, 'Black Panther', 'In Black Panther, TChalla is crowned king of Wakanda following his fathers death, but he is challenged by Killmonger (Jordan), who plans to abandon the country isolationist policies and begin a global revolution.', 'Chadwick Boseman, Michael B. Jordan, Lupita Nyong O, Letitia Wright, Danai Gurira and more', '2023-11-18 17:00:00', '10.00', '3.5', '3', '5'),
+(NULL, 'Oppenheimer', 'During WWII, Leslie Groves chose J. Robert Oppenheimer to head the Manhattan Project. Their team created the first atomic bomb, detonated on July 16, 1945, reshaping history.', 'Cillian Murphy, Florence Pugh, Robert Downey Jr. Emily Blunt, Devon Bostick and more', '2023-11-18 20:30:00', '10.00', '4.5', '4', '5'),
+(NULL, 'Expend4ables', 'A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent.', 'Sylvester Stallone, Jason Statham, Dolph Lundgren, Jet Li, Bruce Willis and more', '2023-11-18 22:00:00', '10.00', '5', '5', '5'),
+
+-- LOCATION (6), 31 NOV
+(NULL, 'Barbie', 'Barbie and Ken enjoy life in Barbie Land but face new joys and challenges when they venture into the real world.', 'Margot Robbie, Ryan Gosling, Will Ferrell, Michael Cera, Emerald Fennell, Dua Lipa, Issa Rae and more', '2023-11-30 12:00:00', '10.00', '4', '1', '6'),
+(NULL, 'Confinement', 'A pregnant painter moves into a temporary lodging and begins experiencing inexplicable incidents in the house when a confinement nanny is hired to take care of her and her newborn child.', 'Cynthia Koh, Rebecca Lim', '2023-11-30 12:00:00', '15.00', '3', '2', '6'),
+(NULL, 'Black Panther', 'In Black Panther, TChalla is crowned king of Wakanda following his fathers death, but he is challenged by Killmonger (Jordan), who plans to abandon the country isolationist policies and begin a global revolution.', 'Chadwick Boseman, Michael B. Jordan, Lupita Nyong O, Letitia Wright, Danai Gurira and more', '2023-11-30 17:00:00', '10.00', '3.5', '4', '6'),
+(NULL, 'Oppenheimer', 'During WWII, Leslie Groves chose J. Robert Oppenheimer to head the Manhattan Project. Their team created the first atomic bomb, detonated on July 16, 1945, reshaping history.', 'Cillian Murphy, Florence Pugh, Robert Downey Jr. Emily Blunt, Devon Bostick and more', '2023-11-30 20:30:00', '10.00', '4.5', '4', '6'),
+(NULL, 'Expend4ables', 'A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent.', 'Sylvester Stallone, Jason Statham, Dolph Lundgren, Jet Li, Bruce Willis and more', '2023-11-30 22:00:00', '10.00', '5', '5', '6');
+
+
