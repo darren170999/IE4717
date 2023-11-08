@@ -1,5 +1,5 @@
 import { JSDOM } from 'jsdom';
-import { fetchMoviePosters, createPosters } from './your-original-file.js';
+import { fetchMoviePosters, createPosters } from '../js/showUpcomingMovies.js';
 
 describe('fetchMoviePosters', () => {
   beforeEach(() => {

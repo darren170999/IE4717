@@ -1,7 +1,5 @@
-// Mock fetch and jsdom
 import { sandbox } from 'fetch-mock';
-import jsdom from 'jsdom';
-import { fetchHalls, sendPurchase } from './your-original-file.js';
+import { fetchHalls, sendPurchase } from '../js/submitPayment.js';
 
 beforeAll(() => {
     global.fetch = sandbox();

@@ -19,34 +19,20 @@ describe('initializeDeleteAccountButton', () => {
     const mockFetch = jest.fn(() => Promise.resolve({ json: () => Promise.resolve({ /* your expected response data */ }) }));
     global.fetch = mockFetch;
     button.clickEvent = new Event('click');
-
-
     initializeDeleteAccountButton(document);
-
-
     button.dispatchEvent(button.clickEvent);
-
-
     expect(mockPreventDefault).toHaveBeenCalled();
     expect(mockFetch).toHaveBeenCalledWith(
       'deleteAccount.php?hall_id=&dates=&timings=&arrangements=&location_id=&username=&total='
     );
   });
-
   it('should handle fetch errors', () => {
-
     const mockPreventDefault = jest.fn();
     const mockFetch = jest.fn(() => Promise.reject('Error message'));
     global.fetch = mockFetch;
     button.clickEvent = new Event('click');
-
-
     initializeDeleteAccountButton(document);
-
-
     button.dispatchEvent(button.clickEvent);
-
-
     expect(mockPreventDefault).toHaveBeenCalled();
   });
 });
