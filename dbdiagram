@@ -1,0 +1,82 @@
+
+Table adminRoles {
+  user_id int [primary key]
+  roles char(10)
+}
+Table users {
+  id int [primary key]
+  username varchar(50)
+  password varchar(100)
+  email varchar(50)
+  contact int
+  created_at timestamp
+}
+Table seats {
+  seat_id int [primary key]
+  hall_id int
+  state char(10)
+  created_at timestamp
+}
+Table halls {
+  id int [primary key]
+  hall_id int
+  location_id int
+  dates datetime
+  timings timestamp
+  arrangements JSON
+  created_at timestamp
+}
+Table movies {
+  movie_id int [primary key]
+  hall_id int
+  location_id int
+  sypnopsis varchar(255)
+  movie_title varchar(255)
+  casts char(255)
+  screening_date datetime
+  price float(4,2)
+  ratings int
+}
+Table moviePosters {
+  id int [primary key]
+  movie_id int 
+  movie_data longblob
+  movie_name varchar(255)
+}
+Table longPosters {
+  id int [primary key]
+  movie_id int 
+  movie_data longblob
+  movie_name varchar(255)
+}
+Table advertisements {
+  id int [primary key]
+  image_data longblob
+  image_name varchar(255)
+}
+Table profiles {
+  profile_id int [primary key]
+  picture varchar(100)
+  genres varchar(100)
+  prferred varchar(100)
+}
+Table locations {
+  location_id int [primary key]
+  location_name varchar(100)
+}
+Table sales {
+  sale_id int [primary key]
+  user_name varchar(100)
+  contact int
+  email varchar(50)
+  total float(4,2)
+  created_at timestamp
+}
+
+Ref: adminRoles.user_id - users.id 
+Ref: seats.hall_id > halls.hall_id
+Ref: locations.location_id < halls.location_id
+Ref: movies.movie_id < moviePosters.movie_id
+Ref: movies.movie_id < longPosters.movie_id
+Ref: movies.hall_id - halls.hall_id
+Ref: movies.location_id - halls.location_id
