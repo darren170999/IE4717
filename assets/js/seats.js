@@ -6,7 +6,7 @@ function toggleSeatColor(event) {
     if (seat.classList.contains('booked')) {
         return; // Exit the function and do nothing for reserved seats
     }
-    // console.log(seat)
+
     const seatID = seat.id;
     const selectedSeatsList = document.getElementById('selected-seats-list');
     const jsonObject = JSON.parse(localStorage.selectedDateTime);
@@ -90,17 +90,10 @@ function toggleSeatColor(event) {
         console.log(seatingArray)
         const stringToSave = seatingArray.join(',');
         localStorage.setItem('seatingArray', stringToSave);
-    }
-    console.log(localStorage)
-    // Combine the seatingArray into a string and save to localStorage without trailing comma
-    // const stringToSave = seatingArray.join(',');
-    // localStorage.setItem('seatingArray', stringToSave);
-    // console.log(stringToSave)
-    // console.log(localStorage.seatingArray)
+    };
 
 }
-// console.log(document.querySelectorAll('.seat'));
-// console.log(document.querySelectorAll('.seat'))
+
 const seats = document.querySelectorAll('.seat');
 seats.forEach(seat => {
 

@@ -68,14 +68,14 @@ document.addEventListener("DOMContentLoaded", function() {
       updateUserDetails(username, newUsername, email, contact)
       .then((data) => {
           if (data !== null) {
-              console.log("Data received:", data);
+              // console.log("Data received:", data);
 
               if (data.error) {
                   console.error("Error from the server:", data.error);
                   // Handle the error or show a message to the user
               } else {
                   // Assuming the server response is valid JSON
-                  console.log("HERE")
+                  // console.log("HERE")
                   everything = data;
                   window.location.href = "profile.php";
                   // seatingArray = JSON.parse(data.arrangements);
