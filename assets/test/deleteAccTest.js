@@ -14,7 +14,7 @@ describe('initializeDeleteAccountButton', () => {
   it('should add a click event listener to the delete button', () => {
 
     const mockPreventDefault = jest.fn();
-    const mockFetch = jest.fn(() => Promise.resolve({ json: () => Promise.resolve({ /* your expected response data */ }) }));
+    const mockFetch = jest.fn(() => Promise.resolve({ json: () => Promise.resolve() }));
     global.fetch = mockFetch;
     button.clickEvent = new Event('click');
     initializeDeleteAccountButton(document);
