@@ -1,7 +1,5 @@
 import { JSDOM } from 'jsdom';
-
 import { initializeDeleteAccountButton } from '../js/deleteAccount.js';
-
 describe('initializeDeleteAccountButton', () => {
   let dom;
   let document;
