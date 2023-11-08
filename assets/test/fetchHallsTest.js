@@ -8,18 +8,13 @@ describe('fetchHalls', () => {
     const dates = '2023-11-08';
     const timings = '12:00 PM';
     const location_id = 1;
-
-
     global.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         json: () => Promise.resolve(),
       });
     });
 
-
     const result = await fetchHalls(arrangements, hallId, dates, timings, location_id);
-
-
     expect(result).toEqual();
     expect(global.fetch).toHaveBeenCalledWith();
   });
@@ -32,14 +27,11 @@ describe('fetchHalls', () => {
     const timings = '12:00 PM';
     const location_id = 1;
 
-
     global.fetch = jest.fn().mockImplementation(() => {
       return Promise.reject('Error message');
     });
 
-
     const result = await fetchHalls(arrangements, hallId, dates, timings, location_id);
-
 
     expect(result).toBeNull();
   });
