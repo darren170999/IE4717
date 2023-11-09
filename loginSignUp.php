@@ -1,4 +1,4 @@
-<?php include('assets/php/connect.php'); ?>
+<?php include('assets/php/connect.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,12 +38,12 @@
                 <h1>Create Account</h1>
                 <div class="social-container">
                 </div>
-                <span>or use your email for registration</span>
-                <input type="text" placeholder="username" name="username"/>
-                <input type="password" placeholder="password" name="password"/>
-                <input type="password" placeholder="Re-enter password" name="password2"/>
-                <input type="email" placeholder="email" name="email" />
-                <input type="int" placeholder="contact" name="contact" />
+                <!-- <span>or use your email for registration</span> -->
+                <input type="text" placeholder="username" name="username" id="username">
+                <input type="password" placeholder="password" name="password" id="password">
+                <input type="password" placeholder="Re-enter password" name="password2" id="password2">
+                <input type="email" placeholder="email" name="email" id="email">
+                <input type="int" placeholder="contact" name="contact" id="contact">
                 <input type="submit" name="submit" value="Sign Up" id="signUp_button">
             </form>
         </div>
@@ -51,10 +51,13 @@
             <form action="signIn.php" method="POST">
                 <h1>Sign in</h1>
                 <div class="social-container"></div>
-                <span>or use your account</span>
-                <input type="text" placeholder="username" name="username"/>
-                <input type="password" placeholder="password" name="password"/>
-                <a href="#">Forgot your password?</a>
+                <!-- <span>or use your account</span> -->
+                <input type="text" placeholder="username" name="usernameT"/>
+                <input type="password" placeholder="password" name="passwordT"/>
+                <a href="#" id="forgotPassword">Forgot your password?</a>
+                <div id="adminNotification" style="display: none; color: white; font-size: 12px;">
+                    We have notified the admins and will reach out to you soon!
+                </div>
                 <input type="submit" name="signin" value="Sign in" id="signIn_button">
             </form>
         </div>
