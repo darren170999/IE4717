@@ -51,9 +51,9 @@
             <form action="signIn.php" method="POST">
                 <h1>Sign in</h1>
                 <div class="social-container"></div>
-                <!-- <span>or use your account</span> -->
-                <input type="text" placeholder="username" name="usernameT"/>
-                <input type="password" placeholder="password" name="passwordT"/>
+                <!-- <span>or use your account</span> --> 
+                <input type="text" placeholder="username" name="usernameT" id="usernameT"/>
+                <input type="password" placeholder="password" name="passwordT" id="passwordT"/>
                 <a href="#" id="forgotPassword">Forgot your password?</a>
                 <div id="adminNotification" style="display: none; color: white; font-size: 12px;">
                     We have notified the admins and will reach out to you soon!
