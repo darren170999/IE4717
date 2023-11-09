@@ -1,13 +1,16 @@
 <?php
 include('assets/php/connect.php');
-
+session_start();
+if (isset($_SESSION['valid_user'])) {
+    $username = $_SESSION['valid_user'];
+}
 if (isset($_POST["deleteAccountButton"])) {
-    if (empty($_POST['delConfirmUsername']) || empty($_POST['delConfirmPassword'])) {
+    if (empty($_POST['delConfirmPassword'])) {
         echo "All records must be filled in";
         exit;
     }
 
-    $username = $_POST['delConfirmUsername'];
+    // $username = $_POST['delConfirmUsername'];
     $enteredPassword = $_POST['delConfirmPassword'];
 
     $query = "SELECT password FROM users WHERE username = ?";

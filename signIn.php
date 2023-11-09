@@ -3,13 +3,13 @@ include('assets/php/connect.php');
 session_start();
 
 if (isset($_POST["signin"])) {
-    if (empty($_POST['username']) || empty($_POST['password'])) {
+    if (empty($_POST['usernameT']) || empty($_POST['passwordT'])) {
         echo "All records must be filled in";
         exit;
     }
 
-    $username = $_POST['username'];
-    $enteredPassword = $_POST['password'];
+    $username = $_POST['usernameT'];
+    $enteredPassword = $_POST['passwordT'];
 
     $query = "SELECT password FROM users WHERE username = ?";
     $stmt = $conn->prepare($query);
